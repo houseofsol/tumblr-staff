@@ -1,0 +1,3199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+
+<!--
+ 
+olympus v. 2.0 multi-muse variant by houseofsol using a tutorial by octomoosey & integrating a base code by neonbike themes
+ 
+this is a custom theme and will not be available to the public. do not rip parts of this theme to use in your own.
+
+thank you.
+
+https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4 -- use this to change the transparency of the backgrounds
+ 
+-->
+
+<!-- popup script -->
+<script type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+<!-- end script -->
+
+
+<!-- tabbed script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#tabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tab li.active").removeClass("active");
+            $("ul#tab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+
+<!-- tabbed popup script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#poptabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#poptabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#poptab li.active").removeClass("active");
+            $("ul#poptab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+<!-- tabbed script -->
+
+    <script>
+
+    $(document).ready(function(){
+    $("ul#mvtabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#mvtabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#mvtab li.active").removeClass("active");
+            $("ul#mvtab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+    </script>
+
+<!-- end tabbed script -->
+
+
+<!-- banned ips script -->
+
+<script type="text/javascript" src="https://l2.io/ip.js?var=userip%22%3E"></script>
+<script language="Javascript">
+function preloadFunc()
+{
+var ip = userip;
+var bannedips=[
+ "83.162.204.108,179.208.159.53, 179.208.156.158,179.208.157.22"
+]
+var handleips=bannedips.join("|")
+handleips=new RegExp(handleips, "i")
+
+if (ip.search(handleips)!=-1){ 
+window.location.replace("https://tumblr.com/logout%22);
+document.write('<!--no.-->');
+}
+}
+window.onpaint = preloadFunc();
+</script>
+
+
+<!-- important scripts -->
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/wgijwsy/Ebfm2v4gy/jquery.masonry.min.js"></script>
+
+
+<!-- end other script -->
+
+<!-- mytooltips script -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+
+<script>
+
+(function($){
+
+$(document).ready(function(){
+
+$("a[title]").style_my_tooltips({
+
+tip_follows_cursor:true,
+
+tip_delay_time:0,
+
+tip_fade_speed:0,
+
+attribute:"title"
+
+});
+
+});
+
+})(jQuery);
+
+</script>
+
+<!-- end mytooltips script -->
+
+<!-- redirect script -->
+<script>
+if(window.location.pathname == '/ask') location.replace('/asks');/*replace /faq with whatever your page is!*/
+</script>
+
+        
+        <script src="https://kit.fontawesome.com/2e587cc233.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+        
+
+    
+    
+ <!-- colour variables (this is where you change the colours) -->
+ 
+   <meta name="color:background" content="#2a3036"/>
+	<meta name="color:text" content="#cccccc"/>
+	<meta name="color:links" content="#778899"/>
+	<meta name="color:links hover" content="#994444"/>
+	<meta name="color:tags" content="#cccccc"/>
+	<meta name="color:tags hover" content="#994444"/>
+	<meta name="color:permalinks" content="#cccccc"/>
+	<meta name="color:permalinks hover" content="#994444"/>
+	<meta name="color:bold" content="#526274"/>
+	<meta name="color:italics" content="#aabbcc"/>
+	<meta name="color:blockquote" content="#445566"/>
+	<meta name="color:pagination" content="#778899"/>
+	<meta name="color:pagination hover" content="#192123"/>
+	<meta name="color:name" content="#cccccc"/>
+	<meta name="color:sidebox" content="#cccccc"/>
+	<meta name="color:popup background" content="#181f26"/>
+	<meta name="color:popup text" content="#cccccc"/>
+	<meta name="color:popup tabs active" content="#445566"/>
+	<meta name="color:verse muse tabs" content="#ffffff"/>
+	<meta name="color:verse muse tabs hover" content="ffffff"/>
+	<meta name="color:verse muse tabs active" content="#778899"/>
+	<meta name="color:buttons" content="#d2d2d2"/>
+	<meta name="color:buttons background" content="#445566"/>
+	
+  
+<!-- image variables (this is for the image uploads) -->  
+
+	<meta name="image:sideimgleft" content="/"/>
+	<meta name="image:sideimgmiddle" content="/"/>
+	<meta name="image:sideimgright" content="/"/>
+	<meta name="image:name" content=""/>  
+	<meta name="image:background" content=""/>
+
+
+    
+<!-- text variables -- where you will put in the text for certain aspects of your theme -->
+
+<meta name="text:name" content="cxpt" /> <!-- this is for your url, character's name or a short title -->
+
+
+<!-- this is where you can choose what google fonts you want to use -->
+
+<link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'> 
+<link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet" type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet" type='text/css'> 
+
+
+    
+<style type="text/css">
+
+@font-face {
+	font-family:'onelove';
+	src:url('https://static.tumblr.com/uopakca/76dq4ct45/onelove.otf');
+	}
+	
+@font-face { font-family: "petita"; src: url('https://static.tumblr.com/ahsqnir/cNdqnu5kr/petitamedium.ttf'); format("truetype");} 
+
+
+/* tabbed popup styling */
+
+ul#poptabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   margin-left:0px;
+}
+
+ul#poptabs li {
+   display: inline-block;
+   background-color: transparent;
+   border: solid 1px #63646a;
+   padding: 5px 6px;
+   margin-bottom: 4px;
+   color: #b1b1b1;
+   cursor: pointer;
+}
+
+ul#poptabs li:hover {
+   background-color: transparent;
+}
+
+ul#poptabs li.active {
+   background-color: {color:popup tabs active};
+}
+
+ul#poptab {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+ul#poptab li {
+   display: none;
+}
+
+ul#poptab li.active {
+   display: block;
+   width:400px;
+}
+
+
+/* popup sidebar */
+
+#popside {
+	width:175px;
+	height: 375px;
+	position:fixed;
+	background:transparent;
+	top:150px;
+	left:1060px;
+
+}
+
+#popsideimage img {
+	width:65px;
+	height:65px;    
+   margin-bottom:5px;
+   margin-left:50px;
+   border:2px solid {color:borders};
+   -webkit-border-radius: 96px;
+   -moz-border-radius: 96px;
+   border-radius: 96px;
+    }
+    
+#popquote {
+	font-size:12px;
+	color:{color:popquote};
+	text-align:justify;
+	padding:0 8px;
+	height:45px;
+	width:110px;
+	margin-top:2px;
+	margin-left:23px;
+	display:inline;
+	float:left;
+}
+
+
+
+/* this is for the tumblr controls */
+
+iframe#tumblr_controls {
+right:2px !important;
+opacity:0.4;
+position: fixed !important;
+filter:alpha(opacity=30);
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+}
+iframe#tumblr_controls:hover{
+opacity:0.9;
+position: fixed !important;
+filter:alpha(opacity=80);
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+}
+
+
+/* this changes the tooltip when you hover over a link */
+
+#s-m-t-tooltip {
+max-width:400px;
+padding:5px;
+margin:10px 0px 0px 10px;
+background-color:#171e23; 
+font-family:'gibson', sans-serif;
+font-size:9px;
+letter-spacing:1px;
+font-style:none;
+text-transform:uppercase;
+padding-bottom:3px;
+color:#fff;
+border: 4px double #d7d7d7;
+z-index:999999999999999999999999999999999999;
+}
+
+/* this is what changes the colour when you highlight */
+
+::selection {
+background: #181f26;
+color: #cc6666;
+}
+
+
+
+/* scrollbars code */
+
+::-webkit-scrollbar-thumb:vertical {
+	background-color:transparent;
+	height:0px;
+	}
+
+::-webkit-scrollbar-thumb:horizontal {
+	background-color:transparent;
+	height:0px;
+	}
+
+::-webkit-scrollbar {
+	background-color:transparent;
+	height:0px;
+	width:0px;
+	}
+
+/* headings */
+
+h1 {
+	font-size:19px;
+	line-height:15px;
+	text-transform:uppercase;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	text-align:right;
+	margin-top:0px;
+}
+
+h2 {
+	font-size:19px;
+	text-transform:uppercase;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	text-align:right;
+	margin-top:-10px;
+}
+
+h3 {
+	font-size:15px;
+	line-height:15px;
+	text-transform:lowercase;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	text-align:center;
+	font-weight:normal;
+	letter-spacing:0px;
+	color:#fff;
+	background-color: transparent;
+	border-top: solid 1px #63646a;
+	border-bottom: dashed 1px #63646a;
+	width:225px;
+	display: inline-block;
+	padding: 5px 15px;
+	margin-bottom: 1px;
+	margin-left:0px;
+	margin-top:0px;
+}
+
+h4 {
+	color:#fff;
+	font-family: 'onelove', sans-serif;
+   font-size:70px;
+	text-transform:lowercase;
+	font-weight:normal;
+	text-align:center;
+	margin-top:-10px;
+	margin-bottom:-15px;
+}
+
+h5 {
+	font-size:12px;
+	font-family:'open sans', sans-serif;
+	line-height:15px;
+	text-transform:uppercase;
+	text-align:center;
+	font-weight:bold;
+	letter-spacing:-1px;
+	color:#c8c1b5;
+	background-color: transparent;
+	border-top: solid 1px #d2d2d2;
+	border-bottom: dashed 1px #d2d2d2;
+	width:100px;
+	display: inline-block;
+	padding: 5px;
+	margin-bottom: 5px;
+	margin-left:0px;
+	margin-top:3px;
+
+}
+
+ul{
+    list-style-type:square;
+}
+
+
+/* general style */
+
+body {
+	background-color: {color:background};
+	background-image: url('{image:background}');
+	background-repeat: repeat;
+	font-family:'arial', sans-serif;
+	font-size:12px;
+	color:{color:text};
+	text-transform:lowercase;
+}
+
+a {
+	text-decoration:none;
+	color:{color:links};
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+}
+
+a:hover {
+	color:{color:links hover};
+}
+
+
+b,strong {
+	color:{color:bold};
+	font-size:17px;
+	text-transform:uppercase;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+b2 {
+	color:#A0A7B1;
+	font-size:17px;
+	text-transform:uppercase;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-weight:bold;
+}
+
+i,em {
+	color:{color:italics};
+	font-family: 'Covered By Your Grace', cursive;
+	font-size:25px;
+	line-height:90%;
+}
+
+sup, small, sub { 
+  font-size:12px;
+  }
+
+blockquote {
+	border-left:1px dashed {color:blockquote};
+	padding-left:10px;
+   padding-right:5px;
+	margin:5px 5px 5px 10px;
+   line-height:auto;
+}
+
+blockquote img {
+	max-width:100%;
+	height:auto;
+}
+
+p{
+    margin-bottom:10px;
+}
+
+p.fake {
+    margin:-3px;    
+    
+}
+
+
+img {
+	border:none;	
+	max-width:100%;
+}
+
+.caption img {
+   max-width:100%;
+   height:auto;
+   }
+ 
+.posts img {
+   max-width:100%;
+   }
+
+.photoset {
+	max-width:100%;
+}
+
+#overlay {
+   position:fixed;
+   left:800px;
+   top:480px;
+   z-index:99999999;
+    }
+
+#overlay img {
+	width:253px;   
+   height:224px;
+    }
+
+
+/* tabbed content coding */
+
+.tabcontent {
+	 position:absolute;    
+    width:365px;
+    margin-left:8px;
+    margin-top:0px;
+    overflow:scroll;
+    overflow-x:hidden;
+    height:550px;
+    text-transform:lowercase;
+    background:transparent;
+	 padding-bottom:10px;
+    }
+
+/* tabbed content coding ends here */	
+ 
+
+
+/*post style */
+
+#container {			/*this will contain the posts so they aren't left justified*/
+	position:absolute;
+	left:97px;
+	height:550px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	width:530px;
+	top:50px;
+	background:#181f26e6; /* only change the first six numbers. the last two are the transparency */
+	padding-bottom:10px;
+	border-left:1px dashed #a0a0a0;
+	border-top:1px dashed #a0a0a0;
+	border-bottom:1px solid #a0a0a0;
+	border-right:1px solid #a0a0a0;
+}
+
+
+.posts {
+	width:500px;
+	background-color:#3c3c3c40; /* only change the first six numbers. the last two are the transparency */ 
+	padding:5px;
+	margin-bottom:30px;
+}
+
+.postswrap {
+	padding:10px;
+	width:500px;
+}
+
+.permalinks {
+	padding:5px;
+	background-color:#171e23bf; /* only change the first six numbers. the last two are the transparency */
+	height:12px;
+	border-top:1px solid #526274;
+	border-bottom:1px dashed #994444;
+	margin-top:15px;
+}
+
+.permalinks a {
+	text-decoration:none;
+	text-transform:capitalize;
+	font-size:9px;
+	color:{color:permalinks};
+}
+
+.permalinks a:hover {
+	color:{color:permalinks hover};
+}
+
+.date {
+	float:left;
+}
+
+.date .fa-bookmark { 
+	color:#aaaaaa; 
+	} 
+
+.reblogs {
+	float:right;
+}
+
+.pinned { 
+	font-weight:bold; 
+   font-size:10px;
+   text-align:center;
+   width:400px;
+}
+
+.pinned a { 
+	text-transform:uppercase!important; 
+	}
+
+.pinned .fa-thumbtack { 
+	margin-right:7px; 
+	font-size:11px; 
+	} 
+	
+
+/* tag styling */
+
+.tags {
+	text-align:center;
+	margin-top:5px;
+}
+
+.tags a {
+	text-decoration:none;
+	font-size:9px;
+	text-transform:uppercase;
+	color:{color:tags};
+}
+
+.tags a:hover {
+	color:{color:tags hover};
+}
+
+
+/*header styling */
+
+#sideimageone {
+	position:fixed;
+	left:640px;
+	top:50px;
+	height:515px;
+	width:175px;
+	padding:2px;
+	background:{color:background};
+	border-left:1px dashed #a0a0a0;
+	border-right:1px dashed #a0a0a0;
+	border-top:1px solid #a0a0a0;
+	border-bottom:1px solid #a0a0a0;
+	}
+
+#sideimageone img {
+	width:175px;
+   height:515px;
+   background-repeat:no-repeat;
+	background-attachment:fixed;
+	url('{image:sideimgleft}');
+}
+
+#sideimagetwo {
+	position:fixed;
+	left:824px;
+	top:50px;
+	height:515px;
+	width:200px;
+	padding:2px;
+	background:{color:background};
+	border-right:1px solid #a0a0a0;
+	border-left:1px solid #a0a0a0;
+	border-top:1px dashed #a0a0a0;
+	border-bottom:1px dashed #a0a0a0;
+}
+
+#sideimagetwo img {
+	width:200px;
+   height:515px;
+   background-repeat:no-repeat;
+	background-attachment:fixed;
+	url('{image:sideimgmiddle}');
+}
+
+#sideimagethree {
+	position:fixed;
+	left:1033px;
+	top:50px;
+	height:515px;
+	width:175px;
+	padding:2px;
+	background:{color:background};
+	border-right:1px dashed #a0a0a0;
+	border-left:1px dashed #a0a0a0;
+	border-top:1px solid #a0a0a0;
+	border-bottom:1px solid #a0a0a0;
+}
+
+#sideimagethree img {
+	width:175px;
+   height:515px;
+   background-repeat:no-repeat;
+	background-attachment:fixed;
+	url('{image:sideimgright}');
+}
+
+/*sidebar styling */
+
+#name {
+	width:145px;
+	color:{color:name};
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	text-align:center;
+	letter-spacing:0px;
+	margin-top:-12px;
+	margin-left:15px;
+}
+
+#sidebar {
+	position:fixed;
+	left:643px;
+	top:75px;
+	height:525px;
+	width:175px;
+	background:transparent;
+	background-position:top left;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+
+#sidebox {
+	font-size:10px;
+	color:{color:sidebox};
+	text-align:center;
+	font-family:'arial', sans-serif;
+	padding:0 8px;
+	height:475px;
+	width:155px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	margin-bottom:5px;
+	margin-top:2px;
+	display:inline;
+	float:left;
+}
+
+/* links styling */
+
+#links {
+	font-size:12px;
+	font-family: 'open sans', sans-serif;
+	padding:10px;
+	text-align:left;
+	margin-left:-50px;
+	margin-top:-23px;
+	width:205px;
+	position:fixed;
+}
+
+#links a {
+	display:inline-block;
+	color:{color:links};
+	padding-left:5px;
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+}
+
+#links a:hover {
+	color:{color:links hover};
+	letter-spacing:1px;
+}
+
+
+/*pagination styling */
+
+#pagination {
+	position:fixed;
+	top:597px;
+	left:1150px;
+	text-transform:uppercase;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size:13px;
+	font-weight:bold;
+}
+
+#pagination a {
+	color:{color:pagination};
+	font-size:12px;
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+}
+
+#pagination a:hover{
+	color:{color:pagination hover};
+}
+
+
+/* bottom box */
+
+#lbox {
+	position:fixed;
+	left:641px;
+	top:586px;
+	height:20px;
+	width:569px;
+	padding:2px;
+	border-top:1px dashed #a0a0a0;
+	border-bottom:1px solid #a0a0a0;
+	}
+
+
+
+
+/* asks styling */
+
+.asker {
+   font-size:15px;
+   font-style: italic;
+   text-align:right;
+   margin-bottom:5px;
+   padding-bottom:3px;
+}
+
+.question {
+   font-style: italic;
+   padding-left:10px;
+   padding-right:50px;
+   padding-top:10px;
+   padding-bottom:10px;
+   border-left:1px dashed {color:blockquote};
+   background-color:#171e23bf; /* only change the first six numbers. the last two are the transparency */
+}
+
+
+iframe#ask_form { 
+		width: 330px;
+      min-height: 255px; 
+      }
+      
+iframe#submit_form { 
+		width: 330px;
+      min-height: 255px; 
+      }
+     
+      
+
+/* quotes stlying */
+
+.quote {
+   font-size:13px;
+   letter-spacing:1px;
+   text-align:center;
+   border-left:1px dashed {color:blockquote};
+   margin-bottom:5px;
+   padding-left:10px;
+   padding-right:50px;
+   padding-top:10px;
+   padding-bottom:10px;
+   background-color:#171e23bf; /* only change the first six numbers. the last two are the transparency */
+}
+
+.quotesource {
+   font-size:10px;
+   letter-spacing:1px;
+   text-align:center;
+   margin-bottom:5px;
+}
+
+
+/* tumblr audio code */
+    
+.playerbuttonbg {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 19px;
+    height: 19px;
+    background-color: transparent;
+    padding: 10px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    opacity: .4;
+    filter: alpha(opacity=40);
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    transition: opacity .7s ease-in-out;
+    -moz-transition: opacity .7s ease-in-out;
+    -webkit-transition: opacity .7s ease-in-out;
+    }
+           
+    .playerbuttonbg:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    }
+   
+    .newplayerbutton {
+    position: relative;
+    width: 19px;
+    height: 19px;
+    overflow: hidden;
+    }
+   
+    .playerbuttonhug {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+       
+    .tumblr_audio_player {
+    height: 90px;
+    width: 270px;
+    -moz-transform: scale(0.60, 0.60);
+    -webkit-transform: scale(0.60, 0.60);
+    -o-transform: scale(0.60, 0.60);
+    -ms-transform: scale(0.60, 0.60);
+    transform: scale(0.60, 0.60);
+    -moz-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -o-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    }
+ 
+    .audioimgwrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+    width: 79px;
+    height: 79px;
+    }
+           
+    .audioimgwrapper img {
+    width: 100%;
+    height: auto;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;                
+    }
+   
+    .trackdetails {
+    width: auto;
+    line-height:14px;
+    border: 0px solid black;
+    display:inline-block;
+    margin-left: 90px;
+    padding-top:20px;
+    min-height:70px;
+    }
+   
+    .audiowrapper {
+    position: relative;
+    display:inline-block;
+    }
+    
+/* tumblr audio code ends here */
+
+/* IMESSAGE CHAT POST */
+.answer span,.convo li{margin:0 0 5px;border-radius:1em;padding:.5em 10px;max-width:75%;clear:both;position:relative}.answer .them,.user_1,.user_3,.user_5,.user_7,.user_9,.user_11{float:left;background:#e5e5ea;color:#000;left:3px}.me::after,.user_1::after,.user_3::after,.user_5::after,.user_7::after,.user_9::after,.user_11::after{content:"";position:absolute;left:-.5em;bottom:0;width:.5em;height:1em;border-right:.5em solid #e5e5ea;border-bottom-right-radius:1em .5em}.answer .me,.user_2,.user_4,.user_6,.user_8,.user_10,.user_12{right:3px;float:right;background-color:#e8f3f9;color:#000}.them::after,.user_2::after,.user_4::after,.user_6::after,.user_8::after,.user_10::after,.user_12::after{content:"";position:absolute;right:-.5em;bottom:0;width:.5em;height:1em;border-left:.5em solid #e8f3f9;border-bottom-left-radius:1em .5em}.me p,.answer,.asked span{padding:0;margin:0}.answer{overflow:hidden}
+        .asked p {
+            text-align: left;
+            margin: 0 0px 10px 0px;
+            padding: 0;
+            color: #666666;
+            font-family: 'Inconsolata', Inconsolata;
+            font-size: 12px;
+            line-height: 0px;
+        }
+        .footerright .viasrc {
+            float: left;
+        }
+        .asked a {
+            margin:0;padding:0;
+        }
+.user_4{background-color:#55caff;color:#fff}.user_4::after{border-color:#55caff}.user_6{background-color:#60f246;color:#fff}.user_6::after{border-color:#60f246}.user_5{background-color:#9ff3fc;color:#000}.user_5::after{border-color:#9ff3fc}.user_3{background-color:#25c413;color:#fff}.user_3::after{border-color:#25c413}.user_7{background-color:#9b9b9b;color:#fff}.user_7::after{border-color:#9b9b9b}.user_8{background-color:#0d9321;color:#fff}.user_8::after{border-color:#0d9321}.user_9{background-color:#606060;color:#fff}.user_9::after{border-color:#606060}
+        .convo {
+            overflow: hidden;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+/* popup styling */
+
+.popup_block{
+    display:none;
+    color:{color:popup text}; /* font colour for the popup */
+    background-color: {color:popup background};
+    padding:20px;
+    border:0px solid #a2a2a2;  /* if you want a solid white pop-up, delete this */
+    float:left;
+    position:fixed;
+    top:330px;
+    left:947px;
+    height:479px; 
+    text-transform:lowercase;
+	 overflow-y:scroll; 
+	 overflow-x:hidden;
+    z-index: 99999;
+    -webkit-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    -moz-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    box-shadow: 0px 0px 0px #000; /* delete for solid white */
+}
+ 
+*html #fade {position: absolute;}
+*html .popup_block {position: absolute;}
+#fade {
+    display:none;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:#000; /* change to #fff for solid white */
+    opacity:0; /* change to opacity:1; */
+}
+
+/* end of styling */
+
+
+
+/* tabbed page code */
+
+#headernav {
+    left:50%;
+    top:50%;
+    overflow:scroll;
+    text-align:justify;
+    color:#eeeeee;
+    font-size:12px;
+}
+
+ul#tabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   margin-left:3px;
+}
+
+ul#tabs li {
+   display: inline-block;
+   background-color: transparent;
+   border: solid 1px #6a6a6a;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   margin-left:2px;
+   color: {color:verse muse tabs};
+   cursor: pointer;
+}
+
+ul#tabs li:hover {
+   background-color: {color:verse muse tabs hover};
+}
+
+ul#tabs li.active {
+   background-color: {color:verse muse tabs active};
+   width:368px;
+}
+
+ul#tab {
+   list-style-type: none;
+   margin-top: 10px;
+   padding: 0;
+}
+
+ul#tab li {
+   display: none;
+}
+
+ul#tab li.active {
+   display: block;
+}
+
+#tabside {
+	width:175px;
+	height: 450px;
+	position:fixed;
+	background:transparent;
+	top:78px;
+	left:465px;
+
+}
+ 
+#verse {
+   height:100px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+   
+#variant {
+   height:350px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+   
+#hc {
+   height:110px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+   
+#bio {
+   height:175px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+   
+#exclusives {
+   height:80px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+
+#left img {
+   float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:50px;
+	height:75px;
+	border:1px dashed #a8a8a8;
+   }
+   
+#right img {
+  float:right;
+  margin-right:1px;
+  margin-left:8px;
+  width:50px;
+  height:75px;
+  border:1px dashed #a8a8a8;
+   }
+   
+ /* tabbed muse/verse tab */
+ 
+
+/* mains & exclusives tabbed page code */
+
+div.shipimg {
+ 	 margin-left:0px;
+ 	 }	 
+ 	 
+div.shipimg img {
+	width:50px;
+  	height:75px;
+  	border:1px dashed #a8a8a8;
+}
+ 	 
+
+ 
+
+ /* tabbed page code */
+
+#headernav {
+    left:50%;
+    top:50%;
+    overflow:scroll;
+    text-align:justify;
+    color:#eeeeee;
+    font-size:12px;
+}
+
+ul#mvtabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   margin-left:3px;
+}
+
+ul#mvtabs li {
+   display: inline-block;
+   background-color: transparent;
+   border: solid 1px #6a6a6a;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   margin-left:2px;
+   color: {color:verse muse tabs};
+   cursor: pointer;
+}
+
+ul#mvtabs li:hover {
+   background-color: {color:verse muse tabs hover};
+}
+
+ul#mvtabs li.active {
+   background-color: {color:verse muse tabs active};
+   display: inline-block;
+}
+
+ul#mvtab {
+   list-style-type: none;
+   margin-top: 10px;
+   padding: 0;
+}
+
+ul#mvtab li {
+   display: none;
+}
+
+ul#mvtab li.active {
+   display: block;
+}
+ 
+#verse {
+   height:100px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+
+#left img {
+   float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:50px;
+	height:75px;
+	border:1px dashed #a8a8a8;
+   }
+   
+#right img {
+  float:right;
+  margin-right:1px;
+  margin-left:8px;
+  width:50px;
+  height:75px;
+  border:1px dashed #a8a8a8;
+   }
+   
+#nleft img {
+   float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:50px;
+	height:75px;
+   }
+   
+#nright img {
+  float:right;
+  margin-right:1px;
+  margin-left:8px;
+  width:50px;
+  height:75px;
+   }
+   
+   
+/* navigation tab in popup */
+
+.button {
+  display:inline-block;
+  text-align:center;
+  width:100px;
+  margin:4px;
+  padding:2px;
+  background-color:{color:buttons background};
+  color:{color:buttons};
+  border-top: 1px solid #ddd;
+  border-bottom: 1px dashed #ddd;
+  border-radius:2px;
+	}
+
+.button:hover {
+  border-top: 1px dashed #ddd;
+  border-bottom: 1px solid #ddd;
+	}
+	
+
+/* tab links coding */
+
+   /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+        
+                
+    }
+    
+ 
+    .tab-links li {
+        margin-left:1px;
+        padding:0px;
+        display:inline-block;
+        list-style:none;
+        text-transform:uppercase;
+    }
+ 
+        .tab-links a {
+            display:inline-block;
+				color:{color:links};
+				padding-left:10px;
+				-webkit-transition: all 0.7s ease;
+				-moz-transition: all 0.7s ease;
+				-o-transition: all 0.7s ease;
+        }
+        
+      .tab-links a:hover {
+      	color:{color:links hover};
+			letter-spacing:1px;
+      }
+
+/* end of tab links coding */
+
+/* tab content -- best not to touch this either */
+
+  .tab-content {
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+
+/* end of tab content coding */	
+
+
+/* this is the credit coding. DO NOT REMOVE */
+    
+   #credit {
+    font-size:9px;
+    font-family:cambria;
+    font-style:italic;
+    letter-spacing:1px;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#credit a {
+    background-color:transparent;
+    padding:5px;
+    position:fixed;
+    right:15px;
+    bottom:10px
+    }  
+ 
+#credit a:hover {
+    background-color:transparent;
+    }    
+    
+/* credit coding ends here */
+
+
+/* Making IE6 Understand Fixed Positioning */
+
+*html #fade {
+ position: absolute;
+}
+*html .popup_block {
+ position: absolute;
+}
+    {CustomCSS}
+    
+  
+pre {
+   white-space: pre-wrap;      
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;    
+   white-space: -o-pre-wrap;  
+   word-wrap: break-word;
+   }   
+
+</style></head>
+    
+<body>
+
+<div id="overlay"><img src="{image:name}"></div>  
+
+<div id="sideimageone"><img src="{image:sideimgleft}"></div>
+
+<div id="sideimagetwo"><img src="{image:sideimgmiddle}"></div>
+
+<div id="sideimagethree"><img src="{image:sideimgright}"></div>
+
+
+<div id="sidebar">
+
+<div id="name">{text:name}</div> 
+
+<div id="sidebox"><h5>captain america</h5><br />Every time someone tries to stop a war before it starts, innocent people die.<br><br><i>Every time.</i><br><br>
+<h5>cxpt</h5><br />
+<b2>steve rogers</b2><br>
+616 based<br>
+written by kc<br>
+private, selective &amp; <br>mutuals only<br><br>
+<b2>mcu by request only</b2><br><br>
+Please read <b><a href="https://cxpt.carrd.co/#guidelines" title="regulations">rules</a></b> before interacting. <br><br>
+Tracking: <b2>cxpt</b2> <br>
+Created: 31 March 2014<br>
+Rebooted: 4 August 2018<br><br>
+
+<h5>interactions</h5>
+<br />
+<b><a title="drafts" href="/d">replies/drafts</a></b><br />
+<b><a title="rp tracker" href="https://www.rpthreadtracker.com/public/depthsofmysol/current">tracker</a></b><br />
+<br />
+<h5>inbox</h5><br />
+<b2>open &amp; accepting<br /> <a title="memes" href="https://cxpt.tumblr.com/tagged/%E2%B8%A2-%E2%98%86-%E2%B8%A5-all-i-did-was-help-someone-find-their-dream-%7C-%E2%9D%9B-memes-%E2%9D%9C">memes &amp; asks</a></b2>
+<br /><br />
+<h5>reading</h5>
+<br />
+<b2>winter soldier</b2><br />
+<b2>captain america vol. 7</b2><br />
+<br />
+<h5>local info</h5>
+<br />
+<b2><a href="https://time.is/Seattle" id="time_is_link" rel="nofollow" style="font-size:14px" title="seattle">time:</a></b2><br>
+<span id="Seattle_z14e" style="font-size:12px"></span>
+<script src="https://widget.time.is/en.js"></script>
+<script>
+time_is_widget.init({Seattle_z14e:{template:"TIME<br>DATE", time_format:"12hours:minutes:secondsAMPM", date_format:"dayname monthnum/daynum/yy"}});
+</script><br><br></div>
+</div> 
+
+<div id="lbox">
+
+<div id="links">
+<div class="tabs">
+<ul class="tab-links">
+<li class="active"><a href="/" title="refresh"><span style="font-size:145%;">&#9733;</span></a></li>
+<li><a href="#tab2" title="message centre">01.</a></li>
+<li><a href="#tab3" title="regulations">02.</a></li>
+<li><a href="#tab4" title="the file">03.</a></li>
+<li><a href="#tab5" title="verses">04.</a></li>
+<li><a href="#tab6" title="navigation">05.</a></li>
+</div>
+
+</div> 
+
+<div id="pagination">
+{block:Pagination} 
+{block:PreviousPage}<a href="{PreviousPage}"><span class="fas fa-arrow-left" style="font-size:100%"></span></a>{/block:PreviousPage} &nbsp;page&nbsp; {block:NextPage}<a href="{NextPage}"><span class="fas fa-arrow-right" style="font-size:100%"></b></span></a>
+{/block:NextPage}
+{/block:Pagination}
+</div>
+</div>
+
+
+<div id="container">
+
+<!-- tabs -->
+<div class="tabs">
+
+<!--  TAB 1  -->
+<div id="tab1" class="tab active">
+<div class="tab-content">
+
+{block:Posts}
+{block:NoRebloggedFrom}
+{block:RebloggedFrom}
+{ReblogParentName}
+{/block:RebloggedFrom}
+{/block:NoRebloggedFrom}
+
+<div class="postswrap">
+<div class="posts"> 
+
+{block:Text}<h1>{block:Title}{Title}{/block:Title}</h1>{Body}{/block:Text}
+
+{block:Photo}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{block:Caption}{Caption}{/block:Caption}{/block:Photo}
+
+{block:Panorama}{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}{block:Caption}{Caption}{/block:Caption}{/block:Panorama}
+
+{block:Photoset}{Photoset-500}{block:Caption}{Caption}{/block:Caption}{/block:Photoset}
+
+{block:Quote}<div class="quote">{Quote}</div>{block:Source}<div class="quotesource">&mdash; {Source}</div>{/block:Source}{/block:Quote}
+
+{block:Link}<h1><a href="{URL}" class="link" {Target}>{Name}</a></h1>{block:Description}{Description}{/block:Description}{/block:Link}
+
+{block:Chat}
+          {block:Title}
+            <h1>{Title}</h1>{/block:Title}<br>
+<ul class="convo">{block:Lines}<li class="line_{Alt} user_{UserNumber}">{block:Label}<span class="label"><strong>{Label}</strong></span>{/block:Label}
+{Line}</li>{/block:Lines}</ul>
+            {/block:Chat}
+            
+                                    
+{block:Video}{Video-500}{block:Caption}{Caption}{/block:Caption}{/block:Video}
+
+<!--AUDIO POST-->
+{block:Audio}
+{block:AudioPlayer}
+<div class="audiowrapper">
+{block:AlbumArt}
+<div class="audioimgwrapper"><img src="{AlbumArtURL}"></div>
+{/block:AlbumArt}
+ 
+<div class="playerbuttonbg">
+<div class="newplayerbutton">
+<div class="playerbuttonhug">
+{AudioPlayerWhite}
+</div></div></div>
+<div class="trackdetails">
+{block:TrackName}<b>Track:</b> {TrackName} <br/>{/block:TrackName}
+{block:Artist}<b>Artist:</b> {Artist} <br/>{/block:Artist}
+{block:Album}<b>Album:</b> {Album} <br/>{/block:Album}
+</div></div>
+{/block:AudioPlayer}
+<br /><br />
+{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+{/block:Audio}
+
+{block:Answer}
+<div class="asker">{Asker} left a message</div>
+<div class="question">{Question}</div>
+{Answer}
+{/block:Answer}
+
+<div class="permalinks"> 
+<div class="date"><span class="fas fa-bookmark" style="font-size:75%"></span> &nbsp; <a href="{Permalink}" title="{ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{Year}">{ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{Year}</a> &nbsp;|&nbsp; <a href="{Permalink}" title="{NoteCountWithLabel}"><span style="color:red; font-size:105%">&#10084;</span>&nbsp;{NoteCount}</a></div>
+<div class="reblogs">{block:RebloggedFrom}
+<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="fas fa-share-alt"></span></a> &nbsp;{/block:RebloggedFrom}{block:ContentSource} <a title="source: {SourceTitle}" href="{SourceURL}"><span class="fas fa-cog"></span></a>{/block:ContentSource} &nbsp;<a href="{ReblogURL}" title="reblog this post"><span class="fas fa-redo"></span></a>
+</div>
+{block:HomePage}{block:PinnedPostLabel}<div class="pinned"><a href="{Permalink}"><span class="fas fa-thumbtack"></span>{PinnedPostLabel}</a></div>{/block:PinnedPostLabel}{/block:HomePage}
+</div>
+
+{block:PermalinkPage}
+<div class="tags">
+<b>filed under:</b>&nbsp;
+{block:HasTags}{block:Tags}&nbsp;<a title="{Tag}" href="{TAGURL}">{TAG}</a>&nbsp; &nbsp; {/block:Tags}{/block:HasTags}
+</div>
+{/block:PermalinkPage}
+
+</div>
+
+<div class="postnote">
+{block:PostNotes}{PostNotes-16}{/block:PostNotes}
+</div>
+
+</div>
+{/block:Posts}
+</div>
+
+
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
+width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+</div>
+
+<!-- -------------------------- TAB 2 -------------------------- -->
+
+<div id="tab2" class="tab">
+    <div class="tabcontent">
+       <div id="headernav">
+<div id="tabside">
+<h4>queries</h4>
+<ul id="tabs">
+     <li class="active" style="width:100px">questions</li>
+     <li style="width:100px">submissions</li>
+</ul> 
+</div> 
+
+<ul id="tab">
+<li class="active">
+<h4>questions</h4>
+<br />
+<iframe id="ask_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/ask_form/cxpt.tumblr.com" frameborder="0" scrolling="no" width="485" height="300"></iframe>
+</li>
+
+<li>
+<h4>submissions</h4>
+<br />
+<iframe id="submit_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/submit_form/cxpt.tumblr.com" frameborder="0" scrolling="no" width="485" height="300"></iframe>
+</li>
+    </div>
+    </div>
+</div>
+        
+        
+<!-- -------------------------- TAB 3 -------------------------- -->
+
+<div id="tab3" class="tab">
+    <div class="tabcontent">
+    <div id="headernav">
+        <div id="tabside">
+        <h4>rules</h4>
+        <ul id="tabs">
+     <li class="active" style="width:100px">regulations</li>
+	  <li style="width:100px">credits</li>
+     <li style="width:100px">connections</li>
+</ul>  
+</div>
+
+<ul id="tab">
+<li class="active">
+<h4>regulations</h4>
+<p><center><h3>the writer&nbsp;&nbsp;</h3></center>
+<p>hello lovies! most everyone calls me <b>kc</b>. 30+/f/pst
+<p>while i don't have a full time job i make it a point not to spend every waking hour on tumblr. i'm here as much as i feel like i can. and when i'm not you can always find me lurking on discord.
+<br /><br />
+
+<p><center><h3>disclaimer&nbsp;&nbsp;</h3></center>
+<p>(1) this blog was created for roleplaying purposes. i am not steve rogers, chris evans, or max martini and i don’t own anything to do with the mcu or the comics.<br /><br />
+<p>(2) all icons that look like squares with the corners cut off were created by me and i ask that you do not steal them.
+<br /><br />
+
+<p><center><h3>if nothing else read this&nbsp;&nbsp;</h3></center>
+<p>(1) steve's portrayal is one i've worked a long time on. i will NOT change my interpretation of my muse in ways that detract from his core foundations. my muse is my own entity. if i start noticing that you’re ignoring parts of my character because you don’t like it/don’t agree with it, i reserve the right to drop all threads without warning.
+<p>(2) start drama with me about my friends? block me now - because we’re done.
+<p>(3) i unfollow for the following:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;inactive for thirty (30) days or more<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;too much ooc content<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;too much political content<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;posting of drama<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;too much negativity<br />
+<p>(4) Interactions with muns 21+ is preferred. Muns 18-21 will be considered & there will be NO interactions with muns under 18. If you have no age listed on your blog I won’t interact nor follow.
+<br /><br />
+
+<p><center><h3>about&nbsp;&nbsp;</h3></center>
+<p>(1) this blog is based the 616 comic verse, while the marvel cinematic universe is now <b>by request only</b>. the mun is still not current with the comics but is slowly starting to read through those relevant to this blog. check the currently reading update box to find out which comics are being read. 
+<p>(2) default interactions for mcu muses is the <b>crossover</b> verse where 616 steve rogers is stuck in the mcu. you can read more about it in <b>verses</b> (04).
+<p>(3) this blog is <b>queue</b> heavy. what that means is the a majority of the replies will be put into a queue that is set to run every two days. if you want to know where your reply is in the queue please read <b><a href="/d">this</a></b> page.
+<p>(4) this blog has a <b>weekend rule</b>. what that means is each saturday and sunday will be spent away from tumblr completely. no replies, no follow backs, no asks, no nothing on tumblr will be done until the following monday. 
+<p>(5) the queue is tagged <b>star spangled man with a queue</b> for your blacklisting purposes.
+<p>(6) this blog is now <b>private &amp; mutuals only</b>. what that means is that you follow me &amp; i follow you. this blog is also <b>selective</b>, meaning i will not be following everyone back. only those i feel like i could see myself writing with or if i feel like our writing styles could work well together.
+<p>(7) i do not follow for follow. if we write together continuously, or we have plotted something out long term I have no problem hitting the follow button. otherwise i prefer to keep a relatively clean dash. this is nothing against you. this is for myself and my dash.
+<p>(8) when it comes to unfollowing it is usually done for the following reasons: inactive for thirty (30) days or more, too much ooc content, too much political content, posting of drama, or too much negativity. i'm here to write, have fun, and forget about the real world for just a little bit. if you decide to return to your inactive blog and we were mutuals feel free to hit me up and i'll refollow. otherwise i figure you have decided to move on from that blog and see no point in following an inactive one.
+<p>(9) i will also unfollow anyone who decides to attack, harass, or do anything similar to one of my friends. in my opinion if you go after someone i call friend you are going after me and i will not tolerate that no matter what.
+<p>(10) please do not contact me and ask why i unfollowed you. any and all such asks will be deleted as they are covered in the rules. harassing me in such a matter will only lead me to block you instead of just unfollowing you.
+<p>(11) please do not send me 'do you want to rp'. all asks that are sent like that will be deleted on sight. if you want to rp with me please send me some ideas or look over my <b>verses</b> (04) tab to see if anything catches your eye. sending me 'do you want to rp' shows me you're not interested in coming up with ideas.
+<p>(12) do not god-mod my character. if i catch you doing so without my permission consider the thread dropped.
+<p>(13) this is a hate free blog. any hate received will be deleted on sight. if i find those i follow sending hate i will unfollow you in a heartbeat. remember to treat others as you would like to be treated in return.
+<p>(14) i will roleplay script (with icons), prose or multi-para/novella. please do not feel the need to match my length. the only thing i ask is that you give me something to work with. if i write three paragraphs and you only give me a sentence or two i will most likely lose any motivation to respond.
+<p>(15) please do not reblog threads unless you are a participant in them. feel free to like them all you want but unless you and i are writing together i ask that you don’t reblog them as it makes it difficult to keep up with whose turn it is in the thread.
+<p>(16) please <b>make a new post</b> if you want to continue asks. i am all for continuing asks but i will not respond to any that have not been moved into a new post.
+<p>(17) Interactions with muns 21+ is preferred. Muns 18-21 will be considered & there will be NO interactions with muns under 18. If you have no age listed on your blog I won’t interact nor follow.
+<br /><br />
+
+<p><center><h3>the mun&nbsp;&nbsp;</h3></center>
+<p>(1) the mun has a life outside of tumblr and asks that everyone please be patient. any and all replies that are seen will be replied to. if for some reason a reply has been missed a gentle reminder in the ask box is appreciated. but please do not constantly harass the mun for a reply.
+<p>(2) the mun is of age (21+) which means there will be nsfw elements on this blog. that could mean violence, torture, gore, and scenes of a sexual nature. we will <b>not</b> write sexual scenes with those who are under 18. there is the option of fade to black or the morning after for those who are not of age
+<p>(3) all nsfw posts will be tagged <b>not safe for spangles</b> for your blacklisting purposes.
+<br /><br />
+
+<p><center><h3>relationships&nbsp;&nbsp;</h3></center>
+<p>(1) this is a multi-ship, multi-verse blog. i ship chemistry first and foremost. if there is chemistry a relationship is possible. this applies to all verses <b>except</b> the main verse (see #2 below). after that i will ship stony (steve/tony), stucky (steve/bucky), steggy (steve/peggy), and staron (steve/sharon). i am open to others from the mcu, though a relationship with steve will not be easy. 
+<p>(2) as this blog is now focusing on the comics it needs to be said that <b>616</b> considers himself heterosexual and is only interested in romantic relationships with women. at the moment the <b>only</b> relationship with a man he is exploring is that with <b><a href="https://invncibleiron.tumblr.com">invncibleiron</a></b>. anyone else and it will take time and a lot of work, and even then it's not guaranteed. platonic or even hate relationships he will consider.
+<p>(3) when it comes to relationships, steve in the <b>mcu</b> considers himself bisexual. though growing up in the 40s with the views at the time, he has a hard time accepting that it is perfectly acceptable to be in a relationship with another man. even in the current age where views have changed radically.
+<p>(4) please do not force a ship on me. nor try to engage us in instant ships. i prefer all ships to be written out and developed over time. forced shipping, instant ships, etc. are the fastest way to send us both running in the opposite direction.
+<p>(5) there is more to steve than just his fc. if you are here to do nothing more than to get into bed with him i ask that you do not follow. i am not here to write purely smut. I prefer to write threads with plots and if smut happens, it happens as part of the thread.
+<p>(6) steve will most likely call your muse kid. while he will definitely think it, it has nothing to do with you, with your muse, or anything related to your muse personally. it's merely his perception given his near century old age, & nothing more.
+<br /><br />
+
+
+<p><center><h3>exclusivity&nbsp;&nbsp;</h3></center>
+<p>(1) at this time this blog is exclusive to a select group of muses. a list of exclusives can be found on the mains/exclusives tab on this page.
+<p>(2) what this means is i will not write with any other version of the muses listed under exclusive. it has nothing to do with you and your muse. there is a connection between their muse and my own that i feel can't be replicated.
+<p>(3) the exclusivity can and will change if muses go inactive or delete. also, being exclusive means we've talked a great deal ooc and have plotted things out between our muses. while i would prefer it to be mutual i will not demand it.
+<br /><br />
+
+<p><center><h3>ocs &amp; children&nbsp;&nbsp;</h3></center>
+<p>(1) this blog is oc friendly but selective due to past problems. i will give your muse a chance but if i feel like our writing styles are incompatible i will drop the thread
+<p>(2) in regards to children, steve will not acknowledge any original characters that claim him as the father. please don’t take this personally as this is nothing against you, the mun, but a personal preference of mine.
+<p>(3) at this time the only character steve will acknowledge as his is james rogers (sonofasymbol)
+<br /><br />
+
+
+<center><h3>misc</h3></center>
+<p>(1) i reserve the right to add to these rules as i see fit.
+<p>(2) all icons not made by myself are courtesy of: citadel_icons @ livejournal, corelite @ dreamwidth, justforeverme @ hollow art, wayward soldier @ hollow art, fanatika @ hollow art, omalleyicons @ tumblr, hxwlett @ tumblr, annieicons @ tumblr, wxnterbarnes @ tumblr, leviathanne @ hollow art, sciencesofficer @ hollow art, maehry @ hollow art, xmanwithaplan @ tumblr, quaevomens @ hollow art, sammystrawberry @ hollow art, famira @ dreamwidth, cupcake-graphics @ dreamwidth, ferrumheros @ tumblr, starkiisms @ tumblr, rpingicons @ tumblr, clairexnovak @ tumblr, brooklyncap @ tumblr, meldaciomartyr @ tumblr, daisychainedtogether @ tumblr
+<br /><br />
+
+</li>
+
+<li>
+<h4>credits</h4>
+<b>coding:</b> &nbsp;&nbsp;@houseofsol<br />
+<b>good morning banners:</b> &nbsp; &nbsp;@concinnitytm<br />
+<b>headcanon &amp; other banners banners:</b> &nbsp; &nbsp;@houseofsol<br />
+</li>
+
+<li>
+<h4>connections</h4>
+<p>
+<center><h3>exclusives</h3></center>
+<p>these are the only muses muses i will interact with. please do not approach me if you are one of the muses listed below as you will be turned away.
+<div class="shipimg">
+<center>
+<p><a title="affcgato (alec lightwood)"><img src="https://i.imgur.com/PtQM0tc.png"></a>&nbsp; &nbsp;
+<a title="affcgato (jonathan morgenstern)"><img src="https://i.imgur.com/Ks1zZCT.png"></a>&nbsp; &nbsp;
+<a title="affcgato (magnus bane)"><img src="https://i.imgur.com/NeinQoZ.png"></a>&nbsp; &nbsp;
+<a title="affcgato (brock rumlow)"><img src="https://i.imgur.com/tjURnxi.png"></a>&nbsp; &nbsp;
+<a title="sonofasymbol"><img src="https://i.imgur.com/GNB7YOU.png"></a>&nbsp; &nbsp;
+<p><a title="sonicanary"><img src="https://i.imgur.com/Gk788B8.png"></a>&nbsp; &nbsp;
+<a title="fasciinating"><img src="https://i.imgur.com/BThjiP3.png"></a>&nbsp; &nbsp;
+<a title="rollingthundcr"><img src="https://i.imgur.com/euwoP4v.png"></a>&nbsp; &nbsp;
+<a title="connection four"><img src="https://i.imgur.com/8gO6jgY.png"></a>&nbsp; &nbsp;
+<a title="connection five"><img src="https://i.imgur.com/8gO6jgY.png"></a>&nbsp; &nbsp;
+
+</center>
+</div>
+
+<p>
+<center><h3>mains</h3></center>
+<p>these are the muses i will go to first for plots, and those that will get priority when it comes to replies. i will only take three (3) of each muse as a main.
+<div class="shipimg">
+<center>
+<p><a title="affcgato (bucky barnes)"><img src="https://i.imgur.com/7DyYl5Z.png"></a>&nbsp; &nbsp;
+<a title="fallencomrade"><img src="https://i.imgur.com/Ic1ZIXk.png"></a>&nbsp; &nbsp;
+<a title="gcroinya"><img src="https://i.imgur.com/143HnO2.png"></a>&nbsp; &nbsp;
+<a title="paintedlies (tony stark) (mcu)"><img src="https://i.imgur.com/6n7Ziee.png"></a>&nbsp; &nbsp;
+<a title="msppotts"><img src="https://i.imgur.com/MwoCoj7.png"></a>&nbsp; &nbsp;
+<p><a title="outlawiism"><img src="https://i.imgur.com/1UQX81I.png"></a>&nbsp; &nbsp;
+<a title="affcgato (tony stark) (mcu)"><img src="https://i.imgur.com/1OYa4fe.png"></a>&nbsp; &nbsp;
+<a title="gildedruins"><img src="https://i.imgur.com/aJRQdgQ.png"></a>&nbsp; &nbsp;
+<a title="masqe (shiro)"><img src="https://i.imgur.com/EQZPvEB.png"></a>&nbsp; &nbsp;
+<a title="crimefightr"><img src="https://i.imgur.com/nXy2H1F.png"></a>&nbsp; &nbsp;
+<p><a title="invncibleiron (616)"><img src="https://i.imgur.com/foz7pKF.png"></a>&nbsp; &nbsp;
+<a title="createshope"><img src="https://i.imgur.com/JOjaHRC.png"></a>&nbsp; &nbsp;
+<a title="wingedshield"><img src="https://i.imgur.com/nEqYOoD.png"></a>&nbsp; &nbsp;
+<a title="connection four"><img src="https://i.imgur.com/8gO6jgY.png"></a>&nbsp; &nbsp;
+<a title="connection five"><img src="https://i.imgur.com/8gO6jgY.png"></a>&nbsp; &nbsp;
+
+</center>
+</div>
+
+<center><h3>relationships</h3></center>
+<p>
+<div class="shipimg">
+<center>
+<p><a title="affcgato (alec lightwood)"><img src="https://i.imgur.com/PtQM0tc.png"></a>&nbsp; &nbsp;
+<a title="affcgato (jonathan morgenstern)"><img src="https://i.imgur.com/Ks1zZCT.png"></a>&nbsp; &nbsp;
+<a title="affcgato (brock rumlow)"><img src="https://i.imgur.com/tjURnxi.png"></a>&nbsp; &nbsp;
+<a title="fallencomrade"><img src="https://i.imgur.com/Ic1ZIXk.png"></a>&nbsp; &nbsp;
+<a title="msppotts"><img src="https://i.imgur.com/MwoCoj7.png"></a>&nbsp; &nbsp;
+<p><a title="affcgato (bucky barnes)"><img src="https://i.imgur.com/7DyYl5Z.png"></a>&nbsp; &nbsp;
+<a title="affcgato (tony stark) (mcu)"><img src="https://i.imgur.com/1OYa4fe.png"></a>&nbsp; &nbsp;
+<a title="paintedlies (tony stark) (mcu)"><img src="https://i.imgur.com/6n7Ziee.png"></a>&nbsp; &nbsp;
+<a title="gildedruins"><img src="https://i.imgur.com/aJRQdgQ.png"></a>&nbsp; &nbsp;
+<a title="rollingthundcr"><img src="https://i.imgur.com/euwoP4v.png"></a>&nbsp; &nbsp;
+<p><a title="masqe (shiro)"><img src="https://i.imgur.com/EQZPvEB.png"></a>&nbsp; &nbsp;
+<a title="invncibleiron (616)"><img src="https://i.imgur.com/foz7pKF.png"></a>&nbsp; &nbsp;
+<a title="gcroinya"><img src="https://i.imgur.com/143HnO2.png"></a>&nbsp; &nbsp;
+<a title="connection four"><img src="https://i.imgur.com/8gO6jgY.png"></a>&nbsp; &nbsp;
+<a title="connection five"><img src="https://i.imgur.com/8gO6jgY.png"></a>&nbsp; &nbsp;
+</center>
+</div>
+<br /> <br /><br />
+</li>
+
+</ul> 
+</li>
+
+   </div></div>
+</div>   
+
+<!--  TAB 4 -->
+
+<div id="tab4" class="tab">
+    <div class="tabcontent">
+       <div id="headernav">
+<div id="tabside">
+<h4>the file</h4>
+<ul id="tabs">
+     <li class="active" style="width:100px">earth-616</li>
+     <li style="width:100px">earth-199999</li>
+</ul> 
+</div> 
+
+<ul id="tab">
+<li class="active">
+<h4>comics</h4>
+<br />
+<p>
+Cpt. Steven "Steve" Rogers aka Captain America, the First Avenger, was rejected by the U.S. Army during World War II due to numerous health problems. He ultimately volunteered for Project Rebirth where he received the Super Soldier Serum developed by Dr. Abraham Erskine. The serum greatly enhanced his frail body to the peak of human physicality. As the Sentinel of Liberty, alongside his best friend Bucky Barnes and the Invaders, Rogers and others helped the allies win the war, but not before he was lost at sea and frozen in ice in a form of suspended animation for decades. He was thawed out in the modern age to continue the battle alongside his new allies the Avengers. Cap is loyal to no politician or government and instead upholds the "timeless principles of freedom, equality and justice of the American Dream".
+<br />
+<br />
+<center><h3>Stats</h3></center>
+<br />
+Steven Grant Rogers<br />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;July 4,1922
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;99 (has the physical appearance of someone 30-40)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;Brooklyn, NY
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;6’2 (1.88m)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;240lbs
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;Blond hair
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;Blue eyes
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;Joseph Rogers (father - deceased)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;Sarah Rogers (mother - deceased)
+<br />
+<br />
+<center><h3>Personal History</h3></center>
+<br />
+<p>Steve Rogers was born July 4,1922, to poor Irish immigrant parents, Sarah and Joseph Rogers. Rogers grew up a frail youth during the Great Depression in New York City, New York, America. Little else is known about Rogers' early life other than the fact that a strong sense of duty, honor, and humility was instilled in him; perhaps due to his Irish Catholic upbringing. Rogers' father died when he was a child and his mother died from pneumonia later, when he was in his late teens.
+
+<p>Steve used to go to a school in the Lower East Side neighborhood. Among the people responsible for instilling the patriotic values in him were his civics teacher Edna Crosley, who taught that as an American it was their responsibility to protect the United States which gave more rights than any other country in the world to its citizens.
+
+<p>Horrified by newsreel footage of Nazis ransacking Europe and atrocities in Asia that the Empire of Japan committed in China and Korea, Rogers tried to enlist in the Army but was rejected as 4-F because of his frailty and sickness. Overhearing the boy's earnest plea to fight for his country, General Chester Phillips, of the US Army, offered Rogers the opportunity to take part in a top-secret performance-enhancing experiment called Operation Rebirth.
+
+<p>Rogers agreed and was taken to a secret laboratory in Washington, D.C., where he was introduced to Doctor Abraham Erskine (code named Professor Joseph Reinstein), the creator of the Super-Soldier Serum.
+
+<p>After weeks of tests, Rogers was at last administered the Super-Soldier Serum. Given part of the compound intravenously and another part orally, Rogers was then bombarded by vita-rays, a special combination of exotic (in 1941) wavelengths of radiation designed to accelerate and stabilize the serum's effect on his body. Steve Rogers emerged from the vita-ray chamber with a perfect human body. A Nazi spy, who observed the experiment, murdered Dr. Erskine mere minutes after its conclusion. Dr. Erskine died without fully committing the Super-Soldier formula to paper, leaving Rogers the sole beneficiary of his genius.
+
+<p>Rogers was then put through an intensive physical and tactical training program that taught him gymnastics, hand-to-hand combat from Colonel Rex Applegate and William Essart Fairbairn, and military strategy. Three months later, he was given his first assignment: to stop the Nazi agent called the Red Skull. To help him become a symbolic counterpart to the Red Skull, Rogers was given the red, white, and blue costume of Captain America. Rogers was also given the cover identity of a clumsy infantry private at Camp Lehigh.
+
+<p>After successfully becoming Captain America, Rogers was later submitted to an experimental mind-conditioning program that conditioned his mind to accept false information about Walter Rogers' family on the chance he was captured by the enemy and forced to reveal classified information. As part of the conditioning, Rogers believed his real name to be Grant Rogers, that he had a brother named Michael who had died at Pearl Harbor, and that due to his parents being diplomats, he had a casual upper class appointment to the Army and Captain America position. It would not be until far later in life that Rogers would recall the conditioning and his true history.
+
+<p>Rogers was originally issued a traditionally "kite" shaped shield made of mundane steel, as well as a sidearm. Cap's original helmet served as a mask and was separate from the rest of his costume. This proved a problem as in one early outing it was nearly knocked from his face via the hard wing emblems, almost revealing his identity to an attending newspaper reporter with a camera. Adding a protective neck-plating hood to his costume, rather than his separate mask, solved this problem and afforded Rogers more protection. President F.D. Roosevelt later presented Rogers with his now-legendary disc-shaped shield. Discovering that its excellent aerodynamic properties made it an effective offensive weapon, Rogers abandoned his sidearm.
+
+<p>During the war, "Cap" served as both a symbol of freedom and America's most effective special operative. In addition to working with his young sidekick Bucky, Cap regularly fought alongside other Allied super-powered heroes such as Namor the Sub-Mariner and the android Human Torch, who were the recognized core of the World War II super-team known as the Invaders - a name suggested by English premier Winston Churchill. Rogers sometimes came into contact with a Canadian paratrooper named James Howlett, the man who would come to be legendarily known as Wolverine.
+
+<p>Rogers faced fascist Germans and imperialist Japanese. Among his foes and adventures were battles with George Maxon, who was an impostor Red Skull, the White Death, the Legion of Unholy Beggars, the Dragon of Death, the Reaper, the Black Toad, the Black Talon, Stryker, Doctor Crime, Mock Mikado, Master Man and the Super-Axis, Togaro, Prophet of Hate, Agent Axis, the Shark, the Hyena, N2 and Mister Sinister, Dr. Togu, Doctor Destiny, Snapper, Jack the Ripper and Terdu, Dormammu, HYDRA, the Hand, the Grandmaster, the Ringmaster, Baron Zemo, Colonel Von Wagner, Fang (who later died in Hiroshima and thus became one with the Everwraith), and the Butterfly. 
+
+<p>He also prevented the murder of President F.D. Roosevelt by a group called the Defenders, the Battle of the Bulge, D-Day, stopping saboteurs (early March 1941), meeting Wakandans, saving President Roosevelt from a deranged Namor, meeting Nikola Tesla, saving a Manhattan Project scientist from Red Skull with the help of the Howling Commandos, stopping (with Howling Commando support) the Red Skull's plot to deploy a centuries-old automaton designed by a time-traveling Doctor Doom, facing the Red Skull in a hover device, scuffling with fellow Allies the Crusaders, fighting alongside the French Resistance and Peggy Carter (an American who had fallen in love with Captain America), almost accidentally slaying a war orphan, saving Michael Kramer from the Red Skull. In April 1945, Rogers stormed the Red Skull's bunker, with Red Guardian, Patriot, and Spirit of '76, in his last WWII battle with Red Skull.
+
+<p>For a time, World War II Bucky fought alongside a time-displaced modern-era Captain America until the Avengers recovered their colleague to the present day.
+
+<p>During the final days of the war, presumably on or before April 18, 1945, Captain America and Bucky were trying to stop a bomb-loaded drone-plane, launched by Baron Zemo, when the plane exploded, apparently killing his partner Bucky and throwing Rogers into icy Arctic waters of the English Channel. The Super-Soldier Formula prevented crystallization of Rogers' bodily fluid, allowing him to enter a state of suspended animation. Although Rogers and Bucky had seemingly perished, the war still raged on and U.S. presidents and the government picked different volunteers, such as William Naslund, Jeffrey Mace, and another Steve Rogers, over the years, to keep the morale alive, and even after World War II ended.
+<br />
+<br />
+<b>nomad</b>
+<br />
+<p>While investigating the subversive organization known as the Secret Empire, Rogers discovered that its leader was a high-ranking government official. While this traitor committed suicide after being discovered, the government covered up the whole affair by using a double. Disillusioned, Rogers abandoned his Captain America identity and took up the alias "Nomad." Two men tried in vain to assume the Captain America title; Bob Russo and "Scar" Turpin, while in the meantime the young idealistic Cap fan, Roscoe Simons, actually succeeded Rogers and Rogers himself awarded Simons his indestructible shield. It was Roscoe's death, at the hands of the Red Skull, that would inspire Rogers to become the "Sentinel of Liberty," a symbol of American inspired ideals rather than the US Government Super Soldier he once was.
+
+<p>In a graphic bit of scenery, Roscoe was crucified and tortured by the Red Skull, as a message to Rogers that any other person in the costume would also suffer the same fate, if the Red Skull encountered any of the "fake" Captain Americas. Rogers re-assumed his classic costumed identity and shield and a rehabilitated Monroe joined Cap in a partnership, himself assuming the Nomad identity in a modified costume.
+<br />
+<br />
+<b>civil war</b>
+<br />
+<p>When S.H.I.E.L.D. suggested the Superhuman Registration Act, Commander Hill ordered Rogers and the Avengers to help enforce it. When he refused, Hill had her trained Superhuman Restraint Unit to attack him. During the scuffle, Rogers avoided being tranquilized and managed to escape by lodging his shield in an aircraft and forcing the pilot to fly him to safety. Soon after, at the Baxter Building, the Watcher told the heroes who had gathered there about Cap's escape. He became the leader of the resistance to the Registration Act, fearing that the freedom of America's heroes and the safety of their families were in danger.
+
+<p>Adopting the alias "Brett Hendrick," a mall security guard to avoid government detection, Rogers became more and more extreme in his desire to win the Civil War. He allowed the Punisher to join his "Secret Avengers," and worked (albeit reluctantly) with the Kingpin. Since his old friend Iron Man was leading the Pro-Registration Superhero Unit, their rivalry was especially bitter. The two attempted to meet twice during the conflict, but each time it devolved into combat. They even refused to attend the wedding of Black Panther and Storm together. Cap was nearly captured by Paladin, but escaped with the aid of Shang-Chi and the Heroes for Hire. In the final battle against the pro-registration forces, Rogers' teammate the Vision disabled Iron Man's armor, evening the odds for Cap and allowing him to ultimately defeat Stark in Times Square. However, a crowd of civilians approached in support of Stark. Realizing that his fight against the Registration Act was endangering the people that he was trying to protect, he surrendered to Iron Man. He then gave his followers the order to stand down.
+
+<p>Following his surrender, Steve Rogers was indicted on several criminal charges. It was noted S.H.I.E.L.D. had restrained Steve with strength dampeners, while he was in custody. A successful assassination was orchestrated by the resurgent Red Skull which involved Crossbones deployed as a sniper. He fired the first shot, hitting Captain America in the back as he entered a federal courthouse to stand trial for his criminal charges. In addition, Doctor Faustus, posing as a S.H.I.E.L.D psychiatrist, had manipulated Sharon Carter and implanted in her mind a hypnotic suggestion that caused her to shoot Rogers, three times in the stomach and chest in the chaos that ensued. Rogers was taken to a hospital, where he succumbed to his wounds.
+
+<p>Captain America was given a state funeral, but the body in his memorial at Arlington was a fake. Immediately after his death, Rogers' body was taken to S.H.I.E.L.D. Headquarters as the only perfect super-soldier specimen in the world. Inexplicably, his body was discovered to have withered back to its original frail state. Tony Stark, accompanied by Hank Pym, and Janet Van Dyne, returned Steve Rogers' body to the Arctic where they had found him frozen in ice. Namor also attended the small private ceremony swearing that as long as he ruled the seas, no one would disturb Captain America's rest.
+
+<p>Many people mourned him including various heroes that knew him. Others such as reformed Winter Soldier James Buchanan Barnes and Wolverine swore to avenge his death. Before the day of his assassination, Rogers prepared a package to be delivered to Stark in the event that he would not survive. It contained a photo of himself as Captain America and Bucky in World War II, and his final requests: that Stark "save" Bucky, and that the mantle of Captain America should continue. A S.H.I.E.L.D. agent presented it to Stark confirming that it was delivered by an unknown attorney.
+
+<p>Thor communicated with Steve Rogers' spirit on the first anniversary of his death. Though Thor vowed to avenge him in full, Rogers declined, saying that their world was already too stained with the taint of death and violence. Thor granted Steve a minute of silence, by using his powers to cut off all the electronic media in America for exactly sixty seconds.
+
+<p>It was later discovered that, while his body was killed, Rogers' essence was "locked into a fixed point in space and time." Rogers' mind was being transported through time, forcing him to relive certain segments of his life such as World War II and becoming Captain America as well in various other scenes. Some changes were revealed to what was previously known (See notes below). While reliving the Kree-Skrull War, he was able to ask the Vision to record a message about his time travel condition to Mister Fantastic and Wasp (Henry Pym) in the future, which was duly relayed by the current Vision (Jonas). With this data, Richards concluded that Sharon was the key to bringing Steve out of time, although they were too late to stop Doctor Doom and Arnim Zola from doing just that, however the Red Skull was now in control of Steve's body.
+
+<p>Barnes and Rogers fought to drive the Red Skull from his body and succeeded in doing so. Rogers considered retirement from the role and allowed Barnes to continue operating as Captain America, thinking that there should not be two formal active Captain Americas. Rogers visited the current US President who gave "Captain America," not Steve Rogers specifically, a full pardon for his actions during the Civil War. Rogers explained that he didn't intend to resume wielding the shield, but would if asked. The President mentioned that this was fine, as he had another idea for Steve's services in the future.
+<br />
+<br />
+<center><h3>personality</h3></center>
+<br />
+<p>Captain America is traditionally seen as one of the greatest heroes in the universe. He is a righteous and brave man who always wanted to see the good in people. From even before his origins as a superhero, Steve has always devoted himself to the protection of the weak and the defense of freedom and justice.
+
+<p>In spite of his virtues, however, Cap has been plagued by his status as man out of time. Remembering his days as a soldier in World War II, Cap worried that his idealism might be considered outdated in the modern world. Furthermore, seeing how idealized his legacy has become throughout the years, Cap sometimes believed that he might not be able to fulfill the image the world had of him. Regardless, Cap is still seen as the pinnacle of heroism and an example for everyone to follow.
+<br />
+<br />
+<center><h3>powers</h3></center>
+<br />
+<p><b>Super-Soldier Serum:</b> The Super-Soldier Serum (SSS) metabolized and permanently enhanced all of Rogers' bodily functions to the peak of human efficiency, and is the most perfect human in existence. Dr. Abraham Erskine has stated Rogers' enhanced condition is "second to none," and described its potential as being "the next step in human evolution," while still remaining completely human, but often called the "perfect man." Nick Fury's intel classified him as Power Level 8.
+<p><b>Artificially Enhanced Physiology:</b> Rogers' enhanced physiology has no superhuman powers, although as a result of the Super-Soldier Serum, he was transformed from a frail young man into a "perfect" specimen of human development and conditioning. He is classified as enhanced human. He possesses powers superior to any Olympic-level athlete that has ever competed. Also, the Super-Soldier Serum physiology is definite, meaning that if Rogers choose to live an unhealthy lifestyle, none of his powers would weaken, and the Super-Soldier Serum in his bloodstream will keep him in top physical form. Dr. Keith Kincaid theorized that as long as some of the serum remains in Rogers' body, it would be able to reproduce itself and sustain Rogers' powers.
+<p><b>Peak Human Strength:</b> Rogers' physical strength is enhanced to the very peak of human potential, making him consistently able to sustain lifts 800 lbs (363 kg), and bench pressing 1,100 pounds (500 kg) as a warm-up.
+<p><b>Peak Human Speed:</b> Rogers can move at speeds equal to that of the absolute finest human athlete, being capable of running at a sustained 30 mph (48 kph); He was able to complete a 40-yard dash in 3.82 seconds, or a mile "in just over a minute."
+<p><b>Peak Human Durability:</b> Rogers' durability is amplified to the highest human potential making him very durable. This has allowed him to survive many forms of extensive punishment throughout his career that would injure an ordinary human.
+<p><b>Peak Human Agility:</b> Rogers' agility is amplified to the highest human potential.
+<p><b>Peak Human Reflexes:</b> Rogers' reflexes are amplified to the highest human potential, and he is said to have a reaction time ten times faster than a normal person. He has been shown to dodge gunfire from multiple shooters simultaneously.
+<p><b>Peak Human Stamina:</b> Rogers' body automatically eliminates the excessive build-up of fatigue-producing chemicals in his muscles; giving him exceptional endurance. He could also resist the freezing cold waters of the Arctic, as he survived being frozen for decades.
+<p><b>Peak Healing Recovery:</b> Rogers' healing speed and efficiency is enhanced peak ability, meaning he heals faster than the average person. The white blood cells and Super-Soldier Serum in his body are efficient enough to fight off most microbe, foreign body, and other pathogens from his body, giving him a high immunity to all infections and diseases. Rogers has stated his metabolism is too fast for alcohol. He is also more resistant to knockout and hypnotic suggestion, though is not immune.
+<p><b>Peak Human Mental Processing:</b> Rogers' mental performance is greatly enhanced allowing it to operate in the most advanced and rapid manner possible. His mind also processes information quickly, giving him an accelerated learning aptitude; for example, Beast once stated that Rogers can learn and master any weapon within seconds. He possesses an eidetic/photographic memory and perfect recall, meaning he never forgets what he sees and experiences, paired with the ability to speed read, and can thereby intuitively understand what's likely going to happen and how best to deal with it. This enables him to remember any military tactic and apply it to any situation.
+<p><b>Peak Human Senses:</b> Rogers' senses of sight, hearing, smell, taste, and touch are enhanced to the highest limits of human potential.
+<p><b>Advanced Longevity:</b> The Super-Soldier Serum halts Rogers' aging due to perfect cells. This was tested when he spent many decades in Earth-69901 and its numerous divergent realities while fighting against Korvac's galactic empire, repeatedly dying and having time rewound, before ultimately being returned to his own time, as well as spending twelve years in Dimension Z, before being returned to Earth the same day with no noticeable signs of aging.
+<br />
+<br />
+<center><h3>abilities</h3></center>
+<br />
+<p><b>Master Tactician and Strategist:</b> Rogers is a master accomplished strategist. He has been widely known as one of the greatest tacticians on the planet, both on and off the battlefield. He is able to formulate battle strategies and his brilliant tactical sense allows him to alter any strategy to fit the changing need of the situation. Thor has acknowledged Rogers' tactical prowess and stated that he would follow him "through the gates of Hades." His tactical plan to rescue Namor from the Kree with the Invaders succeeded despite the Supreme Intelligence's mission. He also led the Galactic Council's fleets when they were defeated by the Builders, and planned a retaliation against the Builders, which resulted in the successful liberation of the Avengers.
+<p><b>Master Martial Artist:</b> Rogers is a master of hand-to-hand combat, being extremely skilled in numerous martial arts through his training in the military and direction under various private instructors. Additionally, he received training from William Fairbairn and Rex Applegate in close-quarters combat during WWII. Rogers has stated that he is adept at every form of hand-to-hand combat known to man. He utilizes boxing, Judo, Defendu, kickboxing, Jujutsu, Tōde, Aikido, Karate, and various other forms of unarmed combat disciplines, with his gymnastics ability creating a style that suits his strengths and enables him to use his knowledge to the best of his ability. When fighting, Rogers has the ability to use pressure points to subdue his opponents, as was done to Dr.Malus, Professor Hulk, or werewolf Falcon. He is one of the finest martial artists, and ultimate human combatant on Earth, which allows him to occasionally defeat foes who are masters of multiple forms or all forms of combat, such as Taskmaster, Wolverine, Iron Fist, Deadpool, or Red Skull. He also defeated a large group of Super-Soldiers while depowered and then defeated many more when his powers were restored, as well as overpowered a boxer augmented by Power Broker, Inc. using nothing but his boxing skills. Rogers trained Iron Man, Spider-Man, Hawkeye, Falcon, Wonder Man, etc in hand-to-hand combat.
+<p><b>Master Shield Fighter:</b> Rogers' years of training and experience with his unique shield, as well as its physical properties, allowing him to accomplish amazing feats with the item. Aside from bashing foes and blocking incoming attacks, he is able to throw it with nearly perfect aim, being able to estimate its hit and rebound down to millimetre. Rogers can hit multiple targets with the same throw by means of ricochet, and could even achieve a boomerang-like return effect, allowing him to strike enemies from behind or retrieve the shield without objects to ricochet from.
+<p><b>Master Acrobat:</b> Rogers' years of extensive training and vast experience have made him a highly skilled acrobat, gymnast, and aerialist. He often utilizes these talents in combat for both evasive and offensive purposes.
+<p><b>Indomitable Will:</b> Rogers is a very strong-willed person. He is able to overcome all forms of temptation, mind control, and resist the effects of extreme pain, drugs, and toxins to a great extent. Rogers accepts his own mortality, and refuses to rob any sapient being of their freedom. During the Destiny War, he destroyed the Forever Crystal, deciding it was too dangerous to exist, despite the many benefits of its power. Rogers is also capable of resisting many forms of mind control; like the powers of the Purple Man, the maddening effects of the Madbomb, and the Red Skull's use of the telepathic brain of Charles Xavier, but fought constantly to maintain his true senses.
+<p><b>Professional Sketch Artist:</b> Rogers has great artistic skill which he developed from childhood. Rogers often worked as a freelance illustrator and sketch artist even loaning his skills to the NYPD for a time. He enjoys drawing and does so with his free time. He has even done some pencil work for Marvel Comics where he drew some of his own adventures for them, as he is listed as the penciler for Marvels Comics: Captain America #1.
+<p><b>Expert Marksman:</b> Rogers is a highly proficient marksman and can throw most projectile weaponry with great aim. He is also well-versed in the use of firearms, though he prefers not to use them.
+<p><b>Expert Swordsman:</b> Steve is proficient with swords and staffs, but is more comfortable with his shield.
+<p><b>Weapons Proficiency:</b> Rogers does not typically utilize weapons other than his shield, but in desperate situations he wields additional weapons to ensure victory. He is proficient in wielding swords, daggers, throwing knives, staffs, sticks, tonfa, axes, maces and even firearms.
+<p><b>Expert Hacker:</b> Rogers can hack into any advanced computer systems without tippling firewalls and security.
+<p><b>Multilingual:</b> Rogers is fluent in English, Spanish, Japanese, German, Russian, at least some French, and some Italian. He might be lingual in other languages.
+<p><b>Expert Vehicular Driver:</b> Rogers is highly proficient in driving cars, motorcycles, trucks, jets, tankers, helicopters, motorboats, submarines, and some types of trains and utility vehicles.
+<br />
+<br />
+<center><h3>equipment &amp; weapons</h3></center>
+<br />
+<p><b>Captain America's Uniform:</b> As Captain America he wears a uniform of woven chain armor of industrial strength durability, and at one point is said to be bulletproof.
+<p><b>Utility Belt:</b> Rogers wears a utility belt containing mission-specific equipment such as a first aid kit (containing tweezers, antiseptic gel coated band aids, bone and muscle pain reliever spray cans and antidotes for some toxins.), military cable, smoke grenades, lock picks, grenades, and several other materials.
+<p><b>Captain America's Shield:</b> Captain America's primary weapon is his shield, a concave disk that is 2.5 feet in diameter, weighing 12 pounds. It is made of a unique Vibranium and Proto-Adamantium steel alloy that has never been duplicated. The Shield was cast by American metallurgist Dr. Myron MacLain, who was contracted by the U.S. government to create an impenetrable substance to use for tanks during World War II. During his experiments, MacLain infused Proto-Adamantium with Vibranium steel alloy and created the disc-shaped shield. MacLain was never able to duplicate the process due to his inability to identify a still unknown catalyst that played a role in the metal bonding. The shield was awarded to Captain America by the government several months after the beginning of his career. The shield has great aerodynamic properties: it is able to slice through the air with minimal wind resistance and deflection of path. Its great overall resilience, combined with its natural concentric stiffness, enables it to rebound from objects with minimal loss of angular momentum. It is virtually indestructible: it is resistant to penetration, temperature extremes, and the entire electromagnetic spectrum of radiation. The only way it can be damaged in any way is by tampering with its molecular bonding.
+<p><b>Energy Shield:</b> A photonic shield able to redirect kinetic energy, emit energy blasts, and morph into a staff.
+
+</li>
+
+
+<li>
+<h4>mcu</h4>
+<br />
+<center><h3>Stats</h3></center>
+<p>
+<p>
+Steven Grant Rogers<br />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;July 4, 1918
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;102 (has the physical appearance of someone 25-30)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;Brooklyn, NY
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;6’2 (1.88m)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;240lbs
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;Blond hair
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;Blue eyes
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;Joseph Rogers (father - deceased)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp;Sarah Rogers (mother - deceased)
+<br />
+
+<center><h3>Personal History</h3></center>
+<p>
+<p>
+
+Steve Grant Rogers was born in Brooklyn, New York on July 4th, 1918 to Joseph and Sarah Rogers. His father was an Army soldier who fought and died in the First World War. His mother, a nurse, died of tuberculosis. A young orphan, Steve is attacked by bullies in Hell’s Kitchen. However, Steve’s resiliency, despite his small stature, inspires a young James Barnes to come to his aid and fight off the bullies. The two then become friends. Years later during an art class Steve and Bucky find out that America has joined the Second World War. Over the next two weeks Bucky trains Steve at Goldie’s Boxing Gym. They visit US Recruiting and Induction Center in New York where Steve is classified as 4F and rejected from service. Steve goes on trying to register in different cities.<br /></br />
+
+After repeated attempts to register and repeated failure to do so, Steve is disheartened but not ready to give up. The night before he’s to be shipped out Bucky takes Steve to the World’s Fair on a double date in order to cheer him up. Steve uses the Fair as another opportunity to enlist and join Bucky and the 107th. Having overheard Rogers’ conversation with Barnes about wanting to help in the war, an Allied German scientist named Abraham Erskine admired his spirit and tenacity and signed him up for "Project: Rebirth".<br /></br />
+
+"Project: Rebirth" was designed to create the perfect soldier to fight the Axis powers using a serum created by Erskine and using technology created by Howard Stark. Rogers was sent to Basic Training with other potential Rebirth patients and was selected when he proved to be braver than the rest by attempting to sacrifice his life by throwing himself on a dud grenade (which he believed was live). The experiment was successful and Rogers was pushed to the peak of human ability. After the operation, a HYDRA saboteur by the name of Heinz Kruger assassinated Erskine and henceforth prevented the creation of any more Super Soldiers.<br /></br />
+
+During this and after, Rogers began feeling passionate about Peggy Carter, an English military officer over watching his progress. She asked him if he liked to go dancing, to which he replied that he would like to dance but only with ‘the right partner’. Along the way it seems that Peggy might be his ‘right partner.’<br /></br />
+
+Because Rogers was a lone man and not the army that was promise he was denied recruitment into the Army and was used as a propaganda tool, dubbed "Captain America" and given a Red, White, and Blue outfit to perform in front of American citizens in an effort to persuade them to buy War Bonds. Rogers was left unsatisfied with the ‘help’ he was providing to the war effort until on day he performed in front of what was left of the 107th. Learning his best friend and many others were still somewhere behind enemy lines and rejecting the order given to him by General Phillips to leave the situation alone, Rogers, with the help of Peggy and Howard, set out into enemy territory and saved Allied soldiers from imprisonment under his nemesis, the Red Skull.<br /></br />
+
+Rogers would later assemble his own military unit, the Howling Commandos, to battle HYDRA across Nazi-occupied Europe. The Howling Commandos consisted of Bucky Barnes, Dum Dum Dugan, Jim Morita, Montogomery Falsworth, Gabriel Jones, and Jacques Dernier.<br /></br />
+
+During his time in HYDRA’s facility Captain America was able to memorize key HYDRA locations and he and the Howling Commandos used the information to deal critical blows to HYDRA’s factory network that culminated in the retrieval of Dr. Arnim Zola and the loss of Bucky Barnes. Using the information that Col. Philips managed to retrieve from Dr. Zola, Steve went on a mission to infiltrate the main HYDRA base and stop the Valkyrie, which carried bombs enhanced by the Cosmic Cube that the Red Skull planned to use to wipe out American cities, starting with New York City. Successfully foiling Schmidt’s plans, Captain America was forced to crash-land the aircraft into frigid waters.<br /></br />
+
+After seventy years, he was retrieved and revived by S.H.I.E.L.D. to be a member of the Avenger Initiative. After the Battle for New York against Loki, he and the other Avengers parted ways. He currently resides in Washington DC.
+<br />
+<br />
+<center><h3>Character Traits</h3></center>
+<p>
+<p>
+
+Steve Rogers has always had a noble and honest spirit, intolerant towards injustice and abuse of power. Since he’s always been weak and small, he has learned on his own what true strength is, and vowed to protect defenseless people at the risk of his own life. Rogers is a proud American patriot, maintaining his American flag themed military uniform even after leaving the USO. Despite being transformed into a "perfect human specimen" by the Super Soldier Serum, he maintained his original spirit and character, often being awkward and shy, even in his new shape. Rogers seems to change a bit since his reawakening, becoming somewhat weary of this new time but still seems to be the same man as he was in the 1940s. Due to his exploits of the past, Rogers seems to naturally have a certain amount of respect given to him, even if he doesn’t look for it.<br /></br />
+
+As a Super Soldier, Steve Rogers possesses peak human abilities, such as formidable strength, speed, agility, stamina, dexterity and reflexes, as well as an increased metabolism that prevents him from being drunk. He’s a highly trained soldier and is an expert in combat. As a weapon of choice, he uses a round Vibranium shield given to him by Howard, which can be used as a throwing weapon and is able to absorb any kind of impact. </br /></br />
+</li>
+
+    </div>
+    </div>
+</div>
+
+
+
+ 
+<!-- -------------------------- TAB 5  -------------------------- -->
+
+<div id="tab5" class="tab">
+    <div class="tabcontent">
+    <div id="headernav">
+    <div id="tabside">
+    <h4>verses</h4>
+        <ul id="tabs">
+     <li class="active" style="width:100px">canon</li>
+	  <li style="width:100px">alt canon</li>
+     <li style="width:100px">fandom</li>
+     <li style="width:100px">alternate</li>
+     <li style="width:100px">misc.</li>
+</ul>  
+</div>
+
+<ul id="tab">
+<li class="active">
+<center><h4>canon</h4>
+<h3>marvel cinematic universe</h3>
+</center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/FfbG5zx.png"></div>
+<a href="#?w=530" rel="01" class="poplight" title="mcu"><b>mcu</b></a> &mdash; This verse takes place in and amongst the MCU and includes the tv shows as well as Netflix. This verse will be a secondary one on this blog and will be broken down into arcs based on each Marvel movie that comes out. This verse is aimed more towards those who are MCU based and have no knowledge of the comics. The reference sheet will cover all the important information as well as the arcs and the events that they will cover.
+</div>
+<br /><br />
+<center><h3>616</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/P3A1PyY.png"></div>
+<a href="#?w=530" rel="02" class="poplight" title="616"><b>616</b></a> &mdash; This verse takes place in and amongst the 616 comic universe. This verse is the main verse on this blog and will be broken down into arcs based on certain events. The reference sheet will cover all the important information as well as the arcs and which events they will cover. All threads in this verse will default to the main one unless otherwise specified.
+</div>
+<br /><br />
+<center><h3>616/mcu</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/Z8r6jzD.png"></div>
+<a href="#?w=530" rel="03" class="poplight" title="616/mcu"><b>616/mcu</b></a> &mdash; Steve had seen a lot since they'd found him in the ice; a world where the Red Skull was in charge, his own world during the war. But nothing could prepare him for being thrown into the MCU. Everything looks just the same except it's slightly different. This verse is 616 Steve being thrown into the MCU verse. It takes place before the 616 civil war and is usually set after the MCU civil war. Having your muse thrown into the 616 verse is also an option.
+</div>
+</li>
+
+<li>
+<center><h4>alternate canon</h4></center>
+<center><h3>ghosts in the machine</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/mHJKWD7.png"></div>
+<a href="#?w=530" rel="04" class="poplight" title="ghosts in the machine"><b>ghosts</b></a> &mdash; This verse takes place after the events of Captain America: The First Avenger. In this verse HYDRA was the one who rescued Steve and not SHIELD. Thanks to a beacon that was left on the plane, HYDRA was able to locate and remove Steve from the ice. They wipe his memories and turn him into an assest similar to the Winter Soldier. His primary targets vary depending on the mission. The only thing they do know is he works best with the Winter Soldier.
+</div>
+<br /><br />
+<center><h3>no fighting spirit</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/LjI8lFv.png"></div>
+<a href="#?w=530" rel="30" class="poplight" title="no human replica can ever have a fighting spirit"><b>skrulls</b></a> &mdash; The mission was simple; with the battle against Thanos won and those who had been snapped returned to the galaxy, it was time to return the Infinity Stones back to their rightful places in time. They’d all known that when they initiated the time heist in the first place. Steve had volunteered to go, thinking he could handle it and possibly get the closure with Peggy that he didn’t realise he needed. Everyone else had their lives to get in order, while he only had himself. The mission had gone well, all but one of the stones had been returned to their rightful place. The Time Stone was the last one to be placed and he was close to returning it to its owner when the world that he knew had been changed for the worse. Stumbling upon something he wasn’t meant to see, he barely had enough time to jump out of the timeline before the creatures he’d witnessed chased after him. Had what he saw been real? Or was it no more than a trick of the light?
+</div>
+<br /><br />
+<center><h3>misadventures in space</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/rOk9es2.png"></div>
+<a href="#?w=530" rel="05" class="poplight" title="misadventures in space"><b>space</b></a> &mdash; It all started with a simple offer from Peter Quill and it ended up with him getting captured by space pirates and spending six months in their captivity. As unamused as he'd been when Quill finally came for him it allowed him to see that he could get away from it all. And instead of having Quill drop him off back on Earth he's decided to spend time on Knowhere and see just what a 'normal' life could be if given the chance.
+</div>
+<br /><br />
+<center><h3>a collision of times</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/EarkiVq.png"></div>
+<a href="#?w=530" rel="06" class="poplight" title="a collision of times"><b>collision</b></a> &mdash; This verse takes place after the events of Captain America: The Winter Soldier. In this verse Steve was the one who died, and instead of meeting other versions of himself he runs into Bucky, who has taken up the mantle of Captain America. Most of the time Steve will refuse to believe the story that either Bucky or Winter Soldier Steve tell him. Only with time will he believe.
+</div>
+<br /><br />
+<center><h3>the path not chosen</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/LaXMx4B.png"></div>
+<a href="#?w=530" rel="07" class="poplight" title="the path not chosen"><b>path</b></a> &mdash; This verse takes place after the events of Captain America: The Winter Soldier. In this verse the serum that has made Steve who he was is slowly starting to fail. It's barely noticeable at first, the wounds he receives in battle taking longer and longer to heal. Eventually, it becomes apparent that there is something wrong with Steve. He takes to spending more and more time away from everyone until one day he disappears. He tells himself it's for the best. But the best means living the remaning years he has left alone.
+</div>
+<br /><br />
+<center><h3>is this just a dream</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/ftZFQyV.png"></div>
+<a href="#?w=530" rel="08" class="poplight" title="is this just a dream"><b>dream</b></a> &mdash; This verse takes place roughly one year after Steve crashed the Valkyrie into the ice. Somehow Howard and Peggy found the crash and brought him to a secure facility to recover. Now that he's able to be on his own he's not certain where to go from there. The war's over and the country no longer needs Captain America. What's a soldier and former weapon supposed to do in a world that no longer needs him?
+</div>
+<br /><br />
+<center><h3>welcome to the new age</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/iHJcSE0.png"></div>
+<a href="#?w=530" rel="09" class="poplight" title="welcome to the new age"><b>dark avengers</b></a> &mdash; New York had been the catalyst. It had shown Steve and the rest of the team just what could be done if they put the world on another path, a better path. They took their protection to a whole new level, encorporating the US first before working on conquering the world. Over time they added to their team, taking on the Maxmimoff twins for their unique abilities. All those who oppose their rule are executed. All those who abide will never want again. Revolution could be in the air. And if it is? They will stomp it out like all the others.
+</div>
+<br /><br />
+<center><h3>the vengeful one</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/Jdbk4N4.png"></div>
+<a href="#?w=530" rel="10" class="poplight" title="the vengeful one"><b>dark steve</b></a> &mdash; War changed people. More than they would ever admit. It had changed Steve Rogers, turning him from the man who would do what was right to the man who would do whatever it took to exact justice. The only problem with this was his guise of being Captain America. His team expected him to be the man he'd once been. What would they think if they found out he had gone down a darker path?
+</div>
+<br /><br />
+<center><h3>world of darkness</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/ykFJGyX.png"></div>
+<a href="#?w=530" rel="11" class="poplight" title="world of darkness"><b>blind steve</b></a> &mdash; The mission was just like every other one they'd been on. Go in, destroy the bad guys, return to the tower and enjoy the victory. Except this time there was an added element none of them could have ever prepared for. No one could remember how; not even Steve himself. Just that some sort of freak accident had stripped his sight from him. At first the doctors said it was temporary. Days turned into weeks turned into months and America's Hero could no longer see the world around him. Everyone had said to be patient, Stark had even offered to make something for him and instead of accepting it, he left. The last thing he wanted was to be a burden on his team.
+</div>
+<br /><br />
+<center><h3>mirror images</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/yYo30DB.png"></div>
+<a href="#?w=530" rel="12" class="poplight" title="mirror images"><b>twins</b></a> &mdash; This verse is strictly for twins, or other Steve Rogers. There is no strict timeline for this verse but it will mostly take place after the events of the Winter Soldier. While Steve has met other versions of himself, each new encounter will have him just as confused as the last.
+</div>
+<br /><br />
+<center><h3>i don't need saving</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/uCSe0HN.png"></div>
+<a href="#?w=530" rel="13" class="poplight" title="i don't need saving"><b>variant</b></a> &mdash; A variant. That's what the TVA (Time Variance Authority) classified her as. In this universe Steve Rogers was born Stephanie Rogers, and her life, while similar to the version of her from the sacred timeline, is just different enough to make her important to the TVA. This is a <b>private</b> verse and is by invitation only. The FCs for this verse are Rebecca Romijn as the main FC, and Sophia Myles for the World War II arcs.
+</div>
+<br />
+<br />
+<br />
+</li>
+
+<li>
+<center><h4>fandom</h4></center>
+<center><h3>life after the fall </h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/xfAyi6V.png"></div>
+<a href="#?w=530" rel="14" class="poplight" title="life after the fall"><b>dc</b></a> &mdash; This verse takes place after the events of Captain America: The Winter Soldier and is aimed more towards characters from the DC universe. Steve was determined to bring down HYDRA at any cost and assumed that his speech would have empowered those around him to help. It did. But it wasn't enough. He only managed to setback HYDRA's operations, not take them down. After taking down the helicarriers and being dragged from the Potomac, it took Sam sneaking him out of the hospital for him to realise what had happened. HYDRA put a bounty on his head and running was the only option. Depending on the muse he is either hiding out in Gotham, Starling or Central City.
+</div>
+<br /><br />
+<center><h3>we created monsters </h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/BnJ6gjP.png"></div>
+<a href="#?w=530" rel="15" class="poplight" title="we created monsters"><b>pacific rim</b></a> &mdash; This verse takes place before, during and after the events of Pacific Rim. When the first kaiju attacked, Steve was one of the first who signed up to be part of the jaeger pilot program. During the course of his training, though, he found out he was not compatible. Only when they switched to two pilots did he finally have a chance.
+</div>
+<br /><br />
+<center><h3>through the great beyond</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/tamepoI.png"></div>
+<a href="#?w=530" rel="16" class="poplight" title="through the great beyond"><b>star trek</b></a> &mdash; Coming from a long line of Starfleet officers it was expected that Steve would follow in their paths. And he did; working his way up to lieutenant commander by the time he was twenty six. He's served on a few different ships under a handful of different captains. To anyone else their goal would be their own ship. Not Steve. He's content to serve others.
+</div>
+<br /><br />
+<center><h3>taking a walk in the woods</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/z4J2HNK.png"></div>
+<a href="#?w=530" rel="17" class="poplight" title="just like taking a walk in the woods"><b>jurassic park</b></a> &mdash; Steve had always had a thing for dinosaurs. Ever since he was little boy and saw the events in San Diego he knew that if it were possible he would work with the creatures that had once been extinct. After a stint in Iraq he was hired on to help in asset containment at the new Jurassic World theme park. It was a dream come true and there are days when he can't believe it. And then there are those days when he remembers just where he's working.
+</div>
+<br />
+<center><h3>both light and dark</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/5Z1wwwG.png"></div>
+<a href="#?w=530" rel="18" class="poplight" title="both light and dark"><b>harry potter</b></a> &mdash; Never did he expect to see not one but two wars. Being five years behind the infamous Marauders he'd seen just what trouble was in store for them. And being a Slytherin didn't help things, either. He never believed in Voldemort's cause and his family paid the ultimate price; his mother had been killed shortly before Voldemort was brought down. With another war on the horizon he's doing all that he can to avoid it. Except his experience means he might not have a choice.
+</div>
+<br /><br />
+<center><h3>like a wind (like a ghost)</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/IX5p87y.png"></div>
+<a href="#?w=530" rel="19" class="poplight" title="like a wind (like a ghost)"><b>fantastic beasts</b></a> &mdash; Sometimes being an Auror meant doing the things that not everyone was comfortable with. It also meant chasing down those wizards who refused to obey the law that had been set out for their protection. During a raid, they happened to stumble across a time turner; illegal for everyone for a reason. Steve was the one who picked it up and was immediately transported away from the scene. He knew how they worked and knew a spell had been put on it. The problem wasn't where he landed. It was when. And the consequences that came with messing around with history.
+</div>
+<br /><br />
+<center><h3>down the rabbit hole</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/WocNimT.png"></div>
+<a href="#?w=530" rel="20" class="poplight" title="down the rabbit hold"><b>lotr</b></a> &mdash; Steve wasn't even certain how he'd gotten to middle earth. The battle had been going well and then he'd been thrown into some sort of portal. Initially he thought maybe he'd been sent to another continent, the woods reminding him of the war. Except he soon found out he wasn't in familiar territory. His only knowledge of middle earth came from reading the Hobbit growing up. But would it be enough to help him survive? And find a way to get back home?
+</div>
+<br /><br />
+<center><h3>shadows of the past</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/Dw2SOis.png"></div>
+<a href="#?w=530" rel="21" class="poplight" title="shadows of the past"><b>star wars</b></a> &mdash; Having been in hiding since the end of Return of the Jedi, Mos and his master watched the fall of the Empire and the rise of the First Order. They sat and watched the rise of the Knights of Ren, laughing at how they were imitating the Siths of old. One day they knew the Jedi would return and when that happened they would be waiting. And then came the disturbance in the force and Mos was sent out to find it and sway it to join the Dark Side. He was also told if he fould the last Jedi to kill him, as well. The last thing he expected was to find new enemies and familiar faces along the way. Nothing was going to stop him, though. Not even the new Republic.
+</div>
+<br /><br />
+<center><h3>hope is stronger than fear</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/qjwuwEx.png"></div>
+<a href="#?w=530" rel="22" class="poplight" title="hope is stronger than fear"><b>hunger games</b></a> &mdash; He wasn't supposed to have survived to be a part of the selection process. He wasn't even supposed to have survived his games. Steve tended to be the kid who beat the odds no matter what. Now there was a quarter quell and once again he'd have to fight for his life. Would he survive to bring down the Capitol once and for all?
+</div>
+<br /><br />
+<center><h3>death is not a necessary sacrifice</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/bvkN2rJ.png"></div>
+<a href="#?w=530" rel="23" class="poplight" title="death is not a necessary sacrifice"><b>shadowhunters</b></a> &mdash; Returning to a world he’d left behind after breaking one of the most fundamental rules hadn’t been something Steve expected, nor was it something he wanted. Not when the Clave had initially turned their backs on him. He’d done what he thought was right and something that would help the Clave, and in return they deemed him problematic. At some point they decided he needed to be brought in and ‘dying’ was the only way he could escape them and the pain that came with losing his parabatai. Except something went wrong and now seventy some odd years after his death he was once again in hiding from the brothers he once considered family. The only familiar face Steve had was the warlock who helped him all those years ago and they both knew time was running out. Their world was changing once again and as much as Steve wanted to stay out of it, he found himself being dragged back in. But at what costs?
+</div>
+<br />
+<br />
+<br />
+
+</li>
+
+
+<li>
+<center><h4>alternate</h4></center>
+<center><h3>lost in a sea of strangers</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/FVtvKQG.png"></div>
+<a href="#?w=530" rel="24" class="poplight" title="lost in a sea of strangers"><b>amnesia</b></a> &mdash; What if being frozen in the ice for seventy years had unseen consequences? What if the moment they woke Steve Rogers up he had no memory of who he was or what had happened to him? That was exactly what had happened. Instead of stopping in Times Square, he ran; out of the city, out of the state and to a place where no one would think of looking. After weeks of running the man that the world used to know as Steve Rogers was now making his home in a small Wyoming town outside of Jackson, going by the name Grant and using the area around him to produce art to squeak out a meagre living. He's also taken up residence with a woman who reminds him of another life, of another time when he didn't look exactly like he did at that moment. The town has accepted their newest resident and he's found that this life isn't so bad. Until remnants of his old life start seeping in and the desire to run from it all hits him once again.
+</div>
+<br /><br />
+<center><h3>new directions</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/uNkzcCK.png"></div>
+<a href="#?w=530" rel="25" class="poplight" title="new directions"><b>bodyguard</b></a> &mdash; His tour was up, and he was once again thrust back into a world he really didn't know. Steve had found a life in the military and now that his time was done, he had no idea just what to do with himself. Until Reed Securities comes calling. They offer him something the military never could; a family, a purpose, and all he has to do is sign on the dotted line. His jobs spread from running ops, to leading teams, to personal security. It wasn't his favourite but it was better than nothing at all. And it helped pay the bills. Something he sorely needed to do.
+</div>
+<br /><br />
+<center><h3>secrets worth hiding</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/3CNsxxl.png"></div>
+<a href="#?w=530" rel="26" class="poplight" title="secrets worth hiding"><b>secrets</b></a> &mdash; Life was fleeting. A lesson Steve had learned during his time in Afgahnistan. Life also had a price. Something he'd learned when he returned home. An IED, later found out to have been set by the locals they were allied with, killed everyone on his team. It should have killed him, as well. Instead he clung to life, spent a month in the hospital and a year afterward in physical therapy to regain the abilities he'd had before the accident. During that time he aslo accepted the government's apology for what had happened. Blood money in his opinion and he swore he would never use it. Not even to live off of. Once they let him go, he moved to Brooklyn, started art classes and worked at a small litte café to make ends meet. It wasn't perfect but it was better than using that money.
+</div>
+<br /><br />
+<center><h3>kiss of an angel</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/oPkAPf5.png"></div>
+<a href="#?w=530" rel="27" class="poplight" title="kiss of an angel"><b>single father</b></a> &mdash; Life had been planned out for him - art school and hopefully work in the publishing or even in a film studio. Until a one night stand gave him the greatest gift he didn't even know he wanted; his daughter Maggie. Now he's balancing school and taking care of his daughter. Not an easy job.
+</div>
+<br />
+<br /><br />
+</li>
+
+<li>
+<center><h4>misc</h4></center>
+<center><h3>through the valley of death</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/7UWYZtw.png"></div>
+<a href="#?w=530" rel="28" class="poplight" title="through the valley of death"><b>death</b></a> &mdash; Death, death and yes, more death. Any and all threads where Steve ends up dead will be thrown into this verse. The only threads that won't be are those where his death is canon to either the MCU or 616. A running death count will also be included in this verse.
+</div>
+<br /><br />
+<center><h3>crack in the shield</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/z5GUAJu.png"></div>
+<a href="#?w=530" rel="29" class="poplight" title="crack in the shield"><b>crack</b></a> &mdash; Crack, crack, and more crack. Any sort of shenanigans, and things that don't really fit into the other verses, will be chucked into this verse. Threads in this verse may or may not have any bearing on the other verses. Also threads in this verse are few and far between as crack is not something I write a lot of.
+</div>
+<br /><br />
+<center><h3>the world inside a box</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/nfUlBjK.png"></div>
+<a href="/asks" title="the world inside a box"><b>ask box</b></a> &mdash; This verse is strictly for those roleplays that happen via the ask box. Unless a specific verse has been attached to them, they have no set verse and can take place in any of the above mentioned verses. Anything that happens in this verse will not affect the events of the other verses. Not unless it has been stated beforehand.
+</div>
+<br />
+<br /><br />
+</li>
+
+</ul> 
+</li>
+
+    </div></div>
+</div>       
+
+<!-- -------------------------- TAB 6 -------------------------- -->
+
+<div id="tab6" class="tab">
+    <div class="tabcontent">
+    <div id="headernav">
+        <div id="tabside">
+        <h4>site map</h4>
+        <ul id="tabs">
+     <li class="active" style="width:100px">blog schedule</li>  
+	  <li style="width:100px">non-rp blogs</li>
+     <li style="width:100px">in character</li>
+     <li style="width:100px">out of character</li>
+</ul>  
+</div>
+
+<ul id="tab">
+<li class="active">
+<h4>blog schedule</h4>
+<br />
+<!-- basic information -->
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/scQ0Ua8.png"></div>
+<a href="https://cxpt.tumblr.com"><b>cxpt</b></a> &mdash; 616 &amp; MCU based steve rogers. private, selective and mutuals only. general knowledge of the marvel cinematic universe is suggested but not required. no knowledge of the comics is necessary for interactions.<br /> 
+<br />
+we can be found on this blog <b>mon,thur,fri</b>
+</div>
+<br /><br />
+
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/xRIEaZy.png"></div>
+<a href="https://ofangelicblood.tumblr.com"><b>ofangelicblood</b></a> &mdash; show based, book influenced jace herondale of the mortal instruments series. private &amp; highly selective. while this blog still pulls heavily from the freeform series, elements of the books are slowly being added to the blended canon main verse. for those who prefer the show there are arcs that follow each series. and for those who prefer the books there is a <b>request only</b> book verse along with arcs for each book. <br />
+<br />
+we can be found on this blog <b>tue</b>
+</div>
+<br /><br />
+
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/cylscql.png"></div>
+<a href="https://bastxrds.tumblr.com"><b>bastxrds</b></a> &mdash; multimuse featuring muses from inception, marvel, dc, the shadowhunter chronicles, harry potter, star wars, netflix's the witcher &amp; the old guard. private &amp; highly selective. please read the bios for the muse you're interested in before approaching us for interactions.<br />
+<br />
+we can be found on this blog <b>wed</b>
+</div>
+<br /><br />
+</li>
+
+<li>
+<h4>non rp blogs</h4>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/5oHcfne.png"></div>
+<p><b>RP hub</b> || <a href="http://houseofsol.tumblr.com/">@houseofsol</a>. the collective RP hub (sideblog) for all of my blogs. this blog collects all of my resources (banners, writing references, fonts, theme things, aesthetics, etc) all in one place. all of my important ooc updates will be posted here, even if they are not reblogged to other blogs. this is also the central hub for all my themes currently available to the public
+<br />
+</div>
+<br /><br />
+
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/APjJdwn.png"></div>
+<p><b>meme hub</b> || <a href="http://mangosmemes.tumblr.com/">@mangosmemes</a>. collective meme hub for all of my blogs, as well as a curated collection with contribution from various other meme-bers. this blog is open as a resource to all rp blogs! <b>currently pending overhaul.</b>
+<br />
+</div>
+<br /><br />
+</li>
+
+<li>
+<h4>in character</h4>
+<center>
+<h3>the captain</h3>
+<p>
+<a href="/tagged/⸢ ☆ ⸥ this was me once upon a time | ❛ shield file ❜" class="button">shield file</a> 
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ getting lost inside my mind | ❛ headcanons ❜" class="button">general hc</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ v; the world we live in | ❛headcanon ❜" class="button">616 hc</a>
+<br />
+<a href="/tagged/⸢ ☆ ⸥ v; only one path | ❛headcanon ❜" class="button">mcu hc</a> 
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ just a kid from brooklyn | ❛ steve rogers ❜ (616)" class="button">visage (616)</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ just a kid from brooklyn | ❛ steve rogers ❜ (mcu)" class="button">visage (mcu)</a>
+<br />
+<a href="/tagged/⸢ ☆ ⸥ once a soldier always a soldier | ❛ isms ❜" class="button">isms</a> 
+&nbsp;
+<a hhref="/tagged/⸢ ☆ ⸥ one day my path will bring me home | ❛ brooklyn ❜" class="button">brooklyn</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ finding myself and losing myself at the same time | ❛ aesthetics ❜" class="button">aesthetics</a>
+<br />
+<a href="/tagged/⸢ ☆ ⸥ the truth is rarely pure and never simple | ❛ meta ❜" class="button">meta</a>
+&nbsp;
+<a href="/" class="button">tbd</a> 
+&nbsp;
+<a href="/" class="button">tbd</a>
+
+<p> 
+
+<h3>the team</h3>
+<p>
+<a href="/tagged/⸢ ☆ ⸥ shellhead | ❛ tony stark ❜" class="button">tony stark</a> 
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ can i trust you | ❛ natasha romanoff ❜ (mcu)" class="button">natasha (mcu)</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ i’m my own woman (first last and always) | ❛ natasha romanoff ❜ (616)" class="button">natasha (616)</a>
+<br />
+<a href="/tagged/⸢ ☆ ⸥ little witch | ❛ wanda maximoff ❜" class="button">wanda</a> 
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ you call that running | ❛ sam wilson ❜ (mcu)" class="button">sam wilson</a>
+&nbsp;
+<a href"/tagged/⸢ ☆ ⸥ born yesterday | ❛ vision ❜ (mcu)" class="button">vision</a>
+<br />
+<a href="/tagged/⸢ ☆ ⸥ badass kitty | ❛ black panther ❜ (mcu)" class="button">bl. pnthr (mcu)</a> 
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ it is not for nothing that i am called the black panther | ❛ black panther ❜ (616)" class="button">bl. pnthr (616)</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ kid from queens | ❛ peter parker ❜ (mcu)" class="button">peter parker</a>
+<br />
+<a href="/tagged/⸢ ☆ ⸥ air force rejected me yesterday | ❛ carol danvers ❜ (616)" class="button">danvers (616)</a> 
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ tic tac | ❛ scott lang ❜ (mcu)" class="button">scott lang</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ i would rather be a good man than a great king | ❛ thor odinson ❜ (mcu)" class="button">thor odinson</a>
+<p> 
+<h3>important others</h3>
+<p>
+<a href="/tagged/⸢ ☆ ⸥ lost without you | ❛ bucky barnes ❜ (mcu)" class="button">bucky barnes</a> 
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ it felt personal | ❛ rumlow ❜ (mcu)" class="button">brock rumlow</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ i noticed | ❛ nick fury ❜ (mcu)" class="button">nick fury</a>
+<br />
+<a href="/tagged/⸢ ☆ ⸥ more than just a neighbour | ❛ sharon carter ❜ (mcu)" class="button">carter (mcu)</a> 
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ with you at my back how can i fail | ❛ sharon carter ❜ (616)" class="button">carter (616)</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ brothers in arms | ❛ howling commandos ❜ (mcu)" class="button">h. commandos</a>
+<br />
+<a href="/tagged/⸢ ☆ ⸥ eight o’clock on the dot | ❛ peggy carter ❜ (mcu)" class="button">peggy carter</a> 
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ late night fondue | ❛ howard stark ❜ (mcu)" class="button">howard stark</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ cold day in hell | ❛ loki laufeyson ❜ (mcu)" class="button">loki laufeyson</a>
+</center>
+</li>
+
+<li>
+<h4>out of character</h4>
+<center>
+<p><h3>out of character</h3>
+<p>
+<a href="tagged/‹ ☆ › open | ❛ 616 ❜" class="button">open (616)</a> 
+&nbsp;
+<a href="/tagged/‹ ☆ › open | ❛ mcu ❜" class="button">open (mcu)</a>
+&nbsp;
+<a href="/tagged/‹ ☆ › open | ❛ mutuals only ❜" class="button">open (mutuals)</a>
+<br />
+<a href="/tagged/‹ ☆ › open | ❛ non-mutuals ❜" class="button">open (all)</a> 
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ out of brooklyn | ❛ ooc ❜" class="button">ooc</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ make a wish and take a chance | ❛ wishlist ❜" class="button">wishlist</a>
+<br />
+<a href="/d" class="button">tracker</a>
+&nbsp;
+<a href="/tagged/⸢-☆-⸥-all-i-did-was-help-someone-find-their-dream-%7C-❛-memes-❜" class="button">memes</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ a reason to smile on a rainy day | ❛ keep ❜" class="button">keep</a>
+<br />
+<a href="/tagged/⸢ ☆ ⸥ orders have been sent out | ❛ answered asks ❜" class="button">ans. asks</a>
+&nbsp;
+<a href="/tagged/⸢ ☆ ⸥ an important message from the captain’s desk | ❛ psa ❜" class="button">psa</a>
+&nbsp;
+<a href="/" class="button">tbd</a>
+</center>
+
+</li>
+</ul>
+</li>
+
+    </div></div>
+</div>   
+ 
+<!-- END OF TABS -->
+
+</div>
+</div>
+</div>
+
+
+
+<div id="credit"> 
+<a href="https://houseofsol.tumblr.com" title="theme by houseofsol"><img src="https://68.media.tumblr.com/e5f4ca3f38bdf7a73c37efc9b8fd4996/tumblr_inline_oj2mweKepP1scj6vj_500.png"></a>
+</div>
+
+
+<!-- tabs/all in one script. do not delete -->
+ 
+<script>
+$(document).ready(function() {
+    $('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = $(this).attr('href');
+ 
+        // Show/Hide Tabs
+        $('.tabs ' + currentAttrValue).fadeIn(600).siblings().hide();
+ 
+        // Change/remove current tab to active
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+});
+</script>
+ 
+<script>
+$(document).ready(function() {
+  $('#filterOptions li a').click(function() {
+    // fetch the class of the clicked item
+    var ourClass = $(this).attr('class');
+ 
+    // reset the active class on all the buttons
+    $('#filterOptions li').removeClass('active');
+    // update the active state on our clicked button
+    $(this).parent().addClass('active');
+ 
+    if(ourClass == 'all') {
+      // show all our items
+      $('#ourHolder').children('div.item').show();
+    }
+    else {
+      // hide all elements that don't share ourClass
+      $('#ourHolder').children('div:not(.' + ourClass + ')').hide();
+      // show all elements that do share ourClass
+      $('#ourHolder').children('div.' + ourClass).show();
+    }
+    return false;
+  });
+});
+</script>
+
+<!-- end all in one script coding -->
+
+<!-- Start of StatCounter Code for Tumblr -->
+<script type="text/javascript">
+var sc_project=10368379; 
+var sc_invisible=1; 
+var sc_security="5acfe067"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "https://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="tumblr visitor
+stats" href="https://statcounter.com/tumblr/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/10368379/0/5acfe067/1/"
+alt="tumblr visitor stats"></a></div></noscript>
+<!-- End of StatCounter Code for Tumblr --> 
+
+
+</body>
+
+
+<!-- verse popups -->
+
+<!-- mcu -->
+
+<div id="01" class="popup_block">
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/QnD16DN.png"></div> <!-- change the image on the popup sidebar -->
+
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>
+		
+     <li style="width:100px">notes</li>
+     
+     <li style="width:100px">headcanons</li>
+     
+     <li style="width:100px">connections</li>
+</ul>  
+
+</div> 
+
+<ul id="poptab">
+<li class="active">
+<center><h4>only one path</h4></center>
+<br />
+<img src="https://64.media.tumblr.com/9fa298face462914b49675206c33335e/tumblr_inline_oerf6viij41scj6vj_500.png">
+<br />
+<p>this verse covers all the events in the mcu. the world that steve knew has been irreparably changed, replaced with something he no longer recognises. all he’d ever wanted to do was fight the bullies, to do the right thing. now, in a world that’s not quite as black and white as it used to be it’s now up to him to figure out his place in the world. 
+<p>
+<br />
+<center><h3>arcs</h3></center>
+<p><b>the first avenger</b>
+<p><blockquote>this arc takes place during the first avenger. a skinny, scrawney, sickly kid, steve wanted nothing more than to fight the bullies he continuously saw on the news. instead he was constantly told that he would get himself killed should he even make it to the front. after erskine’s serum, his life changes. and not always for the best. </blockquote>
+<br />
+<p><b>the avengers</b>
+<p><blockquote>this arc takes place during the avengers and leads into the winter soldier. steve is currently a consultant/agent for shield and currently splitting his time between the apartment he has in brooklyn, new york and an apartment he has in washington, dc. on occasion he can be found in the avengers tower but mostly he prefers the solitary life of his own place.</blockquote>
+<br />
+<p><b>the winter soldier</b>
+<p><blockquote>this arc takes place during the winter soldier and leads into age of ultron. after the emergence of an old enemy steve finds himself trusting no one other than his fellow avengers, maria hill, sam wilson and nick fury. he has also decided that now is as good a time as ever to step away from the remnants of shield and search for bucky.</blockquote>
+<br />
+<p><b>ultron</b>
+<p><blockquote>this arc takes place in the months leading up to the movie age of ultron and includes the events that take place during the movie. steve spends his time between looking for bucky and spending time at avengers tower.</blockquote>
+<br />
+<p><b>post ultron</b>
+<p><blockquote>this arc takes place immediately after age of ultron. with his old team now going their separate ways it’s up to him to train the new group of avengers in the hopes they can protect the earth like his previous team did. instead of living in avengers tower, steve now resides in the new upstate headquarters and has resumed his consultant work with shield.</blockquote>
+<br />
+<p><b>civil war</b>
+<p><blockquote>this arc takes place in the months before the movie civil war and includes the events that take place during the movie.as a fugitive steve is no longer an avenger and avoids any of those who believe that the sokovia accords are the way forward. he’s also doing whatever he can to keep bucky out of the hands of those who would do him harm.</blockquote>
+<br />
+<p><b>post civil war</b>
+<p><blockquote>this arc takes place immediately after the movie civil war. no longer captain america, steve has decided to use his vigilante status to do the good he couldn’t do while under the mantle of captain america. instead of the red, white and blue uniform he now dons an <a href="https://66.media.tumblr.com/7920538d48db5cc1c1a704c9b1b4cdef/tumblr_inline_pr3jfagivp1vj7bl8_500.jpg">all black one</a>. he also carries a new shield, one that is shades of black and silver to blend into the night.</blockquote>
+<br />
+<p><b>infinity war</b>
+<p><blockquote>this arc takes place during infinity war. on the run and looking to continue the work he did while under the guise of captain america, the trouble that was forewarned by thor in age of ultron found them. after rescuing vision from thanos’ soldiers, they regrouped in wakanda in the hopes that together they could defeat thanos. even with all of their technology and the addition of thor with the guardians they were unable to stop thanos. and then came the snap…</blockquote>
+<br />
+<p><b>post infinity war</b>
+<p><blockquote>this arc takes place after infinity war. with half the world’s population gone due to the snap steve isn’t certain what more can be done. once again he’s lost his best friend and the team he’d grown close to after the events of civil war. now, he’s once again without his anchor and having to find the remaining members of his team so they can bring back those who were lost in the snap.</blockquote>
+<br />
+<p><b>endgame</b>
+<p><blockquote>this arc takes place during endgame. their first plan failed and with the world slowly coming to terms with the snap, steve knows it’s time for him to accept what happened and move on with his life. there is no point  to captain america. not when half of his team are gone. he’s never been one to give up but without a way of undoing the snap he sees no point in holding onto that hope. it’s not until scott lang returns does he start to feel that hope once again. with a new plan they are determined to defeat thanos and return those who had been lost. he just wasn’t prepared for the cost they’d all have to pay to make that happen.</blockquote>
+<br />
+<p><b>post endgame</b>
+<p><blockquote>this arc takes place after endgame and through the events of far from home. the infinity stones are now in their rightful place in time and the future looks bright again. even though they lost one of their team, steve knows that now is the time for him to live the life tony stark suggested he do. he’d been tempted to stay in the past, to live with the love of his life but he couldn’t. that wasn’t the man he was. the future needed him much more than the past and getting that last dance in with peggy, he returned to the future with a newly repaired shield. his time as captain america was over but the world still needed the mantle. handing it over to sam, he knows that he and bucky will be exactly what the world needs. if he’d thought bucky was ready he would’ve handed it to him. instead, he knows that sam embraces the same values and is ready for the pressure that comes with it. together they will do the mantle proud.
+<p>he still has his black shield that he got during his time in wakanda along with mjolnir should trouble find him. after the funeral he tells pepper should she or morgan ever need him, the team, or anyone else to call him. steve made certain to set up lists for all the team to visit with morgan, to share with her stories of her father and to help her with life. once he’s certain everything will be taken care of, he leaves and heads out to not only find himself but where he will now fit in.</blockquote>
+<br />
+<p><b>post endgame alt</b>
+<p><blockquote>this is an alterative arc for post endgame and explores what would have happened had steve stayed in the past instead of returning to the present. taking tony’s words to heart, he replaced all the stones into their respective time lines before returning to peggy. that one last dance wasn’t enough for him and instead of returning to the present he decides to live out his life with her. peggy is and will always be the love of his life and he can’t ever imagine living without her. this is his chance to live out the life he was meant to and he doesn’t plan on letting it slip from his fingers. this arc is open to any peggys, howards or other commandos who might’ve survived the war.</blockquote>
+<br />
+<p><b>marvel general</b>
+<p><blockquote>this arc covers the events post far from home and all movies from there on out will be included in this general arc. it is not meant to replace the mcu verse. this will allow steve to live on in the mcu even though there will be no more movies. this could also be considered steve's <b>NOMAD</b> verse. steve’s journey to find himself isn’t easy nor is it short. he’s been through a lot in his life; from being thrust seventy years in the future to fighting aliens and travelling through time. all of that takes its toll on him and while he still struggles with ptsd and depression, he knows this is the only thing that will allow him to figure his life out. packing up his motorcycle with the shield, mjolnir and the all black suit, he sets off across america to see all the things he and bucky talked about before the war. steve carries a phone that bucky can get in touch with him should he need it but he tells his best friend that it’s for emergencies only. he also leaves the number with pepper in case morgan needs to get in touch with him. along the way he not only realises who he is as steve rogers, but comes to terms with the fact that he was always more than the shield and the uniform. he also finds the sort of trouble that always found him and he’s able to keep helping people and fighting the bullies; the one thing that he always wanted to do.</blockquote>
+<br />
+
+
+</li>
+
+<li>
+<center><h4>notes</h4></center>
+<br />
+<center><h3>faceclaim</h3></center>
+<p><b>chris evans</b>
+<br />
+</li>
+
+<li>
+<center><h4>headcanons</h4></center>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<h4>connections</h4>
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+</center>
+</div>
+</li>
+</li>
+    
+</div>
+
+
+<!-- 616 -->
+<div id="02" class="popup_block">
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/jN3JJ1V.png"></div> <!-- change the image on the popup sidebar -->
+
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>
+		
+     <li style="width:100px">notes</li>
+     
+     <li style="width:100px">headcanons</li>
+     
+     <li style="width:100px">connections</li>
+</ul>  
+
+</div> 
+
+<ul id="poptab">
+<li class="active">
+<center><h4>the world we live in</h4></center>
+<br />
+<img src="https://64.media.tumblr.com/d5283292c2ee99b289d83d5fe3e65fb6/tumblr_inline_oer1rzRZ5X1scj6vj_500.png">
+<br />
+<p>to the world he was captain america, the nation’s greatest hero. to his men he was private steve ‘rembrandt’ rogers, a fellow soldier and drive to the chaplain. he and barnes were usually seen together until that fateful day and now that he’s been thrust into the modern world it’s up to him to continue what they’d signed him up to do no matter the cost. this verse will cover all modern day interactions with those in the 616. it will <b>NOT</b> cover the hydra steve run as that will be a separate, <b>CANON DIVERGENT</b> verse.
+<br />
+<center><h3>arcs</h3></center>
+<p><b>when we were young</b>
+<p><blockquote>it wasn’t easy living a double life but the war was at stake and the world didn’t need to know <i>private</i> rogers was actually captain america. no one other than his commanding officers knew. until a curious barnes managed to find out his little secret. this arc will cover all interactions during the war leading up to the crash that sent him into the ice.</blockquote>
+<br />
+<p><b>the price of our sins (civil war)</b>
+<p><blockquote>registration was a slippery slope and one steve wasn’t ready to tread down. doing what was right was never easy and standing up against someone he called friend was even harder. this arc will cover the events from the first civil war event. in the future it could also contain the events of the second civil war event.</blockquote>
+<br />
+<p><b>once upon a timely (1872)</b>
+<p><blockquote>timely wasn’t an easy town to patrol but the job of sheriff was something he would do no matter what. or no matter the consequences. this arc will cover the events from the 1872 run and those that disregard what happened.</blockquote>
+<br />
+</li>
+
+<li>
+<center><h4>notes</h4></center>
+<br />
+<center><h3>faceclaim</h3></center>
+<p><b>max martini</b>     
+   
+<p>
+<br />
+
+</li>
+
+<li>
+<center><h4>headcanons</h4></center>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<center><h4>connections</h4></center>
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+</center>
+</div>
+</li>
+    
+</div>
+
+
+<!-- ghosts in the machine -->
+
+<div id="04" class="popup_block">
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/1tVrgXH.png"></div> <!-- change the image on the popup sidebar -->
+
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>
+		
+     <li style="width:100px">notes</li>
+     
+     <li style="width:100px">headcanons</li>
+     
+     <li style="width:100px">connections</li>
+</ul>  
+
+</div> 
+
+<ul id="poptab">
+<li class="active">
+<center><h4>ghosts in the machine</h4></center>
+<p>
+<img src="https://64.media.tumblr.com/609e35a346940115a7093bfb7246a76d/tumblr_inline_oer55c9Frt1scj6vj_500.png">
+<br />
+<center><h3>general information</h3></center>
+<p><blockquote>roughly two to three years after the plane crash, steve rogers became the commander at the hands of zola. once hydra located the valkyrie they wasted no time in doing whatever they could to turn him from their greatest enemy to their ultimate weapon. not much has been detailed about what programming the commander entailed, only that it took at least two years to finally succeed. unfortunately, their own programming wasn’t strong enough to overcome the combination of the serum and steve’s strong personality. three years after their programming had been completed they installed inhibitors in certain parts of the commander’s brain to force him into compliance. the inhibitors also prevented his memories of who he once was from coming to the surface. unbeknownst to him there was one last thing placed inside of his head; a kill switch. a small vial of a mixture of poisons with only one antidote was implanted into his head with a small device that requires a code when the commander is active. if no code is received the device slowly releases the poison until the commander dies six weeks later.
+<p>similar to the soldier when the commander is not needed for an assignment he is placed into cryo. but unlike the soldier, the commander has a trigger word that makes him unable to remember whether or not he’s been locked away in cryo. punishment is also something the commander makes a point of avoiding. to be placed in the chair, to have all that he is wiped away is punishment and he knows that’s what comes from failure. his kill count is similar to that of the soldier though unlike the soldier hydra has programmed two secondary missions within him; eliminate all starks and should the soldier go rogue eliminate him, as well.
+<p>when it comes to languages, the commander prefers russian to english. while he can speak english it feels heavy on his tongue and will be heavily accented. if other languages are required the commander can be programmed with that knowledge beforehand.
+</blockquote>
+<img src="https://64.media.tumblr.com/77e006e25838548fb82f99bfd30b1b57/tumblr_inline_oer6cck7GL1scj6vj_500.png">
+<blockquote>
+<p>just like the winter soldier, the commander has his own book full of all the information one would need to use him. while the soldier’s book is red with a black star the commander’s book is the opposite; black with a red star. within the book are notes on the inhibitors, on other projects that could be used should the commander no longer fall into line and the code words necessary to bring him about once he’s been taken from cryo. they are similar in nature to the ones used on the soldier with one difference; there is an extra one that <b>MUST</b> be used in order to keep the commander from realising he’s been in cryo for however long it’s been.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; yearning (тоскующий) 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; breakable (ломкий)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; eighteen (номер восемнадцать)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; eventide (вечер)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; incinerator (мусоросжигательная печь)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; nine (номер девять)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; malignant (злокачественный)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; disappearance (исчезновение)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; one (номер один)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; airplane (самолет)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; <i><b>SUMMER (ЛЕТО)</b></i>
+</blockquote>
+<br />
+</li>
+
+<li>
+<center><h4>notes</h4></center>
+<br />
+<center><h3>the file</h3></center>
+<p><b>NAME:</b><br />
+<strike>steven grant rogers</strike> commander (командир)
+<br />
+<p><b><strike>BIRTH</strike> CREATION DATE:</b><br /> 
+1947— 1948 <br />
+
+<p><b>FROM:</b><br /> 
+russia
+<br />
+<p><b>APPEARANCE:</b><br />
+6'2 (1.88m)<br />
+240lbs<br />
+blond hair<br />
+blue eyes<br />
+
+<p><b>UNIFORM:</b><br />
+similar to the stealth suit shown in the winter soldier movie although the commander’s is black and silver with a blood red star. his shield is also black and silver with the blood red star in the centre of it.
+<br />
+<br />
+<center><h3>faceclaim</h3></center>
+<p><b>chris evans</b> from snowpiercer
+</li>
+
+<li>
+<center><h4>headcanons</h4></center>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<center><h4>connections</h4></center>
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+</center>
+</div>
+</li>
+    
+</div>
+
+<!-- variant -->
+
+<div id="13" class="popup_block">
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/rY3sOWP.png"></div> <!-- change the image on the popup sidebar -->
+
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>
+		
+     <li style="width:100px">notes</li>
+     
+     <li style="width:100px">headcanons</li>
+     
+     <li style="width:100px">connections</li>
+</ul>  
+
+</div> 
+
+<ul id="poptab">
+<li class="active">
+<center><h4>i don't need saving</h4></center>
+<br />
+<img src="https://i.imgur.com/MoB7GcX.png">
+<p>
+<center><h3>variant R7418</h3></center>
+<p>in this universe steve rogers was born stephanie rogers, to parents joseph and sarah rogers. on the surface this universe appears similar to that of the sacred timeline, but looking deeper one will find minute differences that remind one that this is a branch and that this version of captain america is nothing more than a variant. in the end her destiny is set and anything that will deviate from it will be pruned. below you will find the information necessary to your understanding of this variant and her timeline.
+<p>
+<br />
+<center><h3>canon timeline</h3></center>
+<div id="variant">
+<p>stephanie grace rogers, born july 4th 1918 to joseph and sarah rogers. she was a sickly child and one not expected to survive. her litany of health problems included asthma, a heart condition, astigmatism, colour blindness, partially deaf and overall fatigue. she tended to be smaller than most children of her age and was constantly picked on by the other children in school. her only escape was her art and it was something she became quite talented with. during her time in school she befriended james ‘bucky’ barnes and slowly he became the rock she needed. being constantly sick bucky was the one who sat by her side and constantly reminded her that she needed to fight and to survive. when sarah rogers died of tuberculosis it was bucky that was there to not only support her, but to eventually convince her to move in with him so she wouldn’t have to struggle on her own. single men and women did live together, but to get a place they needed another pair of adults to sign off on them abstaining from immoral practices. 
+<p>
+<p>when war broke out steph knew she wanted to join the fight. she couldn’t count the number of times she’d ended up breaking up fights or having bucky pull her out of back alleys, but she knew that joining the war was something she needed to do. women were allowed in the army and were given a three month active duty post before rotating back into support roles. some women were trained for leadership roles and they were allowed to remain in the field for longer than three months. others were trained for spy work and they, too, were allowed to stay in the field longer than the three months the army put into place for women soldiers. unfortunately, each time steph went to join her numerous ailments meant she was constantly rejected. she tried at least a dozen times and the rejection letters were piling up in the small apartment she shared with bucky. seeing her best friend get his orders only made it worse and the night they went to the stark expo, she had decided to find a way to get recruited. one last time she went to a recruiting office and instead of being rejected she was accepted and sent to basic training with the other men and women that had been recruited.
+<p>
+<p>basic training wasn’t easy and she struggled to prove her worth. being smaller than everyone else it took double the work to prove that she deserved to be there. each test she finished either in the middle of the pack or towards the tail end as she was constantly struggling. there were two tests where she stood out; pulling the pin from the flag pole to grab the flag that no one had been able to grab and throwing herself over the dummy grenade when everyone else ran. those two tests proved to the army that she might be ready for the war. project rebirth, though… 
+<p>
+<p>it had been a project the military had spent years working on. failure after failure had them looking to see just what the problem was and where they could rectify it. up until that point all of their test subjects had been men and till that point none of them had successfully taken the serum. the actual death count was classified but there had been no survivors. until erskine suggested stephanie  rogers. she could admit she was scared but if this got her to the war she would do it. little did she know what the timeline had in mind. after being injected with the serum and placed in the machine that activated it, she closed her eyes while the other scientists crossed their fingers. the pain was immense and she went hoarse screaming because of it, but once it was done she stepped out of the machine in one piece. and bigger than she’d been before. she was in shock and seeing paul carter in front of her, looking at her in awe she was afraid to see just what the change had done to her. unfortunately, they didn’t have a chance to talk as a hydra spy murdered erskine and sent chaos throughout the room. eventually they were tracked down and instead of being sent off to the war, steph was stuck drumming up support for war bounds. 
+<p>
+<p>day in and day out she did what they asked of her and when they sent her to europe to do the same thing, to drum up support within the troops, she found she couldn’t do it. not when she got word that her best friend had been captured. with the help of agent carter and howard stark she was able to slip in behind enemy lines and freed not only bucky, but the men and women who would later become her howling commandos. she never thought she’d needed any sort of family but steph knew these men and women would become just that. especially as they fought side by side, taking down hydra base after base. they were well on their way to winning the war for the allies when tragedy struck. during their mission on the train containing arnim zola bucky was blown out the side of one of the cars and eventually fell to his death. his death left its mark on steph and from that day on she had no restraint when it came to taking down hydra. 
+<p>
+<p>one by one she burned them to the ground and when she finally cornered the skull on the valkyrie she killed him before dropping him and the cosmic cube out of the plane, watching as they landed in the ocean. by the time she returned to the cockpit the controls had been damaged to the point of no return and she was forced to crash into the ocean. the last thing she promised was to have a dance with paul when they returned to new york. when she woke again seventy some odd years had passed and the life she knew had been ripped from her. this was what was meant to be and in time she picked up her life and returned to being captain america.
+<br />
+</div>
+<p>
+<br/>
+<center><h3>alternate timeline (artist variant)</h3></center>
+<p>stephanie grace rogers, born to parents sarah and joseph rogers, currently living in brooklyn. after graduating top of her class in high school, she went to new york university, earning an art degree that allowed her to start work as artist that worked with multiple publishing houses. in time she earned enough recognition to be the sole artist for a major publishing house in the city and was able to purchase a brownstone in brooklyn close to where her parents still live. her life in this timeline isn’t easy and she struggles with her personal life. but she loves being an artist, she loves bringing a story to life and loves knowing that the images she draws will be seen by children all over the world.
+<p>
+<br />
+<center><h3>alternate timeline (chef variant)</h3></center>
+<p>stephanie grace rogers, born to parents sarah and joseph rogers, currently living in brooklyn. after graduating top of her class in high school, she went to the culinary institute of america in new york. at first she wasn’t certain she could handle the stress that would come with being a chef, but after her first term at the school she found herself thriving in the stress of the kitchen. even though she didn’t graduate first in her class, she was close to the top and was offered positions at two of the top restaurants in the city. after working a few years in others kitchens, she opened up her own restaurant in brooklyn. it’s not an easy life but she loves offering people in the neighbourhood good food and offering the kids summer jobs or after school jobs when they need it. she’s also willing to give those who need a second chance in life that second chance.
+<p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</li>
+
+<li>
+<center><h4>notes</h4></center>
+<br />
+<center><h3>faceclaim</h3></center>
+<p><b>rebecca romijn</b> (main fc)
+<p><b>sophia myles</b> (ww2 fc)
+<br />
+</li>
+
+<li>
+<center><h4>headcanons</h4></center>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<h4>connections</h4>
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+</center>
+</div>
+</li>
+</li>
+    
+</div>
+
+
+<!-- shadowhunters -->
+
+<div id="23" class="popup_block">
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/1tVrgXH.png"></div> <!-- change the image on the popup sidebar -->
+
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>
+		
+     <li style="width:100px">notes</li>
+     
+     <li style="width:100px">headcanons</li>
+     
+     <li style="width:100px">connections</li>
+</ul>  
+
+</div> 
+
+<ul id="poptab">
+<li class="active">
+<center><h4>death is not a necessary sacrifice</h4></center>
+<p>
+<img src="https://64.media.tumblr.com/45002b678f89ec3d0052a65a3b5bdafb/tumblr_inline_p3zbkzdlUr1scj6vj_500.png">
+<br />
+<center><h3>general information</h3></center>
+<p><blockquote>born steven ashwood, the life of a shadowhunter was all he’d ever known and all he could ever think about. he never knew his father, the shadowhunter having been killed only months before he’d been born. to the clave sarah was a single mother, but steve knew nothing but love from not only his mother but his warlock step-father, oscar abrams. they were never officially married but steve treated oscar as his father. as a downworlder, oscar made certain that steve was exposed to things he would never see while training with the clave and he made certain that he would be able to survive on his own should something happen to them. oscar is one of the main reasons he is so willing to work with the downworlders and why he is able to handle himself in a kitchen
+<p>growing up as the son of two shadowhunters meant that eventually he would follow in their footsteps. when he reached a certain age he was sent to idris to start his training before eventually making his way back to the new york institute in brooklyn. it was in brooklyn where steve met james ‘bucky’ haythorne and the two formed a close, tight friendship. thick as thieves some days, their bond as best friends and brothers is what led them to take on the parabatai training. everyone at the institute knew it was bound to happen; even more so when they saw the leadership potential that steve showed. he may not have come from a well known family like the lightwoods or herondales but he thought that one day he might be able to leave his mark on the institute.
+<p>unfortunately, the war in the mundane world wasn’t something steve could ignore and he knew that it was something the demons and downworlders would thrive on. there was also the fact that the bond between himself and james had continued to grow. they both knew that the oath they took to become parabatais meant romantic bonds weren’t allowed. and yet it happened whether or not they’d wanted it to. they knew their bond was strong and thinking the clave could use stronger shadowhunters they found someone in the downworld willing to marry them in secret. their secret didn’t stay that way for long and once the clave found out they were sent on a suicide mission, one that neither of them were meant to come back from. their hopes were that none of the others would know what happened and think they could follow in their footsteps.
+<p>the loss of his parabatai was excruciating and returning to the institute he begged for their help. none was given and instead he was faced with the possibility of being deruned. he knew better than to stick around to find out his punishment so he ran, looking for his warlock friend in the hopes he could help him. not many would want to help someone in his position but his friend jeremy did and together they found a way of putting him into a magically induced sleep that was supposed to last for a lifetime. unbeknownst to either of them james had survived the mission, and was found by a rogue group of the clave wanting to punish everyone and keep their world safe from the growing downworlders. they also considered experimenting on him to find ways of making better shadowhunters. through the decades he was passed through the group in order to continue their experiments, and to torture steve as punishment as well as a reminder to anyone else what happened when the rules were broken. each new group also came up with new crimes that james may or may not have committed to keep him in their custody. eventually he found his way to valentine morgenstern and the circle although the spell that kept him asleep for all the decades was never broken.
+<p>decades later the spell used on steve was broken and he woke up to a world that changed more than he’d imagined it would. having been hidden by his warlock friend originally, it was that same friend who was there once he realised what had happened. he was angry at the world, angry at his friend and in constant pain, and all he wanted was to hide from the world that had tried to kill him. jeremy was the one who set up the safe houses and was the one who created the salve that mimicked yen fin without the addictive properties to help him deal with the constant pain from his parabatai rune. it wasn’t the best solution but while their world struggled with the rise of the circle, steve made as much of a life as he could in the mundane world. he also decided to take on the last name rogers in the hopes that it along with the anti-tracking runes would keep him hidden from their world.
+<p>he made a point of refusing any knowledge of their world although his friend jeremy did give him the information he’d need to stay ahead of the downworlders and other shadowhunters. their partnership had worked and he’d managed to stay under the clave’s radar for a decade. until one day his safe house was found and his friend murdered. steve promised himself he would never return to the clave; not when they had tried to kill him. but something about this shadowhunter gave him hope; something he hadn’t felt since before his parabatai had been killed.
+</blockquote>
+<br />
+</li>
+
+<li>
+<center><h4>notes</h4></center>
+<br />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; steve has spent so much time in the mundane world he knows how to hide in plain sight either via mundane techniques or using the glamour rune.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; to solidify his place in the mundane world, steve has taken up teaching art at the local college. 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; his weapon of choice is the bo staff his parabatai’s sister made for him as a secret wedding gift, though he will use a seraph blade if necessary. he also knows how to use mundane knives in a pinch.
+<br />
+<br />
+<center><h3>weapons</h3></center>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; bo staff made of adamas with hidden seraph blades on the ends
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; single seraph blade
+<br />
+<br />
+<center><h3>faceclaims</h3></center>
+<p><b>chris evans</b>
+
+</li>
+
+<li>
+<center><h4>headcanons</h4></center>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<center><h4>connections</h4></center>
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+</center>
+</div>
+</li>
+    
+</div>
+
+
+<!-- skrulls // old man steve -->
+
+<div id="30" class="popup_block">
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/2bTwiQ0.png"></div> <!-- change the image on the popup sidebar -->
+
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>
+		
+     <li style="width:100px">notes</li>
+     
+     <li style="width:100px">headcanons</li>
+     
+     <li style="width:100px">connections</li>
+</ul>  
+
+</div> 
+
+<ul id="poptab">
+<li class="active">
+<center><h4>no fighting spirit</h4></center>
+<p>
+<img src="https://i.imgur.com/Y3Umf2L.png">
+<br />
+<center><h3>general information</h3></center>
+<p><blockquote>Steve knew what the mission was and that he was the best one to do it. Each of those from the team had their own lives to put back together and the only person he really had was Bucky. He’d promised his friend that he would return, that he wouldn’t be gone long and that they could figure out their new path afterwards. He wasn’t the sort to go back on his word and he knew that it would be a snap to return the stones back to their rightful place. Each one had been relatively simple to return to the timeline and he only had <b>one</b> left. In his mind he could almost see the food that was waiting for him in the present. A part of him still couldn’t believe that he was almost home free and that he’d finally have a life of retirement. What that looked like he didn’t know, but he knew Sam was going to be his successor no matter what.
+<p>He’d gotten the address from Bruce and knew just where he was headed. Strange he was going to be meeting a sorceress given when he was actually in this time magic wasn't something he thought possible. So much had changed since then and seeing his destination in sight his steps became just a bit lighter. Until movement caught his eyes. Steve knew Natasha had gone after Loki and knew that she’d been separated from the group. But he hadn’t thought — watching her go down his first thoughts were they’d killed her. Instead, he saw one of the other <i>creatures</i> transform into the woman he knew and for a long moment he thought he was seeing things. The sound of a crash had these creatures focusing on him and the looks he saw in return weren’t the friendly sort.
+<p><b>run</b>
+<p>Staying there wasn’t possible and bolting the other direction, he randomly imputed something into the device on his wrist. It wasn’t the best solution and he knew he might never get home but maybe he could send a message and maybe someone could find him. <i>Maybe</i>... It was the only thing he could think of and he had to hope it worked. Otherwise — there is no otherwise. It needed to work and he needed to get back home so the others knew there was something going on right underneath their noses., something that none of them would ever believe until they saw it with their own eyes.<p>decades later the spell used on steve was broken and he woke up to a world that changed more than he’d imagined it would. having been hidden by his warlock friend originally, it was that same friend who was there once he realised what had happened. he was angry at the world, angry at his friend and in constant pain, and all he wanted was to hide from the world that had tried to kill him. jeremy was the one who set up the safe houses and was the one who created the salve that mimicked yen fin without the addictive properties to help him deal with the constant pain from his parabatai rune. it wasn’t the best solution but while their world struggled with the rise of the circle, steve made as much of a life as he could in the mundane world. he also decided to take on the last name rogers in the hopes that it along with the anti-tracking runes would keep him hidden from their world.
+</blockquote>
+<br />
+</li>
+
+<li>
+<center><h4>notes</h4></center>
+<br />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; Skrulls have been on Earth long before we met them in Captain Marvel. The ones we met in Captain Marvel were a peaceful faction of that race. In this verse, there is another faction, a war-like faction that believes it is their duty to bring peace to the cosmos by conquering and subjugating every inhabited world in the universe. They were taught that every world in the cosmos is meant to be a Skrull world, they see it as their destiny. And Earth is no exception.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; With two factions of Skrulls on Earth it is damn near impossible to tell who is who and who is even human. This is all part of their plans. Those they’ve copied the looks of are kept in separate ships, having learned in the past that prisoners will come together to start an uprising. The more high priority the prisoner the more likely they are to be kept separate. Should their connection be severed, i.e. should the skrull impersonating them die, the prisoner will wake up unless subdued again.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; In this verse the following people are skrulls: Natasha Romanoff, Matt Murdock, Elektra Natchios, T’Challa/Black Panther, John Lennon, the Vice President of the US, the Secretary of State, the Secretary General of the UN, the leaders of Germany, Frace, Japan, Brazil and Australia and random others within different aspects of society to keep the ruse and to offer support when the invasion starts in earnest.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; Steve is eventually captured and the old man that returns once the mission is over is not Steve but a skrull, and one that will attempt to convince those who are there that there was an accident and that he is the same man that left to replace the stones. When someone realises he’s not the real Steve Rogers he reminds them he is the only one who knows the whereabouts of their friend. Normally, skrulls  don’t realise they are skrulls and have been programmed as such. But this one was given free reign because they need the rest of the Avengers to be distracted. When questioned he will drop hints but none of them will be correct. And when they realise someone is getting close, they move their prisoner from their base in time to their flagship off world. 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; &nbsp; Freeing Steve from the skrulls is only half the battle. They still need to find the skrulls and stop the invasion before it starts. Otherwise their world would fall and the battle would end up being ten times worse than what it already was going to be.
+<br />
+<br />
+<center><h3>faceclaims</h3></center>
+<p><b>chris evans</b>
+
+</li>
+
+<li>
+<center><h4>headcanons</h4></center>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<center><h4>connections</h4></center>
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/WzQAKS5.png"></a>&nbsp;
+</center>
+</div>
+</li>
+    
+</div>
+
+
+
+
+    
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</html>
