@@ -1,0 +1,3112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+
+<!--
+ 
+olympus v. 2.0 multi-muse variant by houseofsol using a tutorial by octomoosey & integrating a base code by neonbike themes
+ 
+this is a custom theme and will not be available to the public. do not rip parts of this theme to use in your own.
+
+thank you.
+
+https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4 -- use this to change the transparency of the backgrounds
+ 
+-->
+
+<!-- popup script -->
+<script type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+<!-- end script -->
+
+
+<!-- tabbed script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#tabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tab li.active").removeClass("active");
+            $("ul#tab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+
+<!-- tabbed popup script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#poptabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#poptabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#poptab li.active").removeClass("active");
+            $("ul#poptab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+<!-- tabbed script -->
+
+    <script>
+
+    $(document).ready(function(){
+    $("ul#mvtabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#mvtabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#mvtab li.active").removeClass("active");
+            $("ul#mvtab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+    </script>
+
+<!-- end tabbed script -->
+
+
+<!-- banned ips script -->
+
+<script type="text/javascript" src="https://l2.io/ip.js?var=userip%22%3E"></script>
+<script language="Javascript">
+function preloadFunc()
+{
+var ip = userip;
+var bannedips=[
+ "83.162.204.108,179.208.159.53, 179.208.156.158,179.208.157.22"
+]
+var handleips=bannedips.join("|")
+handleips=new RegExp(handleips, "i")
+
+if (ip.search(handleips)!=-1){ 
+window.location.replace("https://tumblr.com/logout%22);
+document.write('<!--no.-->');
+}
+}
+window.onpaint = preloadFunc();
+</script>
+
+
+<!-- important scripts -->
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/wgijwsy/Ebfm2v4gy/jquery.masonry.min.js"></script>
+
+
+<!-- end other script -->
+
+<!-- mytooltips script -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+
+<script>
+
+(function($){
+
+$(document).ready(function(){
+
+$("a[title]").style_my_tooltips({
+
+tip_follows_cursor:true,
+
+tip_delay_time:0,
+
+tip_fade_speed:0,
+
+attribute:"title"
+
+});
+
+});
+
+})(jQuery);
+
+</script>
+
+<!-- end mytooltips script -->
+
+<!-- redirect script -->
+<script>
+if(window.location.pathname == '/ask') location.replace('/asks');/*replace /faq with whatever your page is!*/
+</script>
+
+        
+        <script src="https://kit.fontawesome.com/2e587cc233.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+        
+
+    
+    
+ <!-- colour variables (this is where you change the colours) -->
+ 
+   <meta name="color:background" content="#000000"/>
+	<meta name="color:text" content="#cccccc"/>
+	<meta name="color:links" content="#595655"/>
+	<meta name="color:links hover" content="#9e0000"/>
+	<meta name="color:tags" content="#cccccc"/>
+	<meta name="color:tags hover" content="#9e0000"/>
+	<meta name="color:permalinks" content="#cccccc"/>
+	<meta name="color:permalinks hover" content="#9e0000"/>
+	<meta name="color:bold" content="#840000"/>
+	<meta name="color:italics" content="#ad4b14"/>
+	<meta name="color:blockquote" content="#9e0000"/>
+	<meta name="color:pagination" content="#b2b2b2"/>
+	<meta name="color:pagination hover" content="#9e0000"/>
+	<meta name="color:name" content="#cccccc"/>
+	<meta name="color:sidebox" content="#cccccc"/>
+	<meta name="color:popup background" content="#0f0f0f"/>
+	<meta name="color:popup text" content="#cccccc"/>
+	<meta name="color:popup tabs active" content="#540000"/>
+	<meta name="color:verse muse tabs" content="#ffffff"/>
+	<meta name="color:verse muse tabs hover" content="ffffff"/>
+	<meta name="color:verse muse tabs active" content="#540000"/>
+	<meta name="color:buttons" content="#d2d2d2"/>
+	<meta name="color:buttons background" content="#595655"/>
+	
+  
+<!-- image variables (this is for the image uploads) -->  
+
+	<meta name="image:top left" content=""/>  
+	<meta name="image:bottom right" content=""/> 
+	<meta name="image:name" content=""/>  
+	<meta name="image:background" content=""/>
+
+
+    
+<!-- text variables -- where you will put in the text for certain aspects of your theme -->
+
+<meta name="text:name" content="cxpt" /> <!-- this is for your url, character's name or a short title -->
+
+
+<!-- this is where you can choose what google fonts you want to use -->
+
+ <!-- this is where you can choose what google fonts you want to use -->
+<link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'> 
+<link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet" type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet" type='text/css'> 
+
+
+<style type="text/css"> /* this gives the theme its look */
+
+@font-face {
+	font-family:'onelove';
+	src:url('https://static.tumblr.com/uopakca/76dq4ct45/onelove.otf');
+	}
+	
+@font-face { font-family: "petita"; src: url('https://static.tumblr.com/ahsqnir/cNdqnu5kr/petitamedium.ttf'); format("truetype");} 
+
+
+@font-face {font-family:"parabola"; src:url('https://static.tumblr.com/it5srtk/Nuvorwpnj/parabola-regular.ttf')}
+
+@font-face {font-family:"cabinregular"; src:url('https://static.tumblr.com/ahsqnir/ZJnqo4nz4/cabin-regular.ttf')} 
+
+
+/* tabbed popup styling */
+
+ul#poptabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   margin-left:0px;
+}
+
+ul#poptabs li {
+   display: inline-block;
+   background-color: transparent;
+   border: solid 1px #63646a;
+   padding: 5px 6px;
+   margin-bottom: 4px;
+   color: #b1b1b1;
+   cursor: pointer;
+}
+
+ul#poptabs li:hover {
+   background-color: transparent;
+}
+
+ul#poptabs li.active {
+   background-color: {color:popup tabs active};
+}
+
+ul#poptab {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+ul#poptab li {
+   display: none;
+}
+
+ul#poptab li.active {
+   display: block;
+   width:350px;
+}
+
+
+/* popup sidebar */
+
+#popside {
+	width:175px;
+	height: 375px;
+	position:fixed;
+	background:transparent;
+	top:200px;
+	left:1000px;
+
+}
+
+#popsideimage img {
+	width:65px;
+	height:65px;    
+   margin-bottom:5px;
+   margin-left:50px;
+   border:2px solid {color:borders};
+   -webkit-border-radius: 96px;
+   -moz-border-radius: 96px;
+   border-radius: 96px;
+    }
+    
+#popquote {
+	font-size:12px;
+	color:{color:popquote};
+	text-align:justify;
+	padding:0 8px;
+	height:45px;
+	width:110px;
+	margin-top:2px;
+	margin-left:23px;
+	display:inline;
+	float:left;
+}
+
+
+/* this is for the quotes box */
+
+#quotes{
+		position:fixed;
+      top:15px;
+      left:900px;
+      width:250px;
+      height:70px;
+      background-color:transparent;
+      font-size:11px;
+		text-transform:lowercase;
+		/* text-shadow:0px 1px 1px #000000; */
+		text-align:center;
+		color: #999b9b;
+		overflow:auto;
+		padding:0px;
+      overflow-x:hidden;
+      line-height:20px;
+
+}
+
+#quotes a{
+	text-decoration:none;
+}
+
+#quotes a:hover {
+    text-decoration:none;
+}
+
+#quotes-bottom{
+		position:fixed;
+      top:645px;
+      left:655px;
+      width:247px;
+      height:80px;
+      background-color:transparent;
+      font-size:11px;
+		text-transform:lowercase;
+		/* text-shadow:0px 1px 1px #000000; */
+		text-align:center;
+		color: #999b9b;
+		overflow:auto;
+		padding:0px;
+      overflow-x:hidden;
+      line-height:20px;
+
+}
+
+#quotes-bottom a{
+	text-decoration:none;
+}
+
+#quotes-bottom a:hover {
+    text-decoration:none;
+}
+
+
+	
+
+/* quotes box coding ends here */
+
+
+.center {
+margin-left:50px;
+margin-top:20px;
+}
+
+.upcenter {
+margin-left:50px;
+margin-top:0px;
+}
+
+
+
+/* this is for the tumblr controls */
+
+iframe#tumblr_controls {
+right:2px !important;
+opacity:0.4;
+position: fixed !important;
+filter:alpha(opacity=30);
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+}
+iframe#tumblr_controls:hover{
+opacity:0.9;
+position: fixed !important;
+filter:alpha(opacity=80);
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+}
+
+
+/* this changes the tooltip when you hover over a link */
+
+#s-m-t-tooltip {
+max-width:400px;
+padding:5px;
+margin:10px 0px 0px 10px;
+background-color:#600300; 
+font-family:'gibson', sans-serif;
+font-size:9px;
+letter-spacing:1px;
+font-style:none;
+text-transform:uppercase;
+padding-bottom:3px;
+color:#fff;
+border: 4px double #d7d7d7;
+z-index:999999999999999999999999999999999999;
+}
+
+/* this is what changes the colour when you highlight */
+
+::selection {
+background: #181f26;
+color: #cc6666;
+}
+
+
+
+/* scrollbars code */
+
+::-webkit-scrollbar-thumb:vertical {
+	background-color:transparent;
+	height:0px;
+	}
+
+::-webkit-scrollbar-thumb:horizontal {
+	background-color:transparent;
+	height:0px;
+	}
+
+::-webkit-scrollbar {
+	background-color:transparent;
+	height:0px;
+	width:0px;
+	}
+
+/* headings */
+
+h1 {
+	font-size:17px;
+	line-height:15px;
+	text-transform:uppercase;
+	font-family: 'cabinregular', sans-serif;
+	text-align:right;
+	margin-top:0px;
+}
+
+h2 {
+	font-size:17px;
+	text-transform:uppercase;
+	font-family: 'cabinregular', sans-serif;
+	text-align:right;
+	margin-top:-10px;
+}
+
+h3 {
+	font-size:13px;
+	line-height:15px;
+	text-transform:lowercase;
+	font-family: 'cabinregular', sans-serif;
+	text-align:center;
+	font-weight:normal;
+	letter-spacing:0px;
+	color:#fff;
+	background-color: transparent;
+	border-top: solid 1px #63646a;
+	border-bottom: dashed 1px #63646a;
+	width:225px;
+	display: inline-block;
+	padding: 5px 15px;
+	margin-bottom: 1px;
+	margin-left:0px;
+	margin-top:0px;
+}
+
+h4 {
+	color:#fff;
+	font-family: 'onelove', sans-serif;
+   font-size:70px;
+	text-transform:lowercase;
+	font-weight:normal;
+	text-align:center;
+	margin-top:-10px;
+	margin-bottom:-15px;
+}
+
+h5 {
+	font-size:12px;
+	font-family:'open sans', sans-serif;
+	line-height:15px;
+	text-transform:uppercase;
+	text-align:center;
+	font-weight:normal;
+	letter-spacing:0px;
+	color:{color:text};
+	background-color: transparent;
+	border: solid 1px #a8a8a8;
+	width:135px;
+	display: inline-block;
+	padding-top:5px;
+	padding-bottom:3px;
+	padding-right:15px;
+	padding-left:15px;
+	margin-bottom: 3px;
+	margin-left:3px;
+	margin-top:3px;
+
+}
+
+ul{
+    list-style-type:square;
+}
+
+
+/* general style */
+
+body {
+	background-color: {color:background};
+	background-image: url('https://static.tumblr.com/ahsqnir/0pQqf7586/base.png'), url('{image:background}');
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:0px 0px; 
+	margin:0px;
+	font-family:'arial', sans-serif;
+	font-size:12px;
+	color:{color:text};
+	text-transform:lowercase;
+}
+
+a {
+	text-decoration:none;
+	color:{color:links};
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+}
+
+a:hover {
+	color:{color:links hover};
+}
+
+
+b,strong {
+	color:{color:bold};
+	font-size:15px;
+	text-transform:uppercase;
+	font-family: 'cabinregular', sans-serif;
+}
+
+b2 {
+	color:{color:bold};
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:12px;
+}
+
+i,em {
+	color:{color:italics};
+	font-size:25px;
+	text-transform:lowercase;
+	font-family:'parabola';
+}
+
+i2 {
+	color:{color:italics};
+	font-family: 'Covered By Your Grace', cursive;
+	font-size:25px;
+	line-height:90%;
+
+}
+
+sup, small, sub { 
+  font-size:12px;
+  }
+
+blockquote {
+	border-left:1px dashed {color:blockquote};
+	padding-left:10px;
+   padding-right:5px;
+	margin:5px 5px 5px 10px;
+   line-height:auto;
+}
+
+blockquote img {
+	max-width:100%;
+	height:auto;
+}
+
+p{
+    margin-bottom:10px;
+}
+
+p.fake {
+    margin:-3px;    
+    
+}
+
+
+img {
+	border:none;	
+	max-width:100%;
+}
+
+.caption img {
+   max-width:100%;
+   height:auto;
+   }
+ 
+.posts img {
+   max-width:100%;
+   }
+
+.photoset {
+	max-width:100%;
+}
+
+#overlay {
+   position:fixed;
+   left:565px;
+   top:550px;
+   z-index:99999999;
+    }
+
+#overlay img {
+	width:225px;   
+   height:166px;
+    }
+
+
+/* tabbed content coding */
+
+.tabcontent {
+	 position:absolute;    
+    width:340px;
+    margin-left:8px;
+    margin-top:0px;
+    overflow:scroll;
+    overflow-x:hidden;
+    height:550px;
+    text-transform:lowercase;
+    background:transparent;
+	 padding-bottom:10px;
+    }
+
+/* tabbed content coding ends here */	
+ 
+
+
+/*post style */
+
+#container {			/*this will contain the posts so they aren't left justified*/
+	position:absolute;
+	left:655px;
+	height:520px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	width:498px;
+	top:108px;
+	background:#0f0f0fe6; /* only change the first six numbers. the last two are the transparency */
+	padding-bottom:10px;
+}
+
+
+.posts {
+	width:468px;
+	background-color:#23232340; /* only change the first six numbers. the last two are the transparency */ 
+	padding:5px;
+	margin-bottom:30px;
+}
+
+.postswrap {
+	padding:10px;
+	width:500px;
+}
+
+.permalinks {
+	padding:5px;
+	background-color:#0f0f0fbf; /* only change the first six numbers. the last two are the transparency */
+	height:12px;
+	border-top:1px solid #4e0202;
+	border-bottom:1px dashed #4e0202;
+	margin-top:15px;
+}
+
+.permalinks a {
+	text-decoration:none;
+	text-transform:capitalize;
+	font-size:9px;
+	color:{color:permalinks};
+}
+
+.permalinks a:hover {
+	color:{color:permalinks hover};
+}
+
+.date {
+	float:left;
+}
+
+.date .fa-bookmark { 
+	color:#aaaaaa; 
+	} 
+
+.reblogs {
+	float:right;
+}
+
+.pinned { 
+	font-weight:bold; 
+   font-size:10px;
+   text-align:center;
+   width:400px;
+}
+
+.pinned a { 
+	text-transform:uppercase!important; 
+	}
+
+.pinned .fa-thumbtack { 
+	margin-right:7px; 
+	font-size:11px; 
+	} 
+	
+
+/* tag styling */
+
+.tags {
+	text-align:center;
+	margin-top:5px;
+}
+
+.tags a {
+	text-decoration:none;
+	font-size:9px;
+	text-transform:uppercase;
+	color:{color:tags};
+}
+
+.tags a:hover {
+	color:{color:tags hover};
+}
+
+
+/*image styling */
+
+#topimage {
+	position:fixed;
+	width:250px;
+   height:100px;
+}
+
+#topimage img {
+	width:250px;
+   height:100px;
+   margin-left:654px;
+   margin-top:8px;
+   padding-bottom:0px;
+}
+
+#bottomimage {
+	position:fixed;
+	width:251px;
+   height:100px;
+}
+
+#bottomimage img {
+	width:250px;
+   height:100px;
+   margin-left:904px;
+   margin-top:638px;
+   padding-bottom:0px;
+}
+
+/*sidebar styling */
+
+#name {
+	width:145px;
+	color:{color:name};
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	text-align:center;
+	letter-spacing:0px;
+	margin-top:-12px;
+	margin-left:15px;
+}
+}
+
+/* links styling */
+
+#links {
+	font-size:14px;
+	font-family: 'open sans', sans-serif;
+	padding:10px;
+	text-align:left;
+	margin-left:900px;
+	margin-top:70x;
+	width:300px;
+	position:fixed;
+}
+
+#links a {
+	display:inline-block;
+	color:{color:links};
+	padding-left:5px;
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+}
+
+#links a:hover {
+	color:{color:links hover};
+	letter-spacing:1px;
+}
+
+/* links box */
+
+#lbox {
+	position:fixed;
+	left:905px;
+	top:70px;
+	height:20px;
+	width:300px;
+	font-size:12px;
+	font-family: 'open sans', sans-serif;
+	padding:10px;
+	text-align:left;
+	}
+
+
+
+/*pagination styling */
+
+#pagination {
+	position:fixed;
+	margin-top:723px;
+   margin-left:830px;
+	text-transform:uppercase;
+	font-family: 'cabinregular', sans-serif;
+	font-size:13px;
+	font-weight:bold;
+}
+
+#pagination a {
+	color:{color:pagination};
+	font-size:12px;
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+}
+
+#pagination a:hover{
+	color:{color:pagination hover};
+}
+
+
+
+/* asks styling */
+
+.asker {
+   font-size:15px;
+   font-style: italic;
+   text-align:right;
+   margin-bottom:5px;
+   padding-bottom:3px;
+}
+
+.question {
+   font-style: italic;
+   padding-left:10px;
+   padding-right:50px;
+   padding-top:10px;
+   padding-bottom:10px;
+   border-left:1px dashed {color:blockquote};
+   background-color:#0f0f0fbf; /* only change the first six numbers. the last two are the transparency */
+}
+
+
+iframe#ask_form { 
+		width: 305px;
+      min-height: 255px; 
+      }
+      
+iframe#submit_form { 
+		width: 305px;
+      min-height: 255px; 
+      }
+     
+      
+
+/* quotes stlying */
+
+.quote {
+   font-size:13px;
+   letter-spacing:1px;
+   text-align:center;
+   border-left:1px dashed {color:blockquote};
+   margin-bottom:5px;
+   padding-left:10px;
+   padding-right:50px;
+   padding-top:10px;
+   padding-bottom:10px;
+   background-color:#0f0f0fbf; /* only change the first six numbers. the last two are the transparency */
+}
+
+.quotesource {
+   font-size:10px;
+   letter-spacing:1px;
+   text-align:center;
+   margin-bottom:5px;
+}
+
+
+/* tumblr audio code */
+    
+.playerbuttonbg {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 19px;
+    height: 19px;
+    background-color: transparent;
+    padding: 10px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    opacity: .4;
+    filter: alpha(opacity=40);
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    transition: opacity .7s ease-in-out;
+    -moz-transition: opacity .7s ease-in-out;
+    -webkit-transition: opacity .7s ease-in-out;
+    }
+           
+    .playerbuttonbg:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    }
+   
+    .newplayerbutton {
+    position: relative;
+    width: 19px;
+    height: 19px;
+    overflow: hidden;
+    }
+   
+    .playerbuttonhug {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+       
+    .tumblr_audio_player {
+    height: 90px;
+    width: 270px;
+    -moz-transform: scale(0.60, 0.60);
+    -webkit-transform: scale(0.60, 0.60);
+    -o-transform: scale(0.60, 0.60);
+    -ms-transform: scale(0.60, 0.60);
+    transform: scale(0.60, 0.60);
+    -moz-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -o-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    }
+ 
+    .audioimgwrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+    width: 79px;
+    height: 79px;
+    }
+           
+    .audioimgwrapper img {
+    width: 100%;
+    height: auto;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;                
+    }
+   
+    .trackdetails {
+    width: auto;
+    line-height:14px;
+    border: 0px solid black;
+    display:inline-block;
+    margin-left: 90px;
+    padding-top:20px;
+    min-height:70px;
+    }
+   
+    .audiowrapper {
+    position: relative;
+    display:inline-block;
+    }
+    
+/* tumblr audio code ends here */
+
+/* IMESSAGE CHAT POST */
+.answer span,.convo li{margin:0 0 5px;border-radius:1em;padding:.5em 10px;max-width:75%;clear:both;position:relative}.answer .them,.user_1,.user_3,.user_5,.user_7,.user_9,.user_11{float:left;background:#e5e5ea;color:#000;left:3px}.me::after,.user_1::after,.user_3::after,.user_5::after,.user_7::after,.user_9::after,.user_11::after{content:"";position:absolute;left:-.5em;bottom:0;width:.5em;height:1em;border-right:.5em solid #e5e5ea;border-bottom-right-radius:1em .5em}.answer .me,.user_2,.user_4,.user_6,.user_8,.user_10,.user_12{right:3px;float:right;background-color:#e8f3f9;color:#000}.them::after,.user_2::after,.user_4::after,.user_6::after,.user_8::after,.user_10::after,.user_12::after{content:"";position:absolute;right:-.5em;bottom:0;width:.5em;height:1em;border-left:.5em solid #e8f3f9;border-bottom-left-radius:1em .5em}.me p,.answer,.asked span{padding:0;margin:0}.answer{overflow:hidden}
+        .asked p {
+            text-align: left;
+            margin: 0 0px 10px 0px;
+            padding: 0;
+            color: #666666;
+            font-family: 'Inconsolata', Inconsolata;
+            font-size: 12px;
+            line-height: 0px;
+        }
+        .footerright .viasrc {
+            float: left;
+        }
+        .asked a {
+            margin:0;padding:0;
+        }
+.user_4{background-color:#55caff;color:#fff}.user_4::after{border-color:#55caff}.user_6{background-color:#60f246;color:#fff}.user_6::after{border-color:#60f246}.user_5{background-color:#9ff3fc;color:#000}.user_5::after{border-color:#9ff3fc}.user_3{background-color:#25c413;color:#fff}.user_3::after{border-color:#25c413}.user_7{background-color:#9b9b9b;color:#fff}.user_7::after{border-color:#9b9b9b}.user_8{background-color:#0d9321;color:#fff}.user_8::after{border-color:#0d9321}.user_9{background-color:#606060;color:#fff}.user_9::after{border-color:#606060}
+        .convo {
+            overflow: hidden;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+/* popup styling */
+
+.popup_block{
+    display:none;
+    color:{color:popup text}; /* font colour for the popup */
+    background-color: {color:popup background};
+    padding:20px;
+    border:0px solid #a2a2a2;  /* if you want a solid white pop-up, delete this */
+    float:left;
+    position:fixed;
+    top:393px;
+    left:924px;
+    height:490px; 
+    text-transform:lowercase;
+	 overflow-y:scroll; 
+	 overflow-x:hidden;
+    z-index: 99999;
+    -webkit-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    -moz-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    box-shadow: 0px 0px 0px #000; /* delete for solid white */
+}
+ 
+*html #fade {position: absolute;}
+*html .popup_block {position: absolute;}
+#fade {
+    display:none;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:#000; /* change to #fff for solid white */
+    opacity:0; /* change to opacity:1; */
+}
+
+/* end of styling */
+
+
+
+/* tabbed page code */
+
+#headernav {
+    left:50%;
+    top:50%;
+    overflow:scroll;
+    text-align:justify;
+    color:#eeeeee;
+    font-size:12px;
+}
+
+ul#tabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   margin-left:3px;
+}
+
+ul#tabs li {
+   display: inline-block;
+   background-color: transparent;
+   border: solid 1px #6a6a6a;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   margin-left:2px;
+   color: {color:verse muse tabs};
+   cursor: pointer;
+}
+
+ul#tabs li:hover {
+   background-color: {color:verse muse tabs hover};
+}
+
+ul#tabs li.active {
+   background-color: {color:verse muse tabs active};
+   width:368px;
+}
+
+ul#tab {
+   list-style-type: none;
+   margin-top: 10px;
+   padding: 0;
+}
+
+ul#tab li {
+   display: none;
+}
+
+ul#tab li.active {
+   display: block;
+}
+
+#tabside {
+	width:175px;
+	height: 450px;
+	position:fixed;
+	background:transparent;
+	top:150px;
+	left:990px;
+
+}
+ 
+#verse {
+   height:100px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+   
+#hc {
+   height:110px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+   
+#bio {
+   height:175px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+   
+#exclusives {
+   height:80px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+
+#left img {
+   float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:50px;
+	height:75px;
+	border:1px dashed #a8a8a8;
+   }
+   
+#right img {
+  float:right;
+  margin-right:1px;
+  margin-left:8px;
+  width:50px;
+  height:75px;
+  border:1px dashed #a8a8a8;
+   }
+   
+ /* tabbed muse/verse tab */
+ 
+
+/* mains & exclusives tabbed page code */
+
+div.shipimg {
+ 	 margin-left:0px;
+ 	 }	 
+ 	 
+div.shipimg img {
+	width:50px;
+  	height:75px;
+  	border:1px dashed #a8a8a8;
+}
+ 	 
+
+ 
+
+ /* tabbed page code */
+
+#headernav {
+    left:50%;
+    top:50%;
+    overflow:scroll;
+    text-align:justify;
+    color:#eeeeee;
+    font-size:12px;
+}
+
+ul#mvtabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   margin-left:3px;
+}
+
+ul#mvtabs li {
+   display: inline-block;
+   background-color: transparent;
+   border: solid 1px #6a6a6a;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   margin-left:2px;
+   color: {color:verse muse tabs};
+   cursor: pointer;
+}
+
+ul#mvtabs li:hover {
+   background-color: {color:verse muse tabs hover};
+}
+
+ul#mvtabs li.active {
+   background-color: {color:verse muse tabs active};
+   display: inline-block;
+}
+
+ul#mvtab {
+   list-style-type: none;
+   margin-top: 10px;
+   padding: 0;
+}
+
+ul#mvtab li {
+   display: none;
+}
+
+ul#mvtab li.active {
+   display: block;
+}
+ 
+#verse {
+   height:100px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+
+#left img {
+   float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:50px;
+	height:75px;
+	border:1px dashed #a8a8a8;
+   }
+   
+#right img {
+  float:right;
+  margin-right:1px;
+  margin-left:8px;
+  width:50px;
+  height:75px;
+  border:1px dashed #a8a8a8;
+   }
+   
+#nleft img {
+   float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:50px;
+	height:75px;
+   }
+   
+#nright img {
+  float:right;
+  margin-right:1px;
+  margin-left:8px;
+  width:50px;
+  height:75px;
+   }
+   
+   
+/* navigation tab in popup */
+
+.button {
+  display:inline-block;
+  text-align:center;
+  width:100px;
+  margin:4px;
+  padding:2px;
+  background-color:{color:buttons background};
+  color:{color:buttons};
+  border-top: 1px solid #ddd;
+  border-bottom: 1px dashed #ddd;
+  border-radius:2px;
+	}
+
+.button:hover {
+  border-top: 1px dashed #ddd;
+  border-bottom: 1px solid #ddd;
+	}
+	
+
+/* tab links coding */
+
+   /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+        
+                
+    }
+    
+ 
+    .tab-links li {
+        margin-left:1px;
+        padding:0px;
+        display:inline-block;
+        list-style:none;
+        text-transform:uppercase;
+    }
+ 
+        .tab-links a {
+            display:inline-block;
+				color:{color:links};
+				padding-left:10px;
+				-webkit-transition: all 0.7s ease;
+				-moz-transition: all 0.7s ease;
+				-o-transition: all 0.7s ease;
+        }
+        
+      .tab-links a:hover {
+      	color:{color:links hover};
+			letter-spacing:1px;
+      }
+
+/* end of tab links coding */
+
+/* tab content -- best not to touch this either */
+
+  .tab-content {
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+
+/* end of tab content coding */	
+
+
+/* this is the credit coding. DO NOT REMOVE */
+    
+   #credit {
+    font-size:9px;
+    font-family:cambria;
+    font-style:italic;
+    letter-spacing:1px;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#credit a {
+    background-color:transparent;
+    padding:5px;
+    position:fixed;
+    right:15px;
+    bottom:10px
+    }  
+ 
+#credit a:hover {
+    background-color:transparent;
+    }    
+    
+/* credit coding ends here */
+
+
+/* Making IE6 Understand Fixed Positioning */
+
+*html #fade {
+ position: absolute;
+}
+*html .popup_block {
+ position: absolute;
+}
+    {CustomCSS}
+    
+  
+pre {
+   white-space: pre-wrap;      
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;    
+   white-space: -o-pre-wrap;  
+   word-wrap: break-word;
+   }   
+
+</style></head>
+    
+<body>
+
+<div id="overlay"><img src="{image:name}"></div>  
+
+<div id="topimage">
+<img src="{image:top left}">
+</div>
+
+
+
+<div id="quotes">
+<h5><b>Herondale</b></h5><br />
+private, selective & mutuals only <br /><b>jace herondale</b> <br />loved by <i2>kc</i2><br />
+<br />
+please read <b><a href="https://ofangelicblood.carrd.co/#guidelines">rules</a></b> before interacting.
+<br />
+<img src="https://i.imgur.com/RwuMAIg.png"></img>
+<br />
+tracking: <b>ofangelicblood</b> <br />
+created: 23 february 2018
+<br />
+<img src="https://i.imgur.com/RwuMAIg.png"></img>
+<br />
+<b>currently reading:</b><br />
+the dark artifices (lady midnight)
+<br />
+<img src="https://i.imgur.com/RwuMAIg.png"></img>
+<br />
+<b>local info</b><br/>
+<a href="https://time.is/Seattle" id="time_is_link" rel="nofollow" style="font-size:14px" title="seattle">time:</a><br>
+<span id="Seattle_z14e" style="font-size:12px"></span>
+<script src="https://widget.time.is/en.js"></script>
+<script>
+time_is_widget.init({Seattle_z14e:{template:"TIME<br>DATE", time_format:"12hours:minutes:secondsAMPM", date_format:"dayname monthnum/daynum/yy"}});
+</script>
+</div>
+
+<div id="bottomimage">
+<img src="{image:bottom right}">
+</div>
+
+<div id="quotes-bottom">
+<h5><b>Lightwood </b></h5><br />
+❝to love is to <b>destroy</b> and to be loved is to be the one <b>destroyed</b>.❞
+<br />
+</div>
+
+
+<div id="lbox">
+<div id="links">
+<div class="tabs">
+<ul class="tab-links">
+<li class="active"><a href="/" title="home"><span class="fas fa-fire" style="font-size:125%"></span></a></li>
+<li><a href="#tab2" title="questions?">01.</a></li>
+<li><a href="#tab3" title="guidelines">02.</a></li>
+<li><a href="#tab4" title="biography">03.</a></li>
+<li><a href="#tab5" title="verses &amp; timelines">04.</a></li>
+<li><a href="#tab6" title="navigation">05.</a></li>
+</div>
+</div> 
+</div>
+
+<div id="pagination">
+{block:Pagination} 
+{block:PreviousPage}<a href="{PreviousPage}"><span class="fas fa-arrow-left" style="font-size:100%"></span></a>{/block:PreviousPage} &nbsp;page&nbsp; {block:NextPage}<a href="{NextPage}"><span class="fas fa-arrow-right" style="font-size:100%"></b></span></a>
+{/block:NextPage}
+{/block:Pagination}
+</div>
+
+
+
+<div id="container">
+
+<!-- tabs -->
+<div class="tabs">
+
+<!--  TAB 1  -->
+<div id="tab1" class="tab active">
+<div class="tab-content">
+
+{block:Posts}
+{block:NoRebloggedFrom}
+{block:RebloggedFrom}
+{ReblogParentName}
+{/block:RebloggedFrom}
+{/block:NoRebloggedFrom}
+
+<div class="postswrap">
+<div class="posts"> 
+
+{block:Text}<h1>{block:Title}{Title}{/block:Title}</h1>{Body}{/block:Text}
+
+{block:Photo}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{block:Caption}{Caption}{/block:Caption}{/block:Photo}
+
+{block:Panorama}{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}{block:Caption}{Caption}{/block:Caption}{/block:Panorama}
+
+{block:Photoset}{Photoset-500}{block:Caption}{Caption}{/block:Caption}{/block:Photoset}
+
+{block:Quote}<div class="quote">{Quote}</div>{block:Source}<div class="quotesource">&mdash; {Source}</div>{/block:Source}{/block:Quote}
+
+{block:Link}<h1><a href="{URL}" class="link" {Target}>{Name}</a></h1>{block:Description}{Description}{/block:Description}{/block:Link}
+
+{block:Chat}
+          {block:Title}
+            <h1>{Title}</h1>{/block:Title}<br>
+<ul class="convo">{block:Lines}<li class="line_{Alt} user_{UserNumber}">{block:Label}<span class="label"><strong>{Label}</strong></span>{/block:Label}
+{Line}</li>{/block:Lines}</ul>
+            {/block:Chat}
+            
+                                    
+{block:Video}{Video-500}{block:Caption}{Caption}{/block:Caption}{/block:Video}
+
+<!--AUDIO POST-->
+{block:Audio}
+{block:AudioPlayer}
+<div class="audiowrapper">
+{block:AlbumArt}
+<div class="audioimgwrapper"><img src="{AlbumArtURL}"></div>
+{/block:AlbumArt}
+ 
+<div class="playerbuttonbg">
+<div class="newplayerbutton">
+<div class="playerbuttonhug">
+{AudioPlayerWhite}
+</div></div></div>
+<div class="trackdetails">
+{block:TrackName}<b>Track:</b> {TrackName} <br/>{/block:TrackName}
+{block:Artist}<b>Artist:</b> {Artist} <br/>{/block:Artist}
+{block:Album}<b>Album:</b> {Album} <br/>{/block:Album}
+</div></div>
+{/block:AudioPlayer}
+<br /><br />
+{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+{/block:Audio}
+
+{block:Answer}
+<div class="asker">{Asker} left a message</div>
+<div class="question">{Question}</div>
+{Answer}
+{/block:Answer}
+
+<div class="permalinks"> 
+<div class="date"><span class="fas fa-bookmark" style="font-size:75%"></span> &nbsp; <a href="{Permalink}" title="{ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{Year}">{ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{Year}</a> &nbsp;|&nbsp; <a href="{Permalink}" title="{NoteCountWithLabel}"><span style="color:red; font-size:105%">&#10084;</span>&nbsp;{NoteCount}</a></div>
+<div class="reblogs">{block:RebloggedFrom}
+<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="fas fa-share-alt"></span></a> &nbsp;{/block:RebloggedFrom}{block:ContentSource} <a title="source: {SourceTitle}" href="{SourceURL}"><span class="fas fa-cog"></span></a>{/block:ContentSource} &nbsp;<a href="{ReblogURL}" title="reblog this post"><span class="fas fa-redo"></span></a>
+</div>
+{block:HomePage}{block:PinnedPostLabel}<div class="pinned"><a href="{Permalink}"><span class="fas fa-thumbtack"></span>{PinnedPostLabel}</a></div>{/block:PinnedPostLabel}{/block:HomePage}
+</div>
+
+{block:PermalinkPage}
+<div class="tags">
+<b2>filed under:</b2>&nbsp;
+{block:HasTags}{block:Tags}&nbsp;<a title="{Tag}" href="{TAGURL}">{TAG}</a>&nbsp; &nbsp; {/block:Tags}{/block:HasTags}
+</div>
+{/block:PermalinkPage}
+
+</div>
+
+<div class="postnote">
+{block:PostNotes}{PostNotes-16}{/block:PostNotes}
+</div>
+
+</div>
+{/block:Posts}
+</div>
+<br /><br /><br />
+
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
+width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+</div>
+
+<!-- -------------------------- TAB 2 -------------------------- -->
+
+<div id="tab2" class="tab">
+    <div class="tabcontent">
+       <div id="headernav">
+<h4>fire messages</h4>
+<div id="tabside">
+<h4>queries</h4>
+<ul id="tabs">
+     <li class="active" style="width:100px">questions</li>
+     <li style="width:100px">submissions</li>
+</ul> 
+</div> 
+
+<ul id="tab">
+<li class="active">
+<br />
+<iframe id="ask_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/ask_form/ofangelicblood.tumblr.com" frameborder="0" scrolling="no" width="485" height="300"></iframe>
+</li>
+
+<li>
+<br />
+<iframe id="submit_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/submit_form/ofangelicblood.tumblr.com" frameborder="0" scrolling="no" width="485" height="300"></iframe>
+</li>
+    </div>
+    </div>
+</div>
+        
+        
+<!-- -------------------------- TAB 3 -------------------------- -->
+
+<div id="tab3" class="tab">
+    <div class="tabcontent">
+    <div id="headernav">
+        <div id="tabside">
+        <h4>rules</h4>
+        <ul id="tabs">
+     <li class="active" style="width:100px">regulations</li>
+	  <li style="width:100px">credits</li>
+     <li style="width:100px">connections</li>
+</ul>  
+</div>
+
+<ul id="tab">
+<li class="active">
+<h4>regulations</h4>
+<p><center><h3>the writer&nbsp;&nbsp;</h3></center>
+<p>hello lovies! most everyone calls me <b>kc</b>. 30+/f/pst
+<p>while i don't have a full time job i make it a point not to spend every waking hour on tumblr. i'm here as much as i feel like i can. and when i'm not you can always find me lurking on discord.
+<br /><br />
+
+<p><center><h3>disclaimer&nbsp;&nbsp;</h3></center>
+<p>(1) this blog was created for roleplaying purposes. i am not jace herondale, dominic sherwood and i don’t own anything to do with freeform, shadowhunters or the books on which the show is based.
+<p>(2) this is a <b>DRAMA FREE</b> zone. i’m not here to get pulled into the drama involving the tv show versus the books. i’m here to write. if you’re a book based muse great! i’m an adult and i can read if you point me in the right direction. tv based muse? that works too! if you try to drag me into your drama i will drop you in a heartbeat without a second thought.
+<br /><br />
+
+<p><center><h3>if nothing else read this&nbsp;&nbsp;</h3></center>
+<p>(1) jace's portrayal is one i've worked a long time on. i will NOT change my interpretation of my muse in ways that detract from his core foundations. my muse is my own entity. if i start noticing that you’re ignoring parts of my character because you don’t like it/don’t agree with it, i reserve the right to drop all threads without warning.
+<p>(2) start drama with me about my friends? block me now - because we’re done.
+<p>(3) i unfollow for the following:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; inactive for thirty (30) days or more<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; too much ooc content<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; too much political content<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; posting of drama<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642; too much negativity
+<p>(4) this blog runs on a <b>queue</b>. all replies are scheduled so i'm not overwhelmed with drafts and i have a chance to breathe. if this is something you're uncomfortable with this may not be the blog for you.
+<p>(5) interactions with muns 21+ is preferred. muns 18-21 will be considered & there will be no interactions with muns under 18. if you have no age listed on your blog i won’t interact nor follow.
+<br /><br />
+
+<p><center><h3>about&nbsp;&nbsp;</h3></center>
+<p>(1) this blog is based on the freeform show and is canon current. the mun has plans to read the books but as it will be slow going we will interact with book based muses with some guidance. the mun also has no problems reading the wikia for book based threads if necessary.
+<p>(2) all series will be written on this blog but any threads that exist in series three will contain spoilers based on the weekly episode. all spoilers from the episode will be tagged appropriately for at least one week following the episode. after that spoiler tags can’t be guaranteed.
+<p>(3) this blog is <b>queue</b> heavy. what that means is all of the replies will be put into a queue that will post four (4) replies every day. this is for my sanity and to keep the dash from being flooded with replies. don’t hesitate to send me an ask if you want to know when your reply will be posted.
+<p>(4) this blog has a <b>weekend rule</b>. what that means is each saturday and sunday will be spent away from tumblr completely. no replies, no follow backs, no asks, no nothing on tumblr will be done until the following monday.
+<p>(5) the queue is tagged for your blacklisting purposes.
+<p>(6) this blog is <b>highly selective</b>. what that means is i will carefully look over a blog to see whether or not i can see myself writing with them. i also look to see if our writing could be compatible. this blog is also <b>mutuals</b> only. meaning if i follow you and you follow me. all starter calls are for <b>mutuals only</b>. please double check to see if we are following each other before or liking a starter call. <b>memes</b> are now open to <b>non-mutuals</b>.
+<p>(7) i do not follow for follow. if we write together continuously, or we have plotted something out long term I have no problem hitting the follow button. otherwise i prefer to keep a relatively clean dash. this is nothing against you. this is for myself and my dash.
+<p>(8) when it comes to unfollowing it is usually done for the following reasons: inactive for thirty (30) days or more, too much ooc content, posting of drama, or too much negativity. i’m here to write, have fun, and forget about the real world for just a little bit. if you decide to return to your inactive blog and we were mutuals feel free to hit me up and i’ll refollow. otherwise i figure you have decided to move on from that blog and see no point in following an inactive one.
+<p>(9) i will also unfollow anyone who decides to attack, harass, or do anything similar to those i consider my friends. in my opinion if you go after someone i call friend you are going after me and i will not tolerate that no matter what.
+<p>(10) please do not contact me and ask why i unfollowed you. any and all such asks will be deleted as they are covered in the rules. harassing me in such a matter will only lead me to block you instead of just unfollowing you.
+<p>(11) do not god-mod my character. if i catch you doing so without my permission consider the thread dropped.
+<p>(12) this is a hate free blog. any hate received will be deleted on sight. if i find those i follow sending hate i will unfollow you in a heartbeat. remember to treat others as you would like to be treated in return.
+<p>(13) with this blog i prefer to roleplay multi-para to novella. while i can write one liners i feel like there is no character development to those threads and can be easily dropped. multi-para to me is a minimum of three paragraphs, while novella is anywhere over 1k words.
+<p>(14) please <b>do not reblog</b> threads unless you are a participant in them. feel free to like them all you want but unless you and i are writing together i ask that you don’t reblog them as it makes it difficult to keep up with whose turn it is in the thread.
+<p>(15) please <b>make a new post</b> if you want to continue asks. i am all for continuing asks but i will not respond to any that have not been moved into a new post.
+<p>(16) interactions with muns 21+ is preferred. muns 18-21 will be considered & there will be no interactions with muns under 18. if you have no age listed on your blog i won’t interact nor follow.
+<br /><br />
+
+<p><center><h3>the mun&nbsp;&nbsp;</h3></center>
+<p>(1) the mun has a life outside of tumblr and asks that everyone please be patient. any and all replies that are seen will be replied to. if for some reason a reply has been missed a gentle reminder in the ask box is appreciated. but please do not constantly harass the mun for a reply.
+<p>(2) the mun is of age (21+) which means there will be nsfw elements on this blog. that could mean violence, torture, gore, and scenes of a sexual nature. we will not write sexual scenes with those who are under 18. there is the option of fade to black or the morning after for those who are not of age
+<p>(3) all nsfw posts will be tagged for your blacklisting purposes.
+<br /><br />
+
+<p><center><h3>relationships&nbsp;&nbsp;</h3></center>
+<p>(1) this is a multi-ship, multi-verse blog. i ship chemistry first and foremost. if there is chemistry a relationship is possible. this applies to all verses. 
+<p>(2) when it comes to relationships, jace considers himself bisexual with a preference for women. he’s not one to be tied down to a relationship and with his life being what it is sex is something he uses as an outlet. jace will also consider platonic or even hate relationships.
+<p>(3) <b>if you write clary</b>: while i do acknowledge this relationship is canon i will not roleplay it instantly. first, we need to have written together to make certain that our writing styles are compatible. after that i ask that we have at least spoken out of character first and then i would like something plotted out long term. all the plotting in the world won’t mean a damn if there is no chemistry and the writing styles aren’t compatible.
+<p>(4) please do not force a ship on me. nor try to engage us in instant ships. i prefer all ships to be written out and developed over time. forced shipping, instant ships, etc. are the fastest way to send us both running in the opposite direction.
+<p>(5) there is more to jace than just his fc. if you are here to do nothing more than to get into bed with him i ask that you do not follow. i am not here to write purely smut. I prefer to write threads with plots and if smut happens, it happens as part of the thread.
+<br /><br />
+
+
+<p><center><h3>exclusivity&nbsp;&nbsp;</h3></center>
+<p>(1) this blog most likely won’t practise exclusivity. at least not within the shadowhunter fandom. we will have mains and those will be limited to no more than <b>three</b> (3) of each muse.
+<p>(2) when it comes to relationships, this blog <b>does</b> practise exclusivity. at this time this blog is ship exclusive with:<br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642;&nbsp;<b>alec lightwood:</b>&nbsp;<a href="https://affcgato.tumblr.com">affcgato</a> &amp; <a href="https://adventurelcnd.tumblr.com/">adventurelcnd</a>
+<p>what this means is that we will not ship with any other alec lightwood besides those two. please do not approach me for a jalec ship as you will be turned down. 
+<br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9642;&nbsp;<b>ash morgenstern:</b>&nbsp;<a href="https://affcgato.tumblr.com">affcgato</a>
+<p>this is a father/son relationship. what this means is jace will not consider any other ash morgensterns as his "son". the mun and i have worked at establishing this relationship and i will not be exploring it with any others. i will write with other ash morgensterns but this will be the only father/son relationship.
+<br /><br />
+
+<p><center><h3>original characters &amp; children&nbsp;&nbsp;</h3></center>
+<p>(1) this blog is oc friendly but selective due to past problems. i will give your muse a chance but if i feel like our writing styles are incompatible i will drop the thread.
+<p>(2) in regards to children, jace will not acknowledge any original characters that claim him as the father. please don’t take this personally as this is nothing against you, the mun, but a personal preference of mine. 
+<p>(3) at this time the only character jace will acknowledge as his is <b><a href="https://affcgato.tumblr.com">ash morgenstern</a></b> 
+<br /><br />
+
+
+<center><h3>misc</h3></center>
+<p>(1) i reserve the right to add to these rules as i see fit. 
+<br /><br /><br /><br /><br /><br />
+
+</li>
+
+<li>
+<h4>credits</h4>
+<br />
+<b>coding:</b> @houseofsol</b><br />
+<b>asks psd:</b> @korecommissions<br />
+<b>good afternoon banners:</b> @darkrpsd<br />
+<b>headcanon &amp; verse banners:</b> @houseofsol<br />
+<b>icons:</b> created by @houseofsol using screencaps created by @houseofsol or screencapped.net or with bases by @tuppencetrinkets. 
+</li>
+
+<li>
+<h4>connections</h4>
+<p>
+<center><h3>exclusives</h3></center>
+<p>these are the only muses muses i will interact with. please do not approach me if you are one of the muses listed below as you will be turned away.
+<div class="shipimg">
+<center>
+<p><a title="affcgato (bucky barnes)"><img src="https://i.imgur.com/7DyYl5Z.png"></a>&nbsp;
+<a title="affcgato (ersken pate)"><img src="https://i.imgur.com/WjMihq9.png"></a>&nbsp;
+<a title="affcgato (grayson kepler)"><img src="https://i.imgur.com/KlGHTHB.png"></a>&nbsp;
+<a title="affcgato (brock rumlow)"><img src="https://i.imgur.com/qEDFJTu.png"></a>&nbsp;
+<a title="affcgato (alec lightwood) **ship exclusive**"><img src="https://i.imgur.com/PtQM0tc.png"></a>&nbsp;
+
+<p><a title="adventurelcnd (alec lightwood) **ship exclusive**"><img src="https://i.imgur.com/PKeC6tl.png"></a>&nbsp;
+<a title="connection two"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp; 
+<a title="connection four"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp; 
+<a title="connection five"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp; 
+
+</center>
+</div>
+
+<p>
+<center><h3>mains</h3></center>
+<p>these are the muses i will go to first for plots, and those that will get priority when it comes to replies. i will only take three (3) of each muse as a main.
+<div class="shipimg">
+<center>
+<p><a title="masterwcrk"><img src="https://i.imgur.com/POHxy5F.png"></a>&nbsp; 
+<a title="idumean"><img src="https://i.imgur.com/HRoUYF4.png"></a>&nbsp;
+<a title="affcgato (alec lightwood)"><img src="https://i.imgur.com/PtQM0tc.png"></a>&nbsp;
+<a title="affcgato (magnus bane)"><img src="https://i.imgur.com/MeJDJ1t.png"></a>&nbsp;
+<a title="erchommai"><img src="https://i.imgur.com/swVsrFf.png"></a>&nbsp;
+
+<p><a title="adventurelcnd (alec lightwood)"><img src="https://i.imgur.com/PKeC6tl.png"></a>&nbsp; 
+<a title="affcgato (ash morgenstern)"><img src="https://i.imgur.com/YKIIog1.png"></a>&nbsp;
+<a title="writtenchaos (clary fray)"><img src="https://i.imgur.com/UZiRvZY.png"></a>&nbsp; 
+<a title="shesacred"><img src="https://i.imgur.com/qKeYxSE.png"></a>&nbsp; 
+<a title="connection five"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp; 
+
+</center>
+</div>
+
+<br /> <br /><br />
+</li>
+
+</ul> 
+</li>
+
+   </div></div>
+</div>   
+
+<!--  TAB 4 -->
+
+<div id="tab4" class="tab">
+    <div class="tabcontent">
+       <div id="headernav">
+<div id="tabside">
+<h4>the file</h4>
+<ul id="tabs">
+     <li class="active" style="width:100px">overview</li>
+     <li style="width:100px">statistics</li>
+     <li style="width:100px">family</li>
+     <li style="width:100px">notes</li>
+</ul> 
+</div> 
+
+<ul id="tab">
+<li class="active">
+<h4>overview</h4>
+<br />
+Jonathan Christopher "Jace" Herondale is considered the best Shadowhunter of his generation and a hero of the Mortal and Dark wars. He is currently the co-head of the New York Institute, alongside his fiancée, Clary Fairchild.
+<br />
+<br />
+<br />
+<center><h3>early life</h3></center>
+<p>Jace was born to Stephen and Céline Herondale. While he was still in Céline's womb, Valentine Morgenstern constantly gave Céline doses of Ithuriel's blood to mix with her food, and she took it, not knowing what it really was. Ithuriel's blood made its way into unborn baby Jace's system, thus he was born differently from other Shadowhunters.
+<p>Eventually, Valentine had his parents killed. Desperate for the baby he had been giving angel blood to, Valentine had Hodge Starkweather help him take the child from Céline's dead body shortly after—it is said that the only reason that Jace survived was because of the increased amount of angel blood in his body. After faking his and his real son's death, Valentine took off with both Jonathan and Jace and raised them separately, hoping that one or both of them would grow to become very powerful warriors—one with angel blood and the other with demon. While Valentine took the identity of Michael Wayland, Jace was raised as Jonathan Wayland, both of whom were, in fact, the father-and-son Valentine killed to fake their deaths.
+<p>Jace was raised by Valentine believing that they were the Waylands, and they lived in the Waylands' estate. Jace's upbringing was both loving and harsh; Valentine trained him as a warrior, strictly and with the occasional beating, but also treated him with some level of kindness. Valentine also insisted that Jace learn to play an instrument, and he taught him the piano. Jace was also taught other languages by Valentine. Despite the extremely disciplined upbringing, they shared some father-son moments and lessons that Jace cherished. Growing up, Jace always looked forward to his birthday because it was when Valentine always let Jace do or have what he wanted: horses, weapons, books, and even a bath in spaghetti on his fifth birthday.
+<p>Valentine instilled thoughts such as "to love is to destroy and that to be loved is to be the one destroyed" into his mind. In an attempt to teach him this, Valentine gave him a wild falcon to train when he was six, intending it to be a killing companion. After some struggle and a long time, Jace tamed the bird that had initially seemed impossible to train and loved it. Jace excitedly showed it to his father, but Valentine broke its neck, saying that he was supposed to train it to become obedient, not to love him.
+<p>When he was ten, Valentine realized that Jace was too soft for his plans but needed to move forward with his plans. For this, Valentine yet again staged his death as Michael Wayland, with a hiding Jace there to witness his father "killed" right in front of him, convincing Jace and everyone else of "Michael's" death. As he had anticipated when he took Michael's identity, Jace was adopted by the Lightwoods, where Valentine knew Jace would be well cared for, as well as in a good position for possible reconnaissance at a later time.
+<p>Jace was brought to New York City on a passenger ship full of werewolves smuggling Yin fen into the city. Robert Lightwood had snuck aboard a long with Brother Zachariah and a couple vampires to stop them. When battle broke out, Jace came out and joined in the fight, using the Silent Brother's staff. Afterwards, Jace and Brother Zachariah discussed parabatai and how they make you better. Jace had initially thought they were a weakness because of his father, but having heard they could make you a better warrior, Jace began to hope he would find one in New York.
+<p>Jace became good friends with the Lightwood children, Alec and Isabelle Lightwood. The eldest, Alec, eventually became his parabatai. The youngest, Max, grew to look up to Jace. The family matriarch Maryse also gave him his nickname Jace, after he told them that his full name was Jonathan Christopher, which he had seen in Valentine's journal, not knowing that it wasn't referring to him.
+<br />
+<br />
+<center><h3>valentine's return</h3></center>
+<p>Jace would spend the next seven years forming a solid bond with the Lightwoods and was treated much like a true son by Maryse and Robert. In particular, he, Alec, and Isabelle made a formidable Shadowhunting team. One fateful night in August 2007, the trio went scouting at the Pandemonium Club. They had lured a demon into a closet and were about to kill it when they were interrupted by a girl, Clary Fray, that Alec had assumed was a mundane girl. They slipped away shortly after, but Jace remained intrigued and told Hodge about her. When Hodge asked to see the girl, Jace volunteered to go.
+<p>Jace followed her to Java Jones the next evening, and when she confronted him, he told her about Shadowhunters and told her that he doubted that she was ordinary. Clary then received a call from her mother, and when Clary returned home that night, her mother had already been taken. Clary was then poisoned by a Ravener demon, forcing Jace to test his theory by giving her a rune—an iratze.
+<p>Coinciding with the disappearance of Clary's mother, Jocelyn, were the rumors that Valentine Morgenstern, whom Jace was unaware was also Clary's father, had returned from the dead. The Conclave then decided to take Clary in and help her look for her mother, hoping it would lead them to the truth about Valentine. While Izzy and Alec were both skeptical about helping the stranger, Hodge was insistent about helping an old friend, and Jace found himself strangely compelled to help their guest, though he denied this.
+<p>During their adventures, Jace met Madame Dorothea, who they later killed while possessed by the Greater Demon Abbadon, werewolf and former Shadowhunter Luke Garroway, High Warlock of Brooklyn, Magnus Bane, the New York vampire clan and its acting head Raphael Santiago, and, to Jace's dismay, Clary's mundane best friend Simon Lewis.
+<p>Jace had been interested in Clary since the moment they met, though he acted as though he was annoyed by her thus causing her to find him arrogant. However, one evening, when he found out that Clary's birthday was upon them, Jace invited Clary to join him in the Institute's greenhouse. They bonded over stories that Jace told about his childhood and soon shared a passionate kiss. They left and Jace walked Clary to her room, only to find Simon waiting inside. When Simon assumed that they were there for another reason, Clary tried to explain herself. Jace was offended, as he saw it as Clary dismissing their feelings and shrugged her off when she tried to apologize.
+<p>Despite this, Jace still continued to help Clary. At one point, when Alec was gravely injured during their encounter with the demon Abbadon, Jace went to a dark place and began to blame himself.
+<p>Eventually, when Clary was finally able to retrieve the Mortal Cup, Hodge's betrayed them. Knocking Jace out and leaving a helpless Clary to watch, trapped in an invisible casing, Hodge contacted Valentine Morgenstern with Jace's ring. In exchange for his release from his curse, Hodge gave Valentine the Cup and Jace.
+<p>During their time together at Renwick's, Jace realized that Valentine was the man who had raised him, pretending to be Michael Wayland. Suddenly keen on reuniting with his father, Jace momentarily decided to side with Valentine. Upon Clary's arrival, Valentine revealed to Jace that they were siblings, which he refused to believe. Luke soon followed after Clary and began to tell Jace about Valentine and Jocelyn's past, facts which Clary later reinforced. During the confrontation, Jace began to doubt his decision as he learned more about his "father". While Valentine fought Luke, he saw the kind of man he was. With Clary's urging, Jace finally turned against him.
+<p>Truly believing Valentine's lies, Jace was lead to believe that he was the brother of the girl he had fallen in love with. Heartbroken, Jace reverted to his old ways of keeping his distance from those he cared about.
+<br />
+<br />
+<center><h3>wandering jace</h3></center>
+<p>Jace was thrown out from the Institute after Maryse found out the truth about Valentine being his father. Jace then went to the Hunter's Moon bar where Luke's werewolf pack were and started a fight with them by intentionally aggravating them with his indifference to the curious death of one the pack's younger members. Luke managed to stop the fight and called Clary to come help calm him down. Jace told them that he had been thrown out of the Institute and didn't know why.
+<p>Luke, Clary, and Jace decided to go to the Institute to question Maryse Lightwood. She told them that the Inquisitor was coming to talk to him about him being Valentine's son and that she was trying to protect Jace. Nonetheless, Jace decided to stay and face the Inquisitor, believing that by avoiding her things would become worse.
+<p>Later on, due to his disrespectful behavior towards the Inquisitor, Imogen Herondale, he was forced to spend a night in jail in the Silent City. While in the cell, Jace suddenly heard the screams of the Silent Brothers which were caused by Agramon—the Greater Demon of Fear who was now under Valentine's command. After the slaughter of the Silent Brothers, Valentine visited Jace and told him that he had killed them to get the Mortal Sword.
+<p>Meanwhile, Clary, Isabelle, and Alec decided to go and rescue Jace after receiving a distress call from the Silent City. The Inquisitor believed that Jace helped Valentine kill the Silent Brothers in order to get the Mortal Sword and that it was only taken to prevent his testimony. After a lot of debate, they finally agreed to let Jace stay in Magnus Bane's apartment, under the condition that a magical restraint was placed on him.
+<p>Later on, due to the unexplained and mysterious deaths of different Downworlders, Jace and the others visited the Faerie Realm. While there, Clary was tricked into eating faerie food, meaning that she wouldn't be able to leave along with the others. However, the Seelie Queen told her that if she got the kiss that she most desired, she would be able to leave. When Simon's kiss failed to free Clary, Jace kissed her and successfully broke the spell, which angered Simon, thus making him leave the group at Central Park.
+<p>After their return to the Institute, Clary and Jace fought about their feelings for each other. Jace said he didn't see why they couldn't still be together and wanted to keep the relationship a secret, while Clary said that the idea repulsed her and that their feelings for each other were wrong.
+<p>They were soon interrupted by Raphael Santiago's appearance at the Institute with Simon's corpse in his hands. He informed them about Simon having shown up at the Hotel Dumort and being subsequently drained of blood, and that he would either be Turned into a vampire or have to be fully killed. Clary decided to bury Simon in a Jewish cemetery for his resurrection as a vampire.
+<p>Upon learning about Valentine's plan to turn the Mortal Sword into a demon instrument, Jace visited his father, who was currently hiding on a boat. When he returned from his visit, the Inquisitor, having used a tracker on him, kept him prisoner in a Malachi Configuration. She then proceeded to tell him about her plan to threaten Valentine in order to get the Mortal Instruments by using Jace's life. Jace tried to tell her that it would not work but she didn't believe him. Later with some help from Alec, he managed to escape.
+<p>Before facing off Valentine and trying to save both Maia Roberts and Simon, who were both captured for the ritual on his boat, Jace asked Clary to draw the Fearless rune on him. While on-board the ship, Jace found Simon dead and fed him his blood in order to save him. The rest of the Shadowhunters soon arrived and a chaotic battle began on the boat. During the battle, Jace was confronted by Imogen, who apologized and looked really astonished when Jace told her once more that he did not know Valentine was his father. Imogen then noticed his star-shaped scar and tried to tell him something but Jace, angered by the Inquisitor's behavior, left to join the battle. He was then attacked by a demon that could have killed him had the Inquisitor not interfered, saving him. Having realized that he was her grandson, Imogen told Jace his father would be proud, leaving Jace more confused than before—thinking that Imogen was insulting him and referring to Valentine—before dying in his arms.
+<p>Soon afterward the battle ended with the ship being completely destroyed by Clary's Opening rune. Later, Jace told Clary that he would, from now on, act like her brother and nothing more.
+<br />
+<br />
+<center><h3>the mortal war</h3></center>
+<p>After being called to Alicante, Jace was making preparations in order to leave with the rest of his family to Idris, alongside Clary. However, Jace, believing that Idris was too dangerous for Clary and at the same time wanting to stop thinking about her, decided to trick Clary with the help of Simon. Simon reluctantly agreed but when the Lightwoods were ready to leave through a Portal, they were attacked by a group of Forsaken. And amidst the chaos created, Jace was forced to take Simon with him, something which was illegal since permission was required for Downworlders to enter Idris.
+<p>While in Idris, Jace spent a lot of time with Aline Penhallow and her cousin Sebastian Verlac. But his peace was soon interrupted when Clary appeared. Jace, afraid of his feelings for her, distanced himself and even yelled at her. Thus, allowing Sebastian to come closer to Clary. Nevertheless, upon the discovery of the fact that the Book of the White was hidden inside the library in the Wayland manor, Clary asked Jace to help her. Jace agreed and they went together.
+<p>There they discovered the Angel Ithuriel trapped in the basement. Clary having the ability to create runes, freed the Angel, but not before she and Jace were shown some memories of Valentine's experimentation on both of his children. Jace, believing that he had demon blood in his veins, was inconsolable.
+<p>Meanwhile, in Idris, Sebastian had broken the wards thus allowing Valentine's army of demons to enter and destroy everything. A great battle began, and after breaking Simon out of Clave prison, Jace was informed about Sebastian's betrayal and murder of his little brother, Max. Burning with anger and self-hatred because of all the events, Jace decided to track down both Sebastian and Valentine but not before deciding to spend his possible last night with Clary, finally declaring his love for her and sleeping beside her.
+<p>After following the tracking spell Jace found a cave outside Idris where Valentine and Sebastian discussed their plan to summon Raziel and destroy all Downworlders and the Shadowhunters who would not bend their knee. Valentine then left for Lake Lyn, and Sebastian, having already sensed Jace's presence, started to tease him. After a while they both fought each other, ending with Sebastian on top of him revealing his true identity as Jonathan Christopher Morgenstern and informing Jace that he was the son of Stephen Herondale. Just as he was about to deliver the death blow, Isabelle found them and saved Jace by cutting off Jonathan's hand. With Jonathan distracted by beating up Izzy, Jace pushed himself up and found an opening to kill him.
+<p>Later on, he found Valentine, who was ready to summon the Raziel and had silenced Clary with a rune. Valentine looked shocked when Jace told him that he killed Jonathan but, other than that, he didn't show any other emotion and before Jace could finish him off, Valentine stabbed him. Clary, upon witnessing all this, changed the ritual runes causing to her being the master of the summoning of Raziel, not Valentine. Raziel, knowing Valentine's motives and what he had done to Ithuriel, killed him. When asked for her wish, Clary requested that he resurrect Jace, which he did.
+<p>Despite everything, Jace still mourned Valentine's death. A few days after the battle, there was a big celebration in the city over their victory against Valentine's forces in what eventually became known as the Mortal War. Jace and Clary reformed their relationship, free to be together after all.
+<br />
+<br />
+<center><h3>haunted by lilith</h3></center>
+<p>Six weeks after the events of the Mortal War, Jace was now training Clary and the two enjoyed their relationship. However, he began to have some nightmares which always ended with him murdering Clary. Jace, fearing that he was losing control, decided to distance himself from Clary.
+<p>To avoid Clary, but still do right by her, he spent most of his time protecting Simon—who had become a bit of a target. After a while, and after Clary had taken the risk of going after a cult alone, Jace could no longer bury his emotions and told Clary about his nightmares.
+<p>Hoping to find a way to stop these nightmares, they visited the Silent Brothers, who informed them that with Jace's death and resurrection, the magic from the protection ritual placed on all newborn Shadowhunters had faded; leaving him extremely vulnerable to demon possession and influence. They kept Jace in the Silent City in order to perform it again.
+<p>However, during the night, Jace dreamed of his lost brother, Max. Max gave him a knife, telling him to cut himself in order to be released from the demon's possession, then used the blood to mark him with Lilith's mark. Jace woke up under completely under her influence, with the rune still on his chest. He left the Silent City and went to Jocelyn's engagement party. There he kidnapped Clary: knocking her out with a rune and carrying her to the top of an unfinished building where Lilith was preparing a resurrection ritual for Jonathan.
+<p>Eventually, Clary, Simon, and Jace—having Lilith's influence disrupted by Clary cutting the rune—defeated Lilith. Standing alone on the roof guarding Jonathan's body, Jace noticed, to his surprise, the rune over his chest had healed. Jonathan, through Lilith's rune, had now gained power over Jace and compelled him to complete the ritual. Though Jace was screaming internally to stop, he could not gain control of his body. Sebastian—as he would choose to be known—awakened and he and Jace disappeared before the others returned.
+<br />
+<br />
+<center><h3>bound to sebastian</h3></center>
+<p>Jace's state and whereabouts were unknown for weeks after he disappeared with Sebastian, worrying his family and friends. Moreover, the Clave's priorities shifted from locating Sebastian and Jace to repairing the wards on Wrangel Island (as they had recently been smashed through) and updating the Law and Council to now that Downworlders were getting representatives, as well as electing a new Consul and Inquisitor.
+<p>Meanwhile, Jace and Sebastian were traveling all over the world preparing for Sebastian's plan. Jace, unable to stay away from Clary, visited her and asked her to follow them. Clary was considering the offer but their meeting was cut short when Jocelyn saw Sebastian in her kitchen and screamed. Their little adventure ended with Sebastian throwing a silver dagger to Luke and leaving with Jace. Jace's allegiance to Sebastian was confirmed.
+<p>Jace came back for Clary early that morning and found her on the front porch of Luke's house waiting for him. Clary joined them and Sebastian and Jace kept working on their plans without explaining them to her. Clary tried to understand the connection between her brother and boyfriend but she couldn't find a way to help Jace, not without raising suspicions.
+<p>Jace, still under Lilith's spell, participated in all of Sebastian's plans and at the same time dated Clary. He was the happiest Clary had ever seen him. However, after an unfortunate turn of events, his bond with Sebastian was temporarily severed and he was able to say the truth to Clary about the Infernal Cup and Sebastian's real intentions, after which he unsuccessfully tried to flee to the Clave in order to turn in the Cup and himself. After his attempted escape, his Twinning rune that bound him to Sebastian healed and he was back under his control.
+<p>Once at the Seventh Sacred Site, Sebastian, with Jace and Clary by his side, was preparing to create his own army of Endarkened, when Jace's family and the New York werewolf pack came in, along with Simon holding the Glorious. Simon passed this to Clary explaining that the blade would burn out all the evil in whoever it struck, and thus should destroy the bond. Unable to reach Sebastian, Clary used the Glorious and stabbed Jace, believing that it wouldn't kill him as his heart was more good than evil. Jace was set alight, severing the connection between the two and leading the others to believe that he was dead. Sebastian enraged fled with his army.
+<p>However, after a few moments, Clary noticed his heart was still beating and he was taken to the Institute to be cured by Brother Zachariah. When Clary was finally allowed to visit Jace, he told her that stabbing him with Glorious had filled him with Heavenly fire, which could burn anything he touched. Jordan Kyle soon started teaching Jace to meditate in hopes that it would help him be able to control the heavenly fire.
+<br />
+<br />
+<center><h3>the dark war</h3></center>
+<p>Concerned about Alec and Magnus's break up, and asked by Izzy, Jace visited Magnus and talk to him. Jace bluntly pointed out that he was obviously unhappy since his apartment was a mess and he had take-out containers everywhere, clearly gorging himself on take-out food. However, that did not help.
+<p>Due to the several attacks on different Institutes by the Sebastian's Endarkened army, they were all ordered to pack up and gather in Idris for an emergency meeting of the Clave. At that meeting, Jace first met the Blackthorn children and Emma Carstairs. By the end of the meeting, the Clave decided to use the heavenly fire within Jace to defeat Sebastian, although they did not know how to get the fire out of him.
+<p>Jace and Clary took a nighttime walk around the city. The two ultimately ended up in an alley, where, despite Jace's hesitation, Clary succeeded in kissing him. Their kissing escalated so quickly that Jace lost control over the heavenly fire, which caused him to burn handprints into the brick wall he was leaning against. He felt so panicked and fearful that he would hurt Clary that he quickly pulled away.
+<p>The next day, Jace took Clary to buy her a new sword. Diana Wrayburn, the owner of the shop, then gave Clary a Morgenstern family shortsword called Heosphoros, for free. While Clary blessed her sword in Accords Hall fountain, they saw the demon towers light up in the color of battle. Despite not being allowed, the two went through a Portal and joined the battle at Adamant Citadel. Jace fought Sebastian, who then stabbed Jace. Surprised and hurt by the heavenly fire that leaked out of the wound, Sebastian and his army fled the battle. Brother Zachariah attempted to heal Jace but was engulfed in flames. Clary marked Jace with an Agony healing rune powerful enough to heal him.
+<p>Sebastian soon kidnapped the Downworld representatives, along with Jocelyn, and held them hostage, demanding the Clave hand over Jace and Clary for their return. While waiting for the Clave's decision, Emma told Jace and the others that Sebastian and his army had hinted at staying in another dimension called Edom when they had attacked her Institute. After Alec did some research, Jace, Clary, Simon, Alec, and Isabelle escaped to rescue them by going through faerie tunnels to get there. Once in the other dimension, Clary was able to use a rune she imagined to transfer the heavenly fire from Jace into Heosphoros. He and Clary came up with a plan that they kept from the others which worked out well and allowed Clary to get close enough to stab Sebastian with it, killing him and his army along with him.
+<p>To get home they had to make a deal with Magnus's father, the Prince of Hell Asmodeus. This resulted in a sacrifice from Simon, giving up his immortality and being a vampire along with his memories of the Shadow World and the others, including Clary. Clary and Izzy were visibly upset for a long time after, and though Jace tried not to show it, he also greatly missed Simon.
+<br />
+<br />
+<center><h3>finding himself</h3></center>
+<p>After the war, Jace decided to take the name of Herondale; deciding that just because he had complicated feelings for his father, didn't mean the legendary line should end with him. At Jocelyn and Luke's wedding in May 2008, he was given a Herondale family ring from Tessa Gray, which helped him feel more complete.
+<p>During the reception, Simon appeared, having been able to retrieve some of his memories from Magnus. Though Jace was happy for a chance to have Simon back, he continued to mess with him by telling him fake stories of his life.
+<p>Later that year, Jace was invited to the Shadowhunter Academy—where they had sent Simon in hopes of helping him regain all his memories through Ascension—to teach a lesson as a guest tutor. There, he confessed to Simon he had been doing research into his family history to try to understand what it meant to be a Herondale. He struggled to piece together his identity and felt like he was expected to be a hero; the burden of the past—both the negative and the positive—became a lot for him to bear. Simon pointed him in the direction of their guest lecturer, Tessa, who revealed herself to be his ancestor. They met and conversed about the Herondales and Jace felt better knowing there was someone who shared his blood and understood it all. She even took him and Clary on a tour of the Herondale manor.
+<p>Jace had since become more serious about his passion for music. He'd begun to play more challenging pieces and composing, even collaborating once with fellow musician, Simon, on "Come Back, Meow", a song dedicated to Chairman Meow.
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+<h4>statistics</h4>
+<br />
+<center><h3>runes & other identifying marks</h3></center>
+<p>Jace’s runes are built to strengthen and reinforce his abilities. He carries many generic battle runes used to amplify his natural strength, speed and grounding, but he also possesses a Gift/Talent rune, which suggests a superior skill beneath the surface. He also has the Calm Anger and Promise runes, which could allude to the vengeance of his father’s death.
+<br />
+<pre><big>Runes (right side):</big></pre>
+<blockquote>
+    <p>- <b>heightened speed</b>: neck
+    <p>- <b>heightened speed</b>: arm
+    <p>- <b>block/deflect</b>: tricep
+    <p>- <b>strength, soundless</b>: top forearm
+    <p>- <b>vision</b>: inside forearm
+    <p>- <b>soundless</b>: chest
+    <p>- <b>promise, iratze</b>: flank
+    <p>- <b>equilibrium</b>: hip
+    <p>- <b>bridge (tracking)</b>: hand (palm)
+</blockquote>
+<br />
+<pre><big>Runes (left side):</big></pre>
+<blockquote>
+    <p>- <b>gift/talent</b>: tricep
+    <p>- <b>calm anger</b>: outer elbow
+    <p>- <b>strength</b>: top forearm 
+    <p>- <b>angelic power</b>: inside forearm
+    <p>- <b>nyx, angelic power</b>: chest
+    <p>- <b>parabatai</b>: collarbone
+    <p>- <b>sure-footed</b>: flank
+    <p>- <b>visible</b>: hip
+    <p>- <b>herondale birthmark</b>: a star shaped birthmark on his left shoulder
+ </blockquote>
+<br />
+<pre><big>Runes (centre):</big></pre>
+<blockquote>
+    <p>- <b>equilibrium</b>: neck (nape)
+</blockquote>
+<br />
+
+<center><h3>personality traits</h3></center>
+<p>Seen as narcissistic, gorgeous, determined and an expert Shadowhunter, Jace is a natural-born leader and is Alec’s second-in-command whenever on assignments with him and Isabelle. Jace is headstrong and often prefers to act first and ask permission later. Tough, resourceful, and confident, Jace takes slaying demons in his stride, often admiring himself while he does so.
+<p>He is incredibly loyal to his allies and will stop at nothing to help and save them when necessary. Jace is prepared to risk his life and standing with the Clave to protect others, easily doing so to prevent harm to others. As the adoptive son of Maryse and Robert, he has a fierce love for his adoptive family, especially his adoptive siblings Alec and Isabelle, whom he can be quite protective of.
+<p>Like most of his kind, Jace was raised to view love and feelings as a distraction from their sacred mission, though he was not completely averse to it either, specifically after Clary’s presence and influence.
+<p>Jace is usually sarcastic and humorous. He is also incredibly stubborn, as seen with his recurring arguments with Alec. He can be impatient and easily annoyed when things are not moving forward, or when his skill is called into question. Beneath the humor lies a darker side, one where Jace has always felt like an outsider and was further driven to believe he was tainted after Valentine’s lie. He is prone to excessive drinking and indulging in sex to distract himself from more negative emotions, preferring those outlets to talking about his feelings with someone.
+
+<br />
+
+<center><h3>skills &amp; abilities</h3></center>
+<p><b>Nephilim physiology:</b> Being Nephilim, Jace possesses a variety of enhanced physical and mental abilities granted to him by the angel blood of Raziel in his veins and also by the angelic Marks of the Gray Book. This includes enhanced strength, speed, agility, stamina, and coordination, which continue to improve over time and practice.
+<p><b>The Sight:</b> As a Shadowhunter, Jace is naturally and easily able to see through most magical illusions and layers of glamour over reality.
+<p><b>Runic magic:</b> Due to the angel blood in their veins, all Shadowhunters are able to apply runes on their skin without any real danger. These Marks, in turn, give varied effects that serve to benefit the wearer.
+<p><b>Use of heavenly weapons:</b> As a Shadowhunter, Jace is also able to perform tasks unique to their species, such as the ability to use and call on the power of angels for their seraph blades, as well as to handle any heavenly weapons or objects with effect, which would normally not work for other species. In particular, these are tools made of adamas and forged by Iron Sisters. 
+<p><b>Parabatai bond:</b> Due to his parabatai bond with Alec Lightwood, Jace is able to call on more strength in battle and is able to use certain runes or magic exclusive to parabatai. The runes drawn on him by, or shared with, Alec also give a considerably stronger effect. This also allows them to parabatai track. 
+<p><b>Angelic blood empowerment:</b> Like Clary, Jace has pure angel blood, due to an experiment performed on him as an unborn child, and this apparently gave him enhanced strength, speed, and others superior to those of normal Shadowhunters’. 
+<p><b>Rune activation:</b> Jace is able to activate runes on his and others’ bodies without having to use his stele. When he does this, his eyes turn gold.
+<p><b>Blood connection:</b> Because of their angel blood, Jace and Clary share a connection, both with each other and with the source of their blood, Ithuriel. In addition, Clary’s blood relation to Jonathan Morgenstern gives Jace an indirect connection to him as well.
+<p><b>Expert hand-to-hand combatant:</b> Jace is highly skilled in armed and unarmed combat.
+<p><b>Expert swordsman:</b> Jace is highly skilled and proficient in swordsmanship.
+<p><b>Skilled pianist:</b> Jace is highly proficient in playing the piano, from being under the tutelage of Valentine Morgenstern during his childhood. 
+
+<br />
+
+<center><h3>possessions</h3></center>
+<p><b>Basic Shadowhunter gear, including:</b> a steles, seraph blades, and witchlight.
+<p><b>Daggers and swords:</b> Aside from seraph blades, Jace has also used daggers and swords in battle.
+<p><b>Herondale family ring:</b> When Imogen Herondale learned that Jace was a Herondale, she gave him the family ring, which previously belonged to his mother, Céline. He now wears the ring on a chain as a necklace. 
+
+
+<br />
+
+<br /><br /><br /><br /><br />
+</li>
+
+<li>
+<h4>family</h4>
+<br />
+<center><h3>valentine morgenstern</h3></center>
+<p>tbd 
+<br />
+<center><h3>maryse lightwood</h3></center>
+<p>tbd 
+<br />
+<center><h3>alec lightwood</h3></center>
+<p>tbd 
+<br />
+<center><h3>isabelle lightwood</h3></center>
+<p>tbd 
+<br />
+<center><h3>jonathan morgenstern</h3></center>
+<p>tbd 
+<br />
+<center><h3>clary fray/fairchild</h3></center>
+<p>the love that moves the sun and the other stars
+<br />
+<center><h3>ash morgenstern</h3></center>
+<p>tbd 
+<br />
+
+<br />
+<br />
+<br />
+</li>
+
+<li>
+<h4>notes</h4>
+	 <p>- Jace is left-handed and can play the piano
+    <p>- He can speak Romanian, Latin, Italian, French, and apparently some more languages.
+    <p>- He loves Chinese food, particularly mu shu pork, and mangoes. 
+    <p>- He hates cucumber, as well as bergamot and Earl Grey tea. He also dislikes sugar in his coffee. Jace also hates liars and has stated that he never used to lie, something Isabelle and Alec confirmed. However, he lied several times to keep the people he loves, especially Clary, safe.
+    <p>- Jace once ran down Madison Avenue completely naked except for a pair of antlers on his head after eating faerie scones from a faerie run coffee shop: Moon in a Cup.
+    <p>- Jace is extremely well-read and can quote literary passages to fit any occasion, usually in romantic instances between him and Clary.
+<br />
+<br />
+<br />
+<br />
+<br />
+</li>
+    </div>
+    </div>
+</div>
+
+
+
+ 
+<!-- -------------------------- TAB 5  -------------------------- -->
+
+<div id="tab5" class="tab">
+    <div class="tabcontent">
+    <div id="headernav">
+    <div id="tabside">
+    <h4>verses</h4>
+    <br />
+    <center>
+    click verse <b>NAME</b><br />
+    for the <b>POPUP</b><br />
+    with more info.
+    </center>
+        <ul id="tabs">
+     <li class="active" style="width:100px">base canon</li>
+	  <li style="width:100px">canon variants</li>
+     <li style="width:100px">fandom inspired</li>
+     <li style="width:100px">alternate universe</li>
+     <li style="width:100px">corrupt fairytales</li>
+     <li style="width:100px">private verses</li>
+</ul>  
+</div>
+
+<ul id="tab">
+<li class="active">
+<center><h4>base canon</h4>
+<br />
+<h3>main (blended canon)</h3>
+</center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/39zODy1.png"></div>
+<a href="#?w=458" rel="01" class="poplight" title="main (blended canon)"><b>main</b></a> &mdash; this verse is my main, blended canon verse which based on the freeform tv show and weaving in elements from the books. this is a general verse for those muses outside of the fandom or those who might want threads from before the tv show started. 
+the arcs associated with this verse will not incorporate those aspects and will stay strictly tv based.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; we are nephilim we are born to do this | ❛ main ❜<br />
+<b>verse status:</b> <i>main</i> // default interaction<br />
+</blockquote>
+
+</div>
+
+<br /><br />
+<center><h3>alternate (crossover)</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/39zODy1.png"></div>
+<a href="#?w=458" rel="02" class="poplight" title="alternate (crossover)"><b>crossover</b></a> &mdash; this verse is a crossover verse based in either the movie or book universes. in this verse jace from the freeform tv show has had a portal accident and has ended up in either the movie or the book universe. he looks exactly like what he does on the show, has all the runes along with the skills and knowledge.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; travelling through the looking glass | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>alternate</i> // crossover <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>alternate (books)</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/39zODy1.png"></div>
+<a href="#?w=458" rel="03" class="poplight" title="alternate (books)"><b>books</b></a> &mdash; this verse is a book based verse. all events that take place during the mortal instruments and any future books will take place in this verse. this is a request only verse or for those who are strictly book based blogs.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; we are dust and shadows | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>alternate</i> // books <br />
+</blockquote> 
+</div>
+
+<br /><br />
+<center><h3>alternate (world inverted)</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/39zODy1.png"></div>
+<a href="#?w=458" rel="04" class="poplight" title="alternate (world inverted)"><b>world inverted</b></a> &mdash; this verse takes place in the world inverted as shown in series one, episode ten. in this verse jace never became a shadowhunter &amp; never became alec's parabatai. he runs a coffee truck called java jace which he can be found at six days a week. one day a week he gives himself the day off and allows the coffee truck to be run by a close friend and confidant.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; our world has been turned upside down | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>alternate</i> // world inverted <br />
+</blockquote>
+
+<br /><br /><br /><br />
+</div>
+
+</li>
+
+<li>
+<center><h4>canon variants</h4></center>
+<br />
+<center><h3>circle</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/39zODy1.png"></div>
+<a href="#?w=458" rel="05" class="poplight" title="circle"><b>circle</b></a> &mdash; this verse explores what would’ve happened had jace lived with valentine instead of living with the lightwoods. growing up with valentine and jonathan he eventually joins in their crusade to gather the mortal instruments by infiltrating the new york institute as a fellow shadowhunter. in this verse he doesn’t become parabatai to alec lightwood.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; facilis descensus averni  | ❛ alternate ❜ <br /> 
+<b>verse status:</b> <i>alternate</i> // circle <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>shadowhunter spy</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/39zODy1.png"></div>
+<a href="#?w=458" rel="06" class="poplight" title="shadowhunter spy"><b>shadowhunter spy</b></a> &mdash; this verse explores what would’ve happened had jace been forcibly separated from his parabatai, alec lightwood and sent to join a secret group within the clave that used shadowhunters to infiltrate rogue groups around the world in an attempt to take them down. in this verse jace has one extra special ability and that is to create portals similar to clary fairchild. that is the only special ability he has.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; from the shadows we strike | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>alternate</i> // shadowhunter spy <br />
+</blockquote> 
+</div>
+
+<br /><br />
+<center><h3>downworlder/werewolf</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/39zODy1.png"></div>
+<a href="#?w=458" rel="07" class="poplight" title="downworlder/werewolf"><b>downworlder/werewolf</b></a> &mdash; this verse explores what would've happened had an attack turned jace into a werewolf instead of allowing him to become the shadowhunter he's known for. in this verse he never became the parabatai of alec lightwood and his parents are still alive. when in wolf form jace will look like <a href="https://i.imgur.com/onGLVbR.jpg">this</a>.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; this may not have been my destiny but it is my path in life | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>alternate</i> // downworlder (werewolf)<br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>the owl</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/39zODy1.png"></div>
+<a href="#?w=458" rel="08" class="poplight" title="the owl"><b>the owl</b></a> &mdash; this verse explores what would've happened had magnus not been able to incinerate the owl out of jace at the end of series three episode ten. after assuming that alec died from the arrow in his chest, the owl hides out to recover before returning to its mission of killing mundanes that were
+worthy as his queen had asked of him. the owl also decides to take revenge on magnus for causing him pain and for what he assumes is the loss of his queen.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; revenge proves its own executioner | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>alternate</i> // the owl <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>raised by stephen &amp; celine</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/39zODy1.png"></div>
+<a href="#?w=458" rel="09" class="poplight" title="raised by stephen &amp; celine"><b>raised by stephen &amp; celine</b></a> &mdash; this verse explores what would've happened had stephen and celine not been killed during the uprising, and were alive to raise their son jace in idris. he still would have met alec lightwood, they still would've become parabatai but instead of calling the lightwoods his family he would have his intended parents to raise and train him
+<br />
+<br />
+<blockquote>
+<b>verse:</b>✦ v; seeing through the glamour is easy; it’s people that are hard | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>alternate</i> // raised by parents<br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>reincarnation</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/39zODy1.png"></div>
+<a href="#?w=458" rel="10" class="poplight" title="reincarnation"><b>reincarnation</b></a> &mdash; born as jonathan shadowhunter, he's wandered the millennium in the hopes that maybe it'll provide him with the reason he's constantly returned to life. dying over and over again, he always returns to life. and unfortunately he seems to have an infiite number of lives to live. he'd thought that creating the nephilim would improve the world around him. instead, it seems to have made it worse. and he would know as he's watched them grow and corrupt themselves. 
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; death was only the beginning of my journey | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>alternate</i> // reincarnation <br />
+</blockquote>
+</div>
+
+<br /><br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+<center><h4>fandom inspired</h4></center>
+<br />
+<center><h3>pacific rim</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/e4IJM2Z.png"></div>
+<a href="#?w=458" rel="11" class="poplight" title="pacific rim"><b>pacific rim</b></a> &mdash; this verse takes place in the pacific rim universe. jace is one of the few jaeger pilots left and struggles knowing that while the breach was sealed there could always be another one.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; looking to the drift to find what’s missing | ❛ pacific rim ❜<br />
+<b>verse status:</b> <i>alternate</i> // pacific rim <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>terra nova</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/zASwkeM.png"></div>
+<a href="#?w=458" rel="12" class="poplight" title="terra nova"><b>terra nova</b></a> &mdash; this verse takes place in the terra nova universe. a former soldier arrested for running illegal jobs, jace somehow manages to slip in through the portal to end up on terra nova.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; the dawn of a new civilisation | ❛ terra nova ❜<br />
+<b>verse status:</b> <i>alternate</i> // terra nova <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>jurassic world</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/NeMjh2R.png"></div>
+<a href="#?w=458" rel="13" class="poplight" title="jurassic world"><b>jurassic world</b></a> &mdash; this verse takes place in the jurassic world universe. a former soldier, now jace is head of security at the isla nublar park
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; who’s really in control of the mad house | ❛ jurassic world ❜<br />
+<b>verse status:</b> <i>alternate</i> // jurassic world <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>the purge</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/NfUD8GM.png"></div>
+<a href="#?w=458" rel="14" class="poplight" title="the purge"><b>the purge</b></a> &mdash; this verse takes place in the purge universe.
+<br />
+<br />
+<br />
+<br />
+
+<blockquote>
+<b>verse:</b> ✦ v; sometimes you’ve got to let everything go | ❛ purge ❜<br />
+<b>verse status:</b> <i>alternate</i> // the purge <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>007</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/w12BikK.png"></div>
+<a href="#?w=458" rel="15" class="poplight" title="007"><b>007</b></a> &mdash; this verse takes place in the 007 universe.
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; i like to do some things the old fashioned way | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>alternate</i> // 007 <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>the bachelor</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/kn1nV3h.png"></div>
+<a href="#?w=458" rel="16" class="poplight" title="the bachelor"><b>the bachelor</b></a> &mdash; this verse takes place in the bachelor universe.
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; i’m not here to make friends | ❛ bachelor ❜  <br />
+<b>verse status:</b> <i>alternate</i> // the bachelor <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>poseidon</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/RLAIWHn.png"></div>
+<a href="#?w=458" rel="17" class="poplight" title="poseidon"><b>poseidon</b></a> &mdash; this verse takes place in the poseidon universe.
+<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; there's nothing fair about who lives and dies | ❛ poseidon ❜  <br />
+<b>verse status:</b> <i>alternate</i> // poseidon <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>the island</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/OAYWsAR.png"></div>
+<a href="#?w=458" rel="18" class="poplight" title="the island"><b>the island</b></a> &mdash; this verse takes place in the island universe.<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; i just want to live; i don’t  care how | ❛ the island ❜  <br />
+<b>verse status:</b> <i>alternate</i> // the island <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>dc (general)</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/GtiTQqz.png"></div>
+<a href="#?w=458" rel="19" class="poplight" title="dc (general)"><b>dc (general)</b></a> &mdash; this verse takes place in the dc universe &amp; is <b>semi-private</b>. for now participation will be limited to <b>crimefightr</b>, <b>affcgato</b> &amp; those from the dc universe. 
+<p>Jace wayne (he takes on bruce’s last name as he no longer knows just who he is) aka shadowwing (not realising that his bat name pays homage to the fact he was a shadowhunter in his old life). His “uniform” is his all back hunting gear but with the addition of a domino mask to hide his identity.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; the dark descent | ❛ dc ❜  <br />
+<b>verse status:</b> <i>alternate</i> // dc universe <br />
+<b>verse exclusives:</b> bruce wayne (<a href="http://crimefightr.tumblr.com">@crimefightr</a>) &amp; alexander lightwood (<a href="http://affcgato.tumblr.com">@affcgato</a>)
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>harry potter</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/Rb2WxjM.png"></div>
+<a href="#?w=458" rel="20" class="poplight" title="harry potter"><b>harry potter</b></a> &mdash; born of an old, pureblood family, jonathan “jace” herondale was destined to do great things. Getting his letter, he finds himself sorted into slythern; the house of his parents. After struggling in the beginning he slowly starts to become one of the top students in his class, easily mastering transfiguration, charms defense against the dark arts and duelling. Once he graduated from hogwarts he was offered the choice of assignments in the department of magical law enforcement. In the end he decides to go with being a hit wizard but he’s also given the same training an auror so he can work with either department.  
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; we all must face the choice between what is right and what is easy | ❛ harry potter ❜  <br />
+<b>verse status:</b> <i>alternate</i> // harry potter <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>dc (aquaman)</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/lybeoSU.png"></div>
+<a href="#?w=458" rel="21" class="poplight" title="dc (aquaman)"><b>dc (aquaman)</b></a> &mdash; this verse takes place in the dc universe, influenced by the aquaman movie &amp; is <b>semi-private</b>. for now participation will be limited to <b>idumean</b> and <b>affcgato</b>. 
+<p>jace is the son of celine (an atlantean princess) and stephen (a human lighthouse keeper). When the throne was overthrown by valentine celine fled to the surface and was found by stephen. They ended up falling in love and their son jace was born. Not long after he was born valentine sent forces to retrieve celine to punish her for treason. Instead of allowing herself to be taken alive she begged stephen to keep their son safe and took her own life. Jace was raised to think he was as human as everyone else around him although he tends to be drawn to the ocean and has a strange connection to the animals under the sea. 
+<p>In this verse jace will always have legs no matter what unlike his little mermaid based verse where he will have to choose between human legs and mermaid tails.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; true happiness is found along a middle road  | ❛ dc ❜  <br />
+<b>verse status:</b> <i>alternate</i> // aquaman (dc universe)<br />
+<b>verse exclusives:</b> jonathan morgenstern (<a href="http://idumean.tumblr.com">@idumean</a>) &amp; alexander lightwood (<a href="http://affcgato.tumblr.com">@affcgato</a>)
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>the witcher</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/QaSH0UG.png"></div>
+<a href="#?w=458" rel="22" class="poplight" title="the witcher"><b>the witcher</b></a> &mdash; this verse takes place in the wticher universe, influenced by the witcher netflix series. 
+<p>Kidnapped by valentine (a former witcher turned evil) as a child, jace was turned into a witcher to replace the failure that was jonathan morgenstern. Hailing from oxenfurt, he trained at the school of the bear and is now one of the few witchers that roams the countryside.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; evil is evil; lesser greater middling it’s all the same | ❛ the witcher ❜  <br />
+<b>verse status:</b> <i>alternate</i> // the witcher<br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>the old guard</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/39N6pZM.png"></div>
+<a href="#?w=458" rel="23" class="poplight" title="the old guard"><b>the old guard</b></a> &mdash; this verse takes place in the old guard universe and is based around the netflix movie with comic influences.
+<p>The first Immortal. Not something Jonathan had ever thought would happen to him. Demons had been rampaging the earth and it had been up to him and a few others to put a stop to it. His death hadn’t been quick but it had been painful, something he would never forget. Once the battle was done he was the only one to survive and with it came the realisation that he would live forever. Not something Jonathan had wanted. He wandered the earth alone, wondering if he would always be alone or if someone would finally join him. The dream hit him and seeing the girl he happened to get to Andromache’s side as she came to. Unfortunately, he couldn’t stay with her. He knew that it would be dangerous and telling her that all would be okay. And it would. The dreams were ones he learned to ignore and in time he’d preferred being a hermit. Until he had no other choice. Andromache would always know where to find him and while he had spent his time wandering the world, should she need him he would be there. 
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; it’s not what time steals but what it leaves behind   | ❛ the old guard ❜  <br />
+<b>verse status:</b> <i>alternate</i> // the old guard<br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>star wars</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/1eb2vfw.png"></div>
+<a href="#?w=458" rel="24" class="poplight" title="star wars"><b>star wars</b></a> &mdash; this verse takes place in the star wars universe.
+<p>a smuggler unaware of his connection to the force, jace takes jobs where he can charge more than most. sometimes he gets lucky when he evades the first order, other times he wonders if it's something more than just luck.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; your eyes can deceive you; don’t trust them | ❛ star wars ❜ <br />
+<b>verse status:</b> <i>alternate</i> // star wars<br />
+</blockquote>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</li>
+
+
+<li>
+<center><h4>alternate verses</h4></center>
+<br />
+<center><h3>florist/companion</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/8tlaOVQ.png"></div>
+<a href="#?w=458" rel="25" class="poplight" title="florist/companion"><b>florist/companion</b></a> &mdash; this is a companion verse to affcgato’s florist au
+<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; there are no such things as coincidences | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>companion</i> // florist shop <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>college</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/1BcdNdU.png"></div>
+<a href="#?w=458" rel="26" class="poplight" title="college"><b>college</b></a> &mdash; this is a college au verse
+<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; try walking in my shoes if you want to understand | ❛ alternate ❜<br />
+<b>verse status:</b> <i>alternate</i> // college <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>coffee shop</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/09IUTcj.png"></div>
+<a href="#?w=458" rel="27" class="poplight" title="coffee shop"><b>coffee shop</b></a> &mdash; everyone's favourite coffee shop au
+<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; bright smiles and roasted beans | ❛ alternate ❜<br />
+<b>verse status:</b> <i>alternate</i> // coffe shop <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>bodyguard</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/awldvV2.png"></div>
+<a href="#?w=458" rel="28" class="poplight" title="bodyguard"><b>bodyguard</b></a> &mdash; bodyguard au
+<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; once destined for bigger things | ❛ alternate ❜<br />
+<b>verse status:</b> <i>alternate</i> // bodyguard <br />
+</blockquote>
+</div>
+
+<br />
+<br />
+<center><h3>rockstar</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/4ajRWHj.png"></div>
+<a href="#?w=458" rel="29" class="poplight" title="rockstar"><b>rockstar</b></a> &mdash; rockstar au
+<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; i won’t be a rockstar; i’ll be a legend | ❛ alternate ❜<br />
+<b>verse status:</b> <i>alternate</i> // rockstar <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>mafia</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/4p5TZA6.png"></div>
+<a href="#?w=458" rel="30" class="poplight" title="mafia"><b>mafia</b></a> &mdash; in this verse jace is the son of the head of the herondale mafia family. instead of wanting to take over the family from his parents, he's turned to becoming their enforcer. he's also put his services up for sale to the other families in the city. his work doesn't come cheap and it's only those families with money that tend to purchase his services.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; success is the sum of all small efforts repeated day in and day out | ❛ alternate ❜<br />
+<b>verse status:</b> <i>alternate</i> // mafia<br />
+</blockquote> 
+</div>
+
+<br /><br />
+<center><h3>warlocks/familiars</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/wdfTdUE.png"></div>
+<a href="#?w=458" rel="31" class="poplight" title="warlocks/familiars"><b>warlocks/familiars</b></a> &mdash; in this verse jace is the powerful warlock heir to the herondale family. this is a companion verse to the ones on takeseffort &amp; idumean and is also compatible with those from his dark materials.
+<p>ever since the incursion, humanity has sought a way to fight back against the demonic hoards threatening to drown the world in their darkness. after a millennia of struggle, hope emerged in the form of bond between those with magical blood & a strange bloodline - the daemon. magic had long been used to combate the growing threat of darkness, but had unpredictable rates of success due to its unstable nature. a bond with a daemon was found to stabilize that force, allowing for more powerful, predictable results.
+<p>there is only one problem; the number of daemon has always been far, far eclipsed by the number of witches & warlocks seeking to partner with them. add to this the caveat that while a witch or warlock might court a familiar, in the end it's solely the <b>DAEMON'S CHOICE</b> to consent to a bond. because of this, powerful witches & warlocks have tortured them, forcing them to consent so they can bolster their power.
+<p>after being experimented on before his birth jace was born a powerful warlock to stephen & celine. intially wanting to stick by valentine’s side to help him achieve his  goals they found that their son needed a familiar to keep himself from doing more harm. not long after jace was born they ran from idris and went into hiding in new york, raising their son in as normal a life as possible. once he reached a certain age he was brought to the new york institute of sorcery to be matched with a potential familiar
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; you cannot change what you are only what you do | ❛ alternate ❜<br />
+<b>verse status:</b> <i>alternate</i> // warlocks &amp; familiars <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>translator (un/the hague)</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/DITemwa.png"></div>
+<a href="#?w=458" rel="32" class="poplight" title="translator (un/the hague)"><b>translator (un/the hague)</b></a> &mdash; in this verse after jace graduated from nyu he started work at the un as a translator and slowly worked his way up to lead translator. sometimes he works at the hague and other times he is stationed in new york city. 
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; just let the past be and start over | ❛ alternate ❜   <br />
+<b>verse status:</b> <i>alternate</i> // translator <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>law enforcement / criminal minds</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/BcYqFvc.png"></div>
+<a href="#?w=458" rel="31" class="poplight" title="law enforcement / criminal minds"><b>law enforcement / criminal minds</b></a> &mdash; in this verse jace is interpol transfer/exchange temporary working with them because of his international experience and because he was the best & brightest at mi-5 before transferring to interpol
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; we are all that stands between the monsters and the weak | ❛ alternate ❜<br />
+<b>verse status:</b> <i>alternate</i> // law enforcement / criminal minds <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>dracula</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/rgRES2i.png"></div>
+<a href="#?w=458" rel="32" class="poplight" title="dracula"><b>dracula</b></a> &mdash; this verse is based on the dracula untold movie where jace has lived centuries after becomming the immortal dracula. though it's not a name he uses. instead he goes by jonathan or jace depending on the century. 
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; time is always too short for those who need it but for those who love it lasts forever | ❛ alternate ❜   <br />
+<b>verse status:</b> <i>alternate</i> // dracula <br />
+</blockquote>
+</div>
+
+<br />
+<br /><br />
+</li>
+
+<li>
+<center><h4>corrupt fairytales</h4></center>
+<br />
+<center><h3>persephone</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/ogaYIdr.png"></div>
+<a href="#?w=458" rel="33" class="poplight" title="persephone"><b>persephone</b></a> &mdash; in this verse jace is persephone and prisoner of hades for six months out of the year.
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; no winter lasts forever; no spring skips its turn | ❛ alternate ❜<br />
+<b>verse status:</b> <i>alternate</i> // persephone <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>hades</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/D5wC09j.png"></div>
+<a href="#?w=458" rel="34" class="poplight" title="hades"><b>hades</b></a> &mdash; in this verse jace is hades, god of the underworld and constantly in search of his persephone. in the past many had decided to spend their lives with him but after one decided to break their word to him he started to enforce the contract. any who wanted to give their life to him would need to give it freely and would need to sign the contract in blood.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; a love like ours can turn even the darkest coldest realms into the happiest of homes | ❛ alternate ❜<br />
+<b>verse status:</b> <i>alternate</i> // hades<br />
+</blockquote> 
+</div>
+
+<br />
+<center><h3>little mermaid</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/Nyp7Svb.png"></div>
+<a href="#?w=458" rel="35" class="poplight" title="little mermaid"><b>little mermaid</b></a> &mdash; in this verse jace is the last herondale, the lost prince of the kingdom under the sea. constantly drawn to the sea, his parents are constantly worried that he will find out his true heritage; that he is the son of two former mermaids.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; there is a world where hope and dreams can last for all times  |  ❛ alternate ❜  <br />
+<b>verse status:</b> <i>alternate</i> // little mermaid<br />
+</blockquote>
+</div>
+
+<br /><br />
+<br />
+<br /><br />
+</li>
+
+<li>
+<center><h4>private verses</h4></center>
+<br />
+<center><h3>witch</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/9uaXxEy.png"></div>
+<a href="#?w=458" rel="36" class="poplight" title="witch"><b>witch</b></a> &mdash; this verse is based on the movie hocus pocus and is a closed/private verse
+<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; it’s just a bunch of hocus pocus | ❛ alternate ❜<br />
+<b>verse status:</b> <i>private</i> // hocus pocus (closed) <br />
+</blockquote> 
+</div>
+
+<br /><br />
+<center><h3>ballet</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/ObPAJDk.png"></div>
+<a href="#?w=458" rel="37" class="poplight" title="ballet"><b>ballet</b></a> &mdash; this is a ballet alternate universe and is a closed/private verse. once upon a time jonathan herondale was a dancer with the royal ballet in london. until an accident in rehearsal ended his career. after rehab and finding out that it wouldn't be wise for him to return to dancing, jace took up teaching ballet to those who wanted to follow in his footsteps.
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; the art of being wise is the art of knowing what to overlook | ❛ alternate ❜ <br />
+<b>verse status:</b> <i>private</i> // ballet (private // invite only)<br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>cybernetic boyfriend</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/99ao96M.png"></div>
+<a href="#?w=458" rel="38" class="poplight" title="cybernetic boyfriend"><b>cybernetic boyfriend</b></a> &mdash; this verse is based on the cybernetic boyfriend japanese manga comic and is a closed/private verse
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; it’s the unexpected that changes our lives | ❛ alternate ❜  <br />
+<b>verse status:</b> <i>private</i> // cybernetic boyfriend (closed) <br />
+</blockquote>
+</div>
+
+<br /><br />
+<center><h3>warehouse 13</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/68KuHgz.png"></div>
+<a href="#?w=458" rel="39" class="poplight" title="warehouse 13"><b>warehouse 13</b></a> &mdash; this verse is based on warehouse 13 and is a private/closed group verse
+<br />
+<br />
+<br />
+<br />
+<br />
+<blockquote>
+<b>verse:</b> ✦ v; snag it bag it and tag it | ❛ warehouse 13 ❜   <br />
+<b>verse status:</b> <i>private group verse</i> // warehouse 13<br />
+</blockquote>
+</div>
+<br /><br />
+<br />
+<br /><br />
+</li>
+
+</ul> 
+</li>
+
+    </div></div>
+</div>       
+
+<!-- -------------------------- TAB 6 -------------------------- -->
+
+<div id="tab6" class="tab">
+    <div class="tabcontent">
+    <div id="headernav">
+        <div id="tabside">
+        <h4>site map</h4>
+        <ul id="tabs">
+     <li class="active" style="width:100px">blog schedule</li>  
+     <li style="width:100px">non-rp blogs</li>
+     <li style="width:100px">navigation</li>
+</ul>  
+</div>
+
+<ul id="tab">
+<li class="active">
+<h4>blog schedule</h4>
+<br />
+<!-- basic information -->
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/scQ0Ua8.png"></div>
+<a href="https://cxpt.tumblr.com"><b>cxpt</b></a> &mdash; 616 &amp; MCU based steve rogers. private, selective and mutuals only. general knowledge of the marvel cinematic universe is suggested but not required. no knowledge of the comics is necessary for interactions.<br /> 
+<br />
+we can be found on this blog <b>mon,thur,fri</b>
+</div>
+<br /><br />
+
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/xRIEaZy.png"></div>
+<a href="https://ofangelicblood.tumblr.com"><b>ofangelicblood</b></a> &mdash; show based, book influenced jace herondale of the mortal instruments series. private &amp; highly selective. while this blog still pulls heavily from the freeform series, elements of the books are slowly being added to the blended canon main verse. for those who prefer the show there are arcs that follow each series. and for those who prefer the books there is a <b>request only</b> book verse along with arcs for each book. <br />
+<br />
+we can be found on this blog <b>tue</b>
+</div>
+<br /><br />
+
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/cylscql.png"></div>
+<a href="https://bastxrds.tumblr.com"><b>bastxrds</b></a> &mdash; multimuse featuring muses from inception, marvel, dc, the shadowhunter chronicles, harry potter, star wars, netflix's the witcher &amp; the old guard. private &amp; highly selective. please read the bios for the muse you're interested in before approaching us for interactions.<br />
+<br />
+we can be found on this blog <b>wed</b>
+</div>
+<br /><br />
+</li>
+
+<li>
+<h4>non rp blogs</h4>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/5oHcfne.png"></div>
+<p><b>RP hub</b> || <a href="http://houseofsol.tumblr.com/">@houseofsol</a>. the collective RP hub (sideblog) for all of my blogs. this blog collects all of my resources (banners, writing references, fonts, theme things, aesthetics, etc) all in one place. all of my important ooc updates will be posted here, even if they are not reblogged to other blogs. this is also the central hub for all my themes currently available to the public
+<br />
+</div>
+<br /><br />
+
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/APjJdwn.png"></div>
+<p><b>meme hub</b> || <a href="http://mangosmemes.tumblr.com/">@mangosmemes</a>. collective meme hub for all of my blogs, as well as a curated collection with contribution from various other meme-bers. this blog is open as a resource to all rp blogs! <b>currently pending overhaul.</b>
+<br />
+</div>
+<br /><br />
+</li>
+
+<li>
+<h4>navigation</h4>
+<center>
+<p><h3>out of character</h3>
+<p>
+<a href="/tagged/✦ from the institute | ❛ ooc ❜" class="button">ooc</a> 
+&nbsp;
+<a href="/tagged/✦ shadowhunters do love to talk | ❛ promo ❜" class="button">promo</a>
+<br />
+<a href="/tagged/✦ orders from above | ❛ memes ❜" class="button">memes</a>
+&nbsp;
+<a href="/tagged/✦ an urgent message from idris | ❛ psa ❜" class="button">psa</a> 
+<br />
+<a href="/tagged/✦ just be yourself | ❛ self promo ❜" class="button">self promo</a>
+&nbsp;
+<a href="/tagged/✦ walking with a friend in the dark is better than walking alone in the light | ❛ follow friday ❜" class="button">follow friday</a>
+<br />
+</center>
+
+<br />
+<center>
+<p><h3>in character</h3>
+<p>
+<a href="/d" class="button">threads</a> 
+&nbsp;
+<a href="https://www.rpthreadtracker.com/public/allthreads?userId=40604&currentBlog=&sortDescending=false&currentOrderBy=LastPostDate&filteredTag=" class="button">rp tracker</a>
+<br />
+<a href="/tagged/✦ i am stunningly attractive | ❛ interactions ❜" class="button">interactions</a>
+&nbsp;
+<a href="/tagged/✦ why not take a chance | ❛ wishlist ❜" class="button">wishlist</a> 
+<br />
+<a href="/tagged/✦ fire message | ❛ answered asks ❜" class="button">answered asks</a>
+&nbsp;
+<a href="/tagged/✦ just another demon stepping up to play | ❛ anonymous ❜" class="button">anonymous</a>
+<br />
+<a href="/tagged/✦ off on a mission | ❛ queue ❜" class="button">queue</a> 
+&nbsp;
+<a href="/" class="button">tbd</a>
+<br />
+</center>
+<br />
+
+<center>
+<p><h3>jonathan 'jace' herondale</h3>
+<p>
+<a href="https://shadowhunters.fandom.com/wiki/Jace_Herondale" class="button">book canon</a> 
+&nbsp;
+<a href="https://shadowhunterstv.fandom.com/wiki/Jace_Herondale" class="button">show canon</a>
+<br />
+<a href="/tagged/✦ lies are the stories we tell ourselves | ❛ headcanons ❜" class="button">headcanons</a>
+&nbsp;
+<a href="/tagged/✦ i want to be an angst-ridden teenager who can’t confront his own inner demons and takes it out verbally on other people instead | ❛ isms ❜" class="button">isms</a> 
+<br />
+<a href="/tagged/✦ who am i? not wayland not morgenstern not lightwood not herondale | ❛ visage ❜" class="button">visage</a>
+&nbsp;
+<a href="/" class="button">tbd</a>
+<br />
+</center>
+
+<br />
+
+<center>
+<p><h3>connections</h3>
+<p>
+<a href="/tagged/✦ for whither thou goest i will go | ❛ alec lightwood ❜" class="button">alec lightwood</a> 
+&nbsp;
+<a href="/tagged/✦ love makes you stronger | ❛ clary fray ❜" class="button">clary fray</a>
+<br />
+<a href="/tagged/✦ clever as the devil | ❛ isabelle lightwood ❜" class="button">izzy lightwood</a>
+&nbsp;
+<a href="/tagged/✦ created in chaos and born to destroy | ❛ sebastian morgenstern ❜" class="button">seb morgenstern</a> 
+<br />
+<a href="/" class="button">val morgenstern</a>
+&nbsp;
+<a href="/tagged/✦ a brother's love will forever protect you | ❛ idumean ❜" class="button">jon morgenstern</a>
+<br />
+<a href="/tagged/✦ three go in; three come out | ❛ lightwoods ❜" class="button">lightwoods</a> 
+&nbsp;
+<a href="/tagged/✦ brothers don’t let each other wander in the dark alone | ❛ parabatai ❜" class="button">parabatai</a>
+<br />
+<a href="/" class="button">magnus bane</a>
+&nbsp;
+<a href="/" class="button">ash morgenstern</a> 
+</center>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+</li>
+</ul>
+</li>
+
+    </div></div>
+</div>   
+ 
+<!-- END OF TABS -->
+
+</div>
+</div>
+</div>
+
+
+
+<div id="credit"> 
+<a href="https://houseofsol.tumblr.com" title="theme by houseofsol"><img src="https://68.media.tumblr.com/e5f4ca3f38bdf7a73c37efc9b8fd4996/tumblr_inline_oj2mweKepP1scj6vj_500.png"></a>
+</div>
+
+
+<!-- tabs/all in one script. do not delete -->
+ 
+<script>
+$(document).ready(function() {
+    $('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = $(this).attr('href');
+ 
+        // Show/Hide Tabs
+        $('.tabs ' + currentAttrValue).fadeIn(600).siblings().hide();
+ 
+        // Change/remove current tab to active
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+});
+</script>
+ 
+<script>
+$(document).ready(function() {
+  $('#filterOptions li a').click(function() {
+    // fetch the class of the clicked item
+    var ourClass = $(this).attr('class');
+ 
+    // reset the active class on all the buttons
+    $('#filterOptions li').removeClass('active');
+    // update the active state on our clicked button
+    $(this).parent().addClass('active');
+ 
+    if(ourClass == 'all') {
+      // show all our items
+      $('#ourHolder').children('div.item').show();
+    }
+    else {
+      // hide all elements that don't share ourClass
+      $('#ourHolder').children('div:not(.' + ourClass + ')').hide();
+      // show all elements that do share ourClass
+      $('#ourHolder').children('div.' + ourClass).show();
+    }
+    return false;
+  });
+});
+</script>
+
+<!-- end all in one script coding -->
+
+<a title="Web Analytics Made Easy - StatCounter" href="https://statcounter.com/" target="_blank">
+<img src="https://c.statcounter.com/11804418/0/47029b5a/1/" alt="Web Analytics Made Easy - StatCounter" ></a>
+
+
+</body>
+
+
+<!-- verse popups -->
+
+<!-- verse popup -->
+
+<div id="01" class="popup_block">
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/6STOw5W.png"></div> <!-- change the image on the popup sidebar -->
+
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>
+		
+     <li style="width:100px">notes</li>
+     
+     <li style="width:100px">headcanons</li>
+     
+     <li style="width:100px">connections</li>
+</ul>  
+
+</div> 
+
+<ul id="poptab">
+<li class="active">
+<h4>description</h4>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<h4>notes</h4>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+</li>
+
+<li>
+<h4>headcanons</h4>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<h4>connections</h4>
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/HCsHJYB.png"></a>&nbsp;
+</center>
+</div>
+</li>
+    
+</div>
+
+
+
+
+    
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</html>
