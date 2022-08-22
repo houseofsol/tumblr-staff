@@ -1,0 +1,3876 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+
+<!--
+ 
+olympus ver. 2.0 by houseofsol with a base code by neonbike themes. 
+this is a custom theme for depthsofmysol. no part of it will be replicated.
+please do not remove this credit and please do not use this theme for commissions or giveaways. 
+thank you.
+ 
+-->
+
+
+<!-- dropdown verse scripts -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+        $('.toggle').each(function(){
+                $(this).find('.toggle-content').hide();
+        });
+        $('.toggle a.toggle-trigger').click(function(){
+                var el = $(this), parent = el.closest('.toggle');
+ 
+                if( el.hasClass('active') )
+                {
+                        parent.find('.toggle-content').slideToggle();
+                        el.removeClass('active');
+                }
+                else
+                {
+                        parent.find('.toggle-content').slideToggle();
+                        el.addClass('active');
+                }
+                return false;
+        });
+ 
+});  
+</script>
+
+<!-- popup script -->
+<script type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+<!-- end script -->
+
+<!-- logout script -->
+
+<script type="text/javascript" src="https://l2.io/ip.js?var=userip%22%3E"</script>
+<script language="Javascript">
+function preloadFunc()
+{
+var ip = userip;
+var bannedips=[
+ "83.162.204.108"
+]
+var handleips=bannedips.join("|")
+handleips=new RegExp(handleips, "i")
+
+if (ip.search(handleips)!=-1){ 
+window.location.replace("https://tumblr.com/logout%22);
+document.write('<!--no.-->');
+}
+}
+window.onpaint = preloadFunc();
+</script>
+
+<!-- end script -->
+
+
+<!-- important scripts -->
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/wgijwsy/Ebfm2v4gy/jquery.masonry.min.js"></script>
+
+
+<!-- end other script -->
+
+
+<!-- tabbed script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#tabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tab li.active").removeClass("active");
+            $("ul#tab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+<!-- tabbed popup script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#poptabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#poptabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#poptab li.active").removeClass("active");
+            $("ul#poptab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+
+<!-- mytooltips script -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+
+<script>
+
+(function($){
+
+$(document).ready(function(){
+
+$("a[title]").style_my_tooltips({
+
+tip_follows_cursor:true,
+
+tip_delay_time:0,
+
+tip_fade_speed:0,
+
+attribute:"title"
+
+});
+
+});
+
+})(jQuery);
+
+</script>
+
+<!-- end mytooltips script -->
+
+<!-- redirect script -->
+<script>
+if(window.location.pathname == '/ask') location.replace('/asks');/*replace /faq with whatever your page is!*/
+</script>
+
+
+<!-- image variables (this is for the image uploads) -->  
+
+	<meta name="image:info" content=""/>
+	<meta name="image:header" content=""/>
+	<meta name="image:headerb" content=""/>
+	<meta name="image:smallbg" content=""/>
+	<meta name="image:tooltips" content=""/>
+	<meta name="image:background" content=""/>  
+	<meta name="image:top left" content=""/>  
+	<meta name="image:bottom right" content=""/> 
+	<meta name="image:name" content=""/>  
+	
+	
+<!-- text variables -- where you will put in the text for certain aspects of your theme -->
+
+	<meta name="if:Cursor" content="1"> <!-- this is where you'll have the option of turning the small cursor on or off -->
+	<meta name="if:show grayscale" content="0"/> <!-- this is where you'll have the option of turning the colour on hover on or off -->
+
+ 
+<!-- colour variables (this is where you change the colours) -->
+ 
+   <meta name="color:Background" content="#515f6c"/>
+	<meta name="color:Text" content="#f9f9fb"/>
+	<meta name="color:asktext" content="#f9f9fb"/>
+	<meta name="color:Link" content="#17202f"/>
+	<meta name="color:infolink" content="#17202f"/>
+	<meta name="color:infolink hover" content="#593034"/>
+	<meta name="color:Link Hover" content="#593034"/>
+	<meta name="color:Bold" content="#24323a"/>
+	<meta name="color:Italics" content="#474a50"/>
+	<meta name="color:blockquote" content="#293241"/>
+	<meta name="color:tabs active" content="#70828e"/>
+	<meta name="color:tabs hover" content="#593034"/>
+	<meta name="color:hover background" content="#515f6c"/>
+	<meta name="color:tooltip" content="#70828e"/>
+	
+
+ <script src="https://kit.fontawesome.com/2e587cc233.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">	
+
+ <!-- this is where you can choose what google fonts you want to use -->
+<link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet" type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet" type='text/css'>  
+<link href="https://fonts.googleapis.com/css?family=La+Belle+Aurore" rel="stylesheet" type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Rasa&display=swap" rel="stylesheet" type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Arima+Madurai&display=swap" rel="stylesheet" type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap" rel="stylesheet" type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Marck+Script&display=swap" rel="stylesheet" type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet" type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Mr+Dafoe&display=swap" rel="stylesheet" type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet" type='text/css'> 
+
+
+<style type="text/css"> /* this gives the theme its look */
+
+@font-face{font-family:'abuget';src:url('https://static.tumblr.com/uopakca/kLGq4cspi/abuget.ttf');}
+@font-face{font-family:'inkland';src:url('https://static.tumblr.com/ujahjev/y1upmobkh/inkland.ttf');}  
+@font-face{font-family:'notera';src:url('https://static.tumblr.com/uopakca/ksnq4csub/notera_personaluseonly.ttf');}  
+@font-face{font-family:'northwave';src:url('https://static.tumblr.com/uopakca/AzKq4ct1m/north_wave.otf');}
+
+
+iframe#ask_form { 
+        width: 455px;
+      height: 230px;
+      min-height: 220px; 
+      }
+
+
+/* this is more code for the cursor */
+
+{block:IfCursor}*, body, a, a:hover {
+cursor: url(https://cur.cursors-4u.net/others/oth-6/oth589.cur), auto;
+}
+{block:IfCursor}
+
+/* this is for the tabbed popup box */
+
+ul#poptabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   color:#606c64;
+}
+
+ul#poptabs li {
+   display: inline-block;
+   background-color: transparent;
+   background-image:url('{image:smallbg}');
+   border: solid 1px #6a6a6a;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   color: #fff;
+   text-shadow:0px 1px 1px #000000;
+   cursor: pointer;
+}
+
+ul#poptabs li:hover {
+   background-color: transparent;
+   background-image:url('{image:smallbg}');
+}
+
+ul#poptabs li.active {
+   background-color: #7a9f80;
+   background-image:url('{image:tabsbkg}');
+}
+
+ul#poptab {
+   list-style-type: square;
+   margin: 5px;
+   padding: 5px;
+   }
+
+ul#poptab li {
+   display: none;
+}
+
+ul#poptab li.active {
+   display: block;
+}
+
+/* tabbed popup box coding ends here */
+
+
+/* this is for the quotes box */
+
+#quotes{
+		position:fixed;
+      top:75px;
+      left:730px;
+      width:245px;
+      height:70px;
+      background-color:transparent;
+      font-size:11px;
+		text-transform:lowercase;
+		/* text-shadow:0px 1px 1px #000000; */
+		text-align:center;
+		color: #f9f9fb;
+		overflow:auto;
+		padding:0px;
+      overflow-x:hidden;
+      line-height:20px;
+
+}
+
+#quotes a{
+	text-decoration:none;
+}
+
+#quotes a:hover {
+    text-decoration:none;
+}
+
+#headerq{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:250px;
+    height:25px;
+    margin-top:1px;
+    margin-left:105px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:7px;
+     cursor: pointer;
+     border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+}
+
+#quotes-bottom{
+		position:fixed;
+      top:710px;
+      left:477px;
+      width:250px;
+      height:70px;
+      background-color:transparent;
+      font-size:11px;
+		text-transform:lowercase;
+		/* text-shadow:0px 1px 1px #000000; */
+		text-align:center;
+		color: #f9f9fb;
+		overflow:auto;
+		padding:0px;
+      overflow-x:hidden;
+      line-height:20px;
+
+}
+
+#quotes-bottom a{
+	text-decoration:none;
+}
+
+#quotes-bottom a:hover {
+    text-decoration:none;
+}
+
+#headerqb{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:250px;
+    height:25px;
+    margin-top:1px;
+    margin-left:105px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:7px;
+     cursor: pointer;
+     border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+}
+	
+
+/* quotes box coding ends here */
+
+
+.center {
+margin-left:50px;
+margin-top:20px;
+}
+
+.upcenter {
+margin-left:50px;
+margin-top:0px;
+}
+
+
+/* this is for the tumblr controls */
+
+iframe#tumblr_controls {
+right:2px !important;
+opacity:0.4;
+position: fixed !important;
+filter:alpha(opacity=30);
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+}
+iframe#tumblr_controls:hover{
+opacity:0.9;
+position: fixed !important;
+filter:alpha(opacity=80);
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+}
+
+
+/* this is what changes the colour when you highlight */
+
+::selection {
+background: #17202f;
+color: #c7cccb;
+}
+
+
+/* this changes the tooltip when you hover over a link */
+
+#s-m-t-tooltip {
+max-width:400px;
+padding:5px;
+margin:10px 0px 0px 10px;
+background-color:#c97904; 
+background-image:url('{image:tooltips}');
+font-family:trebuchet ms;
+font-size:8px;
+letter-spacing:1px;
+font-style:none;
+text-transform:uppercase;
+padding-bottom:3px;
+color:#fff;
+text-shadow:0px 1px 1px #000000;
+border: 4px double #293241;
+z-index:999999999999999999999999999999999999;
+}
+
+
+/* this is the scrollbar code */
+ 
+::-webkit-scrollbar-thumb:vertical {background-color:transparent;height:0px;}
+::-webkit-scrollbar-thumb:horizontal {background-color:transparent;height:0px;}
+::-webkit-scrollbar {background-color:{color:transparent};height:0px;width:0px;}
+
+
+/* this is all your heading codes */
+
+h1 {
+font-size:17px;
+line-height:15px;
+font-family:bitter;
+text-transform:uppercase;
+text-align:center;
+font-style:italic;
+font-weight:normal;
+letter-spacing:0px;
+color:{color:text};
+}
+ 
+h2 {
+font-size:17px;
+font-family:bitter;
+text-align:center;
+line-height:100%;
+letter-spacing:-0.5px;
+color:{color:text};
+font-weight:bold;
+text-transform:uppercase;
+padding:5px;
+padding-bottom:2px;
+}
+
+h3 {
+font-size:45px;
+text-align:center;
+line-height:2px;
+font-family: 'northwave', cursive;
+letter-spacing:-0.5px;
+color:#293241;
+font-weight:normal;
+font-style:italic;
+text-align:center;
+text-transform:lowercase;
+padding-top:2px;
+margin-top:25px;
+margin-bottom:30px;
+}
+
+h4 {
+font-size:40px;
+line-height:15px;
+font-family: 'Cedarville Cursive', cursive;
+text-transform:lowercase;
+text-align:center;
+font-style:italic;
+font-weight:normal;
+letter-spacing:0px;
+color:{color:text};
+margin-top:15px;
+margin-bottom:2px;
+}
+
+h5 {
+font-size:13px;
+line-height:15px;
+font-family:bitter;
+text-transform:uppercase;
+text-align:center;
+font-weight:normal;
+letter-spacing:0px;
+color:{color:text};
+background-color: transparent;
+border: solid 1px #ffffff;
+width:135px;
+display: inline-block;
+padding: 5px 15px;
+margin-bottom: 3px;
+margin-left:3px;
+margin-top:3px;
+}
+
+h6 {
+font-size:13px;
+font-family:bitter;
+text-align:center;
+line-height:100%;
+letter-spacing:-0.5px;
+color:{color:text};
+font-weight:bold;
+text-transform:uppercase;
+padding-top:7px;
+background-image: url('{image:header}');
+background-repeat: no-repeat;
+border-top:1px solid #fff;
+border-bottom:1px dashed #fff;
+margin-left:15px;
+width:200px;
+height:26px;
+}
+
+h7 {
+font-size:11px;
+font-family:bitter;
+text-align:center;
+line-height:15px;
+text-transform:lowercase;
+text-align:center;
+font-weight:normal;
+letter-spacing:0px;
+color:#17202f;
+border-top: 1px solid #f9f9fb;
+border-bottom: 1px dashed #f9f9fb;
+background:transparent;
+width:185px;
+display: inline-block;
+padding: 5px 15px;
+margin-bottom: 1px;
+margin-left:-20px;
+}
+
+h7:hover {
+border-top: 1px dashed #f9f9fb;
+border-bottom: 1px solid #f9f9fb;
+background-image:url('{image:tooltips}');
+color:#593034;
+}
+
+
+ul{
+    list-style-type:square;
+}
+ 
+ol{
+    list-style-type:;
+}
+
+/* heading code ends */
+
+ 
+/* general code for the look of your theme */
+
+body {
+   background-color:{color:background};
+   background-image: url('https://static.tumblr.com/ahsqnir/8Uxqgmjv4/base2.png'), url('{image:background}');
+	background-repeat:no-repeat,repeat;
+	background-attachment:fixed;
+	background-position:0px 0px; 
+   margin:0px;
+   color:{color:text};
+   font-family:bitter;
+   font-size:12px;
+   text-transform:lowercase;
+   line-height:20px;
+   cursor: pointer;
+}
+
+sup, small, sub { 
+  font-size:12px;
+  }
+  
+b, strong {
+	color:{color:bold};
+	font-size:15px;
+	text-transform:uppercase;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+big {
+	color:{color:bold};
+	}
+	
+
+i, em {
+	color:{color:italics};
+	font-size:25px;
+	text-transform:lowercase;
+	font-family: 'Covered By Your Grace', cursive;
+}
+
+i2, em2 {
+	color:#ff5e7a;
+	font-size:25px;
+	text-transform:lowercase;
+	font-family: 'Covered By Your Grace', cursive;
+}
+ 
+a {
+	text-decoration:none;
+   outline:none;
+   -moz-outline-style:none;
+   color:{color:link};
+   -moz-transition-duration:0.5s;
+   -webkit-transition-duration:0.5s;
+   -o-transition-duration:0.5s;
+   cursor: pointer;
+}
+ 
+a:hover {
+    text-decoration:none;
+    outline:none;
+    -moz-outline-style:none;
+    color:{color:link hover};
+    cursor: pointer;
+}
+
+a.asker {
+   font-size:35px;
+	font-family:'inkland', sans-serif;
+ 	text-transform:capitalize;
+ 	padding-top:5px;
+}
+ 
+p{
+    margin-bottom:10px;
+}
+ 
+img {
+    border:none;
+    max-width:100%
+    height:auto;
+}
+
+img, .photoset {
+max-width: 100%;
+}
+
+blockquote {
+	border-left:1px dashed {color:blockquote};
+   padding-left:10px;
+    padding-right:10px;
+    margin:5px 5px 5px 10px;
+    line-height:auto;
+	}  
+	
+
+blockquote img {
+   max-width:100%;
+   height:auto;
+   }
+
+
+.caption img {
+   max-width:100%;
+   height:auto;}
+ 
+.posts img {
+   max-width:100%;
+   margin-top:5px;
+   margin-bottom:5px;}
+   
+#wrapping img {
+	float:left;
+	padding-right:5px;
+	padding-top:5px;
+	} 
+	
+#wrapverse {
+	height:225px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:10px;
+   margin-right:4px;
+	overflow:auto;
+	color:#606c64;
+}
+
+#wrapverse2 {
+	height:150px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:10px;
+   margin-right:4px;
+	overflow:auto;
+}
+	
+#wrapverse2 img {
+	float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:72px;
+	height:72px;
+	} 	
+	
+#wrapverse2b {
+	height:100px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:10px;
+   margin-right:4px;
+	overflow:auto;
+}
+	
+#wrapverse2b img {
+	float:right;
+	margin-right:8px;
+	margin-left:1px;
+	width:72px;
+	height:72px;
+	} 		
+
+#wrapversea2 {
+	height:225px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:10px;
+   margin-right:4px;
+	overflow:auto;
+}
+	
+#wrapverse img {
+	float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:72px;
+	height:72px;
+	} 
+	
+#wrapversea img {
+	float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:72px;
+	height:72px;
+	} 
+
+#wrapversea2 img {
+	float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:72px;
+	height:72px;
+	} 
+
+
+#wrapverseb {
+	height:225px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:10px;
+   margin-left:4px;
+	overflow:auto;
+}
+
+#wrapverseb2 {
+	height:150px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:10px;
+   margin-left:4px;
+	overflow:auto;
+}
+
+#wrapverseb3 {
+	height:165px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:10px;
+   margin-left:4px;
+	overflow:auto;
+}
+	
+#wrapverseb img {
+	float:right;
+	margin-right:1px;
+	margin-left:8px;
+	width:72px;
+	height:72px;
+	} 
+	
+
+#wrapverseab img {
+	float:left;
+	margin-right:8px;
+	width:65px;
+	height:65px;
+	} 
+	
+#wrapverseba img {
+	float:right;
+	margin-left:8px;
+	width:65px;
+	height:65px;
+	} 
+	
+.video {
+   width:450px!important;}
+
+.video iframe {
+   width:450px!important;}
+   
+  span {
+      cursor: pointer;
+        }
+        
+#overlay {
+   position:fixed;
+   left:470px;
+   top:653px;
+   z-index:99999999;
+    }
+
+#overlay img {
+	width:280px;   
+   height:83px;
+    }
+  
+   
+ div.hr2 {
+ margin-top:5px;
+ height: 5px;
+ margin-left:5px;
+ border-top: 1px dashed #8c8b8b;
+ border-bottom: 1px dashed #8c8b8b;
+ background:transparent;}
+
+div.hr2 hr {
+ display: none;} 
+    
+/* general coding ends here */
+
+
+/* this is your sidebar coding */
+
+#sidebar {
+	position:fixed;
+	width:250px;
+   height:100px;
+}
+
+#sidebar img {
+	width:248px;
+   height:98px;
+   margin-left:481px;
+   margin-top:72px;
+   padding-bottom:0px;
+}
+
+#sidebar2 {
+	position:fixed;
+	width:251px;
+   height:100px;
+}
+
+#sidebar2 img {
+	width:249px;
+   height:98px;
+   margin-left:730px;
+   margin-top:702px;
+   padding-bottom:0px;
+}
+
+/* sidebar coding ends */
+	
+	
+/* tabbed content coding */
+
+.tabcontent {
+    padding:10px;
+    width:500px;
+    margin-left:476px;
+    margin-top:158px;
+    margin-bottom:15px;
+    position:fixed;
+    overflow:scroll;
+    overflow-x:hidden;
+    height:525px;
+    text-transform:lowercase;
+    font-size:12px;
+    line-height:20px;
+    cursor: pointer;
+    
+}
+
+/* tabbed content coding ends here */	
+ 
+
+/* this is the container coding */
+
+#post {
+    width:485px;
+    padding-bottom:15px;
+    margin-top:3px;
+}
+
+#entries {
+    padding:1px 10px;
+    width:500px;
+    margin-left:476px;
+    margin-top:158px;
+    margin-bottom:15px;
+    position:fixed;
+    overflow:scroll;
+    overflow-x:hidden;
+    height:527px;
+    text-transform:lowercase;
+    font-size:12px;
+    line-height:20px;
+}
+   
+/* container coding ends */
+
+
+
+/* this is your links coding */
+
+#links {
+    position:fixed;
+    font-family:bitter;
+    width:300px;
+    margin-top:133px;
+    margin-left:600px;
+    text-transform:uppercase;
+    font-size:15px;
+    text-align:right;
+    line-height:190%;
+    }
+   
+#links a{
+    line-height:190%;
+    padding:1px;
+    margin-top:1px;
+    margin-left:3px;
+    text-decoration:none;
+    color:#17202f;
+    -moz-transition-duration:.7s;
+    -webkit-transition-duration:.7s;
+    -o-transition-duration:.7s;
+    }
+   
+#links a:hover {
+    color:{color:link hover};
+   -moz-transition-duration:.4s;
+   -webkit-transition-duration:.4s;
+   -o-transition-duration:.4s;
+     
+    }
+
+/* links coding ends */
+    
+
+ 
+/* this is your pagination coding (how you go from one page to another) */
+
+#pagination {
+    width:150px;
+   height:35px;
+    font-family:'bitter';
+	font-size:12px;
+	font-style:bold;
+    text-transform:uppercase;
+    margin-top:710px;
+    margin-left:615px;
+    letter-spacing:1px;
+    text-align:center;
+    }
+   
+#pagination a {
+    color:#593034;
+        }
+        
+/* pagination code ends */
+    
+
+/* this is your post information coding */
+
+#info {
+    font-family:calibri;
+    width:501px;
+    height:36px;
+    border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+    margin-left:-3px;
+    padding-top:8px;
+    word-spacing:1px;
+    font-size:12px;
+    color:{color:infotext};
+    text-transform:lowercase;
+    font-style:normal;
+    text-align:center;
+    background-image: url('{image:info}');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#info a {
+    margin-right:5px;
+    color:{color:infolink};
+    font-style:normal;
+    cursor: pointer;
+    }
+   
+#info a:hover {
+    color:{color:infolink hover};
+    cursor: pointer;
+    }
+    
+/* post info coding ends here */
+
+/* this is your permalink post information coding */
+
+{block:PermalinkPage}
+
+#perminfo {
+    font-family:calibri;
+    width:501px;
+    height:36px;
+    margin-left:-3px;
+    padding-top:10px;
+    word-spacing:1px;
+    font-size:12px;
+    border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+    color:{color:infotext};
+    text-transform:lowercase;
+    font-style:normal;
+    text-align:center;
+    background-image: url('{image:info}');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#perminfo a {
+    margin-right:5px;
+    color:{color:infolink};
+    font-style:normal;
+    cursor: pointer;
+    }
+   
+#perminfo a:hover {
+    color:{color:infolink hover};
+    cursor: pointer;
+    }
+    
+{/block:PermalinkPage}
+    
+/* post info coding ends here */
+    
+    
+/* this is the code for your tags */
+
+.tags {
+    font-family:calibri;
+    width:485px;
+    text-transform:normal;
+    line-height:120%;
+    font-size:11px;
+    text-align:right;
+    padding-top:1px;
+    padding-bottom:15px;
+    cursor: pointer;
+    -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    }
+.tags a{
+        font-style:italic;
+        color:{color:link};
+        text-transform:lowercase;
+        cursor: pointer;
+     -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    } 
+.tags a:hover{
+        color:{color:link hover};
+        cursor: pointer;
+         -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+   }  
+   
+/* tags coding ends here */
+
+/* this is the code for your permalink page tags */
+
+{block:PermalinkPage}
+
+.permtags {
+    font-family:calibri;
+    width:485px;
+    text-transform:normal;
+    line-height:120%;
+    font-size:11px;
+    text-align:right;
+    padding-top:1px;
+    padding-bottom:15px;
+    cursor: pointer;
+    -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    }
+.permtags a{
+        font-style:italic;
+        color:{color:link};
+        text-transform:lowercase;
+        cursor: pointer;
+     -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    } 
+.permtags a:hover{
+        color:{color:link hover};
+        cursor: pointer;
+         -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+   }  
+   
+{/block:PermalinkPage}
+   
+/* tags coding ends here */
+
+   
+/* this is the code for your asks/answers */
+
+#ask {
+    padding:5px;
+    padding-bottom:10px;
+    padding-left:10px;
+    text-align:center;
+    text-transform:uppercase;
+    font-weight:bold;
+    color:{color:asktext};
+    line-height:140%;
+    border-bottom:1px dashed #6a6f7a;
+}
+
+#ask img {
+    float:right;
+}
+#ans {
+    text-align:left;
+    padding:5px;
+    color:{color:text};
+    text-transform:lowercase;
+}
+
+/* asks/answers code ends */
+    
+
+/* tumblr audio code */
+    
+.playerbuttonbg {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 19px;
+    height: 19px;
+    background-color: transparent;
+    padding: 10px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    opacity: .4;
+    filter: alpha(opacity=40);
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    transition: opacity .7s ease-in-out;
+    -moz-transition: opacity .7s ease-in-out;
+    -webkit-transition: opacity .7s ease-in-out;
+    }
+           
+    .playerbuttonbg:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    }
+   
+    .newplayerbutton {
+    position: relative;
+    width: 19px;
+    height: 19px;
+    overflow: hidden;
+    }
+   
+    .playerbuttonhug {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+       
+    .tumblr_audio_player {
+    height: 90px;
+    width: 270px;
+    -moz-transform: scale(0.60, 0.60);
+    -webkit-transform: scale(0.60, 0.60);
+    -o-transform: scale(0.60, 0.60);
+    -ms-transform: scale(0.60, 0.60);
+    transform: scale(0.60, 0.60);
+    -moz-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -o-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    }
+ 
+    .audioimgwrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+    width: 79px;
+    height: 79px;
+    }
+           
+    .audioimgwrapper img {
+    width: 100%;
+    height: auto;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;                
+    }
+   
+    .trackdetails {
+    width: auto;
+    line-height:14px;
+    border: 0px solid black;
+    display:inline-block;
+    margin-left: 90px;
+    padding-top:20px;
+    min-height:70px;
+    }
+   
+    .audiowrapper {
+    position: relative;
+    display:inline-block;
+    }
+    
+/* tumblr audio code ends here */
+
+/* header coding */
+
+#header{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:400px;
+    height:25px;
+    margin-top:15px;
+    margin-left:40px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 text-shadow:0px 1px 1px #000000;
+	 font-weight:bold;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+     border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+
+}
+
+#headerp{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:250px;
+    height:25px;
+    margin-top:1px;
+    margin-left:105px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:7px;
+     cursor: pointer;
+     border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+}
+
+#headerb{
+    background-image: url('{image:headerb}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:400px;
+    height:25px;
+    margin-top:15px;
+    margin-left:40px;
+    font-size:11px;
+    text-shadow:0px 1px 1px #000000;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:bold;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+     border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+
+}
+
+#header2{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:325px;
+    height:25px;
+    margin-top:15px;
+    margin-left:75px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 text-shadow:0px 1px 1px #000000;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:7px;
+     cursor: pointer;
+     border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+
+}
+
+#header2p{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:230px;
+    height:25px;
+    margin-top:15px;
+    margin-left:105px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 text-shadow:0px 1px 1px #000000;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+     border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+}
+
+#header3{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:300px;
+    height:25px;
+    margin-top:15px;
+    margin-left:87px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 text-shadow:0px 1px 1px #000000;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:7px;
+     cursor: pointer;
+     border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+
+}
+
+#header3p{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:245px;
+    height:25px;
+    margin-top:1px;
+    margin-left:3px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 text-shadow:0px 1px 1px #000000;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:7px;
+     cursor: pointer;
+	border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+}
+
+#header4{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:400px;
+    height:25px;
+    margin-top:15px;
+    margin-left:20px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 text-shadow:0px 1px 1px #000000;
+	 font-weight:bold;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+     border-top:1px solid #fff;
+    border-bottom:1px dashed #fff;
+
+}
+
+/* header coding ends here */
+
+/* tabbed page code */
+
+#headernav {
+    left:50%;
+    top:50%;
+    overflow:scroll;
+    text-align:justify;
+    color:#eeeeee;
+    font-size:12px;
+}
+
+ul#tabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+}
+
+ul#tabs li {
+   display: inline-block;
+   background-color: transparent;
+   background-image:url('{image:smallbg}');
+   border: solid 1px #f9f9fb;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   color: #fff;
+   text-shadow:0px 1px 1px #000000;
+   cursor: pointer;
+}
+ 
+ul#tabs li:hover {
+   background-color: transparent;
+   background-image:url('{image:smallbg}');
+}
+
+ul#tabs li.active {
+   background-color: #515f6c;
+   background-image:url('{image:tabsbkg}');
+}
+ 
+ul#tab {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+ul#tab li {
+   display: none;
+}
+
+ul#tab li.active {
+   display: block;
+   color:#f9f9fb;
+} 
+ 
+/* tabbed page code ends */
+
+
+/* tab styling -- best not to touch this unless you know what you're doing */
+
+.tabs {
+ 
+    width:100%;
+    margin-left:0px;
+    display:inline-block;
+   
+    
+}
+
+/* end of tab styling */
+
+/* tab links coding */
+
+   /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+        
+                
+    }
+ 
+    .tab-links li {
+        margin-right:1px;
+        display:inline-block;
+        list-style:none;
+        text-transform:uppercase;
+    }
+ 
+        .tab-links a {
+            display:inline-block;
+            color:{color:links};
+            transition:all linear 0.15s;
+            border-bottom:1px solid transparent;
+            font-size:15px;
+        }
+
+/* end of tab links coding */
+
+/* tab links hover stylilng */
+
+     .tab-links a:hover {
+            text-decoration:none;
+            color:{color:link hover};
+        }
+ 
+    li.active a, li.active a:hover {
+        background:transparent;
+        background:{color:links};
+        font-size:15px;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -o-transition: all .3s;
+        -ms-transition: all .3s;    
+        transition: all .3s;
+    }
+
+/* end of tab links hover styling */
+
+/* tab content -- best not to touch this either */
+
+  .tab-content {
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+
+/* end of tab content coding */
+
+/* popup styling */
+
+.popup_block{
+    display:none;
+    background:#bed0c0;
+    color:#606c64;
+    padding:20px;
+    border:0px solid #a2a2a2;  /* if you want a solid white pop-up, delete this */
+    float:left;
+    position:fixed;
+    top:396px;
+    left:798px;
+    width:560px; 
+	 height:530px; 
+	 overflow-y:scroll; 
+	 overflow-x:hidden;
+    z-index: 99999;
+    -webkit-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    -moz-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    box-shadow: 0px 0px 0px #000; /* delete for solid white */
+}
+ 
+*html #fade {position: absolute;}
+*html .popup_block {position: absolute;}
+#fade {
+    display:none;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:#000; /* change to #fff for solid white */
+    opacity:0; /* change to opacity:1; */
+}
+
+/* end of styling */
+
+/*navigation page styling */
+
+.navi {
+    color:#eee;
+    display:inline-block;
+    background-color:#transparent;
+    border: dotted 1px #63646a;
+    width:77px;
+    text-align:center;    
+    padding:3px;
+    text-transform:lowercase; 
+}
+
+.navi2 {
+    color:#eee;
+    display:inline-block;
+    background-color:#3a3737;
+    border: dotted 1px #cccccc;
+    width:77px;   
+    padding:3px;
+    text-transform:lowercase;  
+    font-size:8px;
+	 font-family:bitter;
+	 text-align:center;
+	    }
+	    
+.navi3 {
+    background-color:transparent;    
+    border: none;
+    padding:1px;
+    text-transform:lowercase; 
+    font-size:12px;
+	 font-family:bitter;
+	 text-align:center;
+   }	
+   
+.navi4 {
+    color:#bbbbc3;
+    display:inline-block;
+    background-color:transparent;
+    border: solid 1px #63646a;
+    width:175px;   
+    padding:3px;
+    text-transform:lowercase;  
+    font-size:12px;
+	 font-family:bitter;
+	 text-align:center;
+	    }       
+	    
+div.naviheader {
+ 	 margin-left:60px;
+ 	 }
+ 	 
+div.navihead {
+ 	 margin-left:70px;
+ 	 }
+	   
+div.shipimg {
+ 	 margin-left:50px;
+ 	 }	    
+ 	 
+div.shipimgm {
+ 	 margin-left:95px;
+ 	 }	 
+ 	 
+div.shipimgm img {
+ 	 border:0px solid #a8a8a8;
+ 	 }	 
+ 	 
+div.shipimge {
+ 	 margin-left:120px;
+ 	 }	    
+
+   
+/* end of nav page styling */
+
+/* verse information coding */
+
+#verlinks {
+	background-color: transparent;
+	line-height:23%;
+	margin-left:10px;
+	font-size:10px;
+   }
+   
+#verlinks a {
+	font-size:12px;
+	font-family:cambria;
+}
+
+/* muse information coding ends */
+
+ 
+/* this is the credit coding. DO NOT REMOVE */
+    
+   #credit {
+    font-size:9px;
+    font-family:cambria;
+    font-style:italic;
+    letter-spacing:1px;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#credit a {
+    background-color:transparent;
+    padding:5px;
+    position:fixed;
+    right:15px;
+    bottom:10px
+    }  
+ 
+#credit a:hover {
+    background-color:transparent;
+    }    
+    
+/* credit coding ends here */
+
+
+ /* Making IE6 Understand Fixed Positioning */
+*html #fade {
+ position: absolute;
+}
+*html .popup_block {
+ position: absolute;
+}
+    {CustomCSS}
+    
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+   
+pre {
+   white-space: pre-wrap;      
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;    
+   white-space: -o-pre-wrap;  
+   word-wrap: break-word;
+   }    
+ 
+.toggle a.toggle-trigger {
+    display:inline-block;
+    letter-spacing:2px;
+    text-align:center;
+    padding: 2px;
+    position:relative;
+    text-decoration: none;
+    color:#fff; /*change your faq question color here */}
+ 
+.toggle a.toggle-trigger:hover {
+    text-decoration: none;}
+ 
+.toggle a.active {
+    text-decoration: none;
+    color:#fff;
+ 
+.toggle .toggle-content {
+    background-color:transparent;
+    text-align:left;
+    padding: 10px 20px 10px 20px;
+    color:#ffffff; /*change your answer text color here */}    
+   
+    
+ 
+    </style>
+	<link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">        
+    
+    </head><body>
+    
+<div id="overlay"><img src="{image:name}"></div>  
+  
+<!-- this is the meat of the theme and makes it what it is -->
+
+<div id="sidebar">
+<img src="{image:top left}">
+</div>
+
+<div id="quotes">
+<h5><b>depthsofmysol</b></h5><br />
+i'm <i>kc</i>, and welcome to my humble home. here is where i share just a few of my thoughts, obsessions, graphics, and writings. feel free to leave a message in my ask box. i don't bite. not really.<br />
+
+<p><span class="fas fa-sun" style="font-size:175%; color:#17202f;"></span> &nbsp; <span class="fas fa-sun" style="font-size:175%; color:#17202f;"></span> &nbsp; <span class="fas fa-sun" style="font-size:175%; color:#17202f;"></span>
+<br />
+<h5>local info</h5><br />
+<a href="https://time.is/Seattle" id="time_is_link" rel="nofollow" style="font-size:14px" title="seattle">time:</a><br>
+<span id="Seattle_z14e" style="font-size:12px"></span>
+<script src="https://widget.time.is/en.js"></script>
+<script>
+time_is_widget.init({Seattle_z14e:{template:"TIME<br>DATE", time_format:"12hours:minutes:secondsAMPM", date_format:"dayname monthnum/daynum/yy"}});
+</script>
+
+</div>
+
+<div id="sidebar2">
+<img src="{image:bottom right}">
+</div>
+
+<div id="quotes-bottom">
+<h5><b>day</b></h5><br />
+n, a period of twenty-four hours, mostly misspent.
+<br />
+
+</div>
+
+
+<div id="links">
+<div class="tabs">
+<ul class="tab-links">
+<li class="active">
+<a href="/" title="refresh"><span class="fas fa-thumbtack" style="font-size:95%"></span></a></li>
+<li><a href="#tab2" title="questions?">01.</a></li>
+<li><a href="#tab3" title="navigation">02.</a></li>
+<li><a href="https://thecannibalfactory.tumblr.com/" title="image credit">03.</a></li>
+</ul>
+</div>
+</div>
+
+
+<!-- tabs -->
+<div class="tabs">
+
+<!--  TAB 1  -->
+<div id="tab1" class="tab active">
+<div class="tab-content">
+<div id="entries">
+{block:Posts} 
+{block:NoRebloggedFrom}
+{block:RebloggedFrom}
+{ReblogParentName}
+{/block:RebloggedFrom}
+{/block:NoRebloggedFrom}
+
+{block:ContentSource}<!-- {SourceURL}
+{block:SourceLogo}<img src="{BlackLogoURL}"width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+<div id="post">
+ 
+{block:Text}<h1>{block:Title}{Title}{/block:Title}</h1>{Body}{/block:Text}
+ 
+{block:Photo}{LinkOpenTag}<div align="center"><img src="{PhotoURL-500}"></div>{LinkCloseTag}{block:Caption}{Caption}{/block:Caption}{/block:Photo}
+ 
+{block:Photoset}{Photoset}{block:Caption}{Caption}{/block:Caption}{/block:Photoset}
+ 
+ {block:Quote}<big><big>"{Quote}"</big></big>{/block:Quote}
+ 
+{block:Link}<h1><a href="{URL}" {Target}>{Name}</a></h1>{block:Description}{Description}{/block:Description}{/block:Link}{hw}
+ 
+{block:Chat}{block:Title}<h1>{Title}</h1>{/block:Title}{block:Lines}{block:Label}<b>{Label}</b>{/block:Label} {Line}<br>{/block:Lines}{/block:Chat}{hw}
+ 
+<!--AUDIO POST-->
+{block:Audio}
+{block:AudioPlayer}
+<div class="audiowrapper">
+{block:AlbumArt}
+<div class="audioimgwrapper"><img src="{AlbumArtURL}"></div>
+{/block:AlbumArt}
+ 
+<div class="playerbuttonbg">
+<div class="newplayerbutton">
+<div class="playerbuttonhug">
+{AudioPlayerWhite}
+</div></div></div>
+<div class="trackdetails">
+{block:TrackName}<b>Track:</b> {TrackName} <br/>{/block:TrackName}
+{block:Artist}<b>Artist:</b> {Artist} <br/>{/block:Artist}
+{block:Album}<b>Album:</b> {Album} <br/>{/block:Album}
+</div></div>
+{/block:AudioPlayer}
+<br /><br />
+{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+{/block:Audio}
+ 
+{block:Video}{Video-400}{block:Caption}{Caption}{/block:Caption}{/block:Video}
+ 
+{block:Answer}<div id="ask">{Question} <img class="ask" src="{AskerPortraitURL-48}"><br />&mdash;&nbsp;{Asker}<br /><br /></div><div id="ans"><div id="wrapping">{Answer}</div><div style="clear:both"></div></div>{/block:answer}
+{block:IndexPage}
+ 
+<div class="toggle"> 
+<div id="info"> 
+{block:Date}
+<a href="{Permalink}" title="posted {TimeAgo} - {ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{ShortYear}"><span class="fas fa-sun" style="font-size:150%"></span></a>{/block:Date}
+<a href="{Permalink}" title="{NoteCountWithLabel}"><span class="fas fa-heart" style="font-size:125%"></span></a>
+
+{block:RebloggedFrom}
+<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="fas fa-sun" style="font-size:150%"></span></a> {/block:RebloggedFrom}{block:ContentSource} 
+<a title="source: {SourceTitle}" href="{SourceURL}"><span class="fas fa-sun" style="font-size:150%"></span></a>{/block:ContentSource}   {/block:RebloggedFrom} <a href="#" class="toggle-trigger" title="click for tags"><span class="fas fa-sun" style="font-size:150%"></span></a> <a href="{ReblogURL}"target="_blank" title="reblog this post"><span class="fas fa-redo"></span></a> 
+
+</div>
+
+<div class="toggle-content">
+<div class="tags">
+{block:HasTags}
+{block:Tags}
+<a title="{Tag}" href="{TagURL}">{Tag}</a>
+&nbsp;&nbsp;
+{/block:Tags}
+{/block:HasTags}
+</div></div></div>
+{/block:IndexPage}
+
+
+{block:PermalinkPage}
+<div id="perminfo"> 
+{block:Date}
+<a href="{Permalink}" title="posted {TimeAgo} - {ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{ShortYear}"><span class="fas fa-sun" style="font-size:125%"></span></a>{/block:Date}
+<a href="{Permalink}" title="{NoteCountWithLabel}"><span class="fas fa-heart" style="font-size:125%"></a>
+
+{block:RebloggedFrom}
+<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="fas fa-sun" style="font-size:125%"></span></a> {/block:RebloggedFrom}{block:ContentSource} 
+<a title="source: {SourceTitle}" href="{SourceURL}"><span class="fas fa-sun" style="font-size:125%"></span></a>{/block:ContentSource}   {/block:RebloggedFrom}
+<a href="{ReblogURL}"target="_blank" title="reblog this post"><span class="fas fa-redo"></span></a>&nbsp; &nbsp; &nbsp;
+</div>
+
+<div class="permtags">
+{block:HasTags}
+{block:Tags}
+<a title="{Tag}" href="{TagURL}">{Tag}</a>
+&nbsp;&nbsp;
+{/block:Tags}
+{/block:HasTags}
+</div>
+{/block:PermalinkPage}
+
+<div class="postnote">
+{block:PostNotes}{PostNotes-16}{/block:PostNotes}
+</div>
+</div>
+{/block:Posts}
+<br />
+<br />
+<br />
+<br />
+    </div></div>
+    
+<!-- TAB 2  -->
+<div id="tab2" class="tab">
+<div class="tabcontent">
+<div id="headernav">
+<div id="heading"><h3>message centre</h3></div>
+<ul id="tabs">
+     <li class="active">questions</li>
+     &nbsp;
+     <li>submissions</li>
+</ul>  
+
+<ul id="tab">
+<li class="active">
+(1) <b>messages:</b> this blog is where anon hate goes to die. I will not post it, I will not drop anything on the dash, so don't even waste your energy, loves. <br /><br />
+(2) <b>commissions:</b> commissions can now be found on <a href="https://houseofsol.tumblr.com"><i>houseofsol</i></a><br /><br />
+<br /><br />
+<iframe id="ask_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/ask_form/depthsofmysol.tumblr.com" frameborder="0" scrolling="no" width="455" height="300"></iframe>
+</li>
+
+<li>
+<iframe id="submit_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/submit_form/depthsofmysol.tumblr.com" frameborder="0" scrolling="no" width="455" height="300"></iframe>
+</li>
+<br />
+<br />
+<br />
+<br />    
+    </div>
+    </div>
+    </div>
+    
+<!--  TAB 3  -->
+<div id="tab3" class="tab">
+<div class="tabcontent">
+<div id="headernav">
+<div id="heading"><h3>navigation</h3></div>
+<ul id="tabs">
+     <li class="active">site map</li>
+     &nbsp;
+     <li>tbd</li>
+     &nbsp;
+     <li>tbd</li>
+</ul>  
+
+<ul id="tab">
+<li class="active">
+<div id="header2">my stuff</div>
+
+<div class="navihead">
+<p><h7><a href="https://archiveofourown.org/users/depthsofmysol" style="font-size:13px">my fics</a></h7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <h7><a href="/tagged/solgraphics" style="font-size:13px">my graphics</a></h7>
+<p><h7><a href="https://houseofsol.tumblr.com" title="the hub" style="font-size:13px">houseofsol</a></h7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <h7><a href="https://cxpt.tumblr.com" title="where to find me" style="font-size:13px">steve rogers</a></h7>
+<p><h7><a href="https://ofangelicblood.tumblr.com" title="where to find me" style="font-size:13px">jace herondale</a></h7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <h7><a href="https://bastxrds.tumblr.com" title="where to find me" style="font-size:13px">multimuse</a></h7> 
+</div>
+
+
+<br />
+<br />
+<br />
+<br />
+
+</li>
+
+<li>
+<div id="header2">tbd</div>
+<p>
+<br />
+<br />
+<br />
+<br />
+
+</li>
+
+<li>
+<div id="header2">tbd</div>
+<p>
+<br />
+<br />
+<br />
+<br />
+
+</li>  
+  </div></div></div>
+        
+<!-- end of tabs -->
+</div> </div>
+   
+<div style="float:left;"><p></p><br><br><div id="pagination">{block:Pagination}{block:PreviousPage}<a href="{PreviousPage}"><span class="fas fa-arrow-left"></span></a>{/block:PreviousPage} &nbsp;page&nbsp; {block:NextPage}<a href="{NextPage}"><span class="fas fa-arrow-right"></b></span></a>{/block:NextPage}{/block:Pagination} </div></div></div>
+
+<div id="credit"> 
+<a href="https://houseofsol.tumblr.com" title="theme by houseofsol"><img src="https://68.media.tumblr.com/e5f4ca3f38bdf7a73c37efc9b8fd4996/tumblr_inline_oj2mweKepP1scj6vj_500.png"></a>
+</div>
+
+<!-- tabs/all in one script. do not delete -->
+ 
+<script>
+$(document).ready(function() {
+    $('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = $(this).attr('href');
+ 
+        // Show/Hide Tabs
+        $('.tabs ' + currentAttrValue).fadeIn(600).siblings().hide();
+ 
+        // Change/remove current tab to active
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+});
+</script>
+ 
+<script>
+$(document).ready(function() {
+  $('#filterOptions li a').click(function() {
+    // fetch the class of the clicked item
+    var ourClass = $(this).attr('class');
+ 
+    // reset the active class on all the buttons
+    $('#filterOptions li').removeClass('active');
+    // update the active state on our clicked button
+    $(this).parent().addClass('active');
+ 
+    if(ourClass == 'all') {
+      // show all our items
+      $('#ourHolder').children('div.item').show();
+    }
+    else {
+      // hide all elements that don't share ourClass
+      $('#ourHolder').children('div:not(.' + ourClass + ')').hide();
+      // show all elements that do share ourClass
+      $('#ourHolder').children('div.' + ourClass).show();
+    }
+    return false;
+  });
+});
+</script>
+
+<!-- end all in one script coding -->
+
+<!-- Statcounter code -->
+
+
+<!-- End of Statcounter Code -->
+ 
+</body>
+
+ <!-- popups -->
+
+<!-- this is a tabbed popup. to use it you'll need to add the link code to wherever you want to use it and make certain the div ids match -->
+
+<!-- verse one -->
+
+<div id="c01" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+<p>this verse follows the canon outlined in her <b>main biography</b> & contains the events from the original six book series, <i>the mortal instruments</i>. 
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapversea"><img src="https://i.imgur.com/bWQFyi1.png"> coming soon!<br><br><br><br>
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon crossover</i> || <b>dustfinger</b> || <a href="http://inkburnedheart.tumblr.com/">@inkburnedheart</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>        
+        
+    </div>
+    
+<div id="wrapversea"><img src="https://i.imgur.com/rhoXTUh.png"> coming soon!<br><br><br><br>
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon</i> || <b>jace herondale</b> || <a href="http://jacee.tumblr.com/">@jacee</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>        
+        
+    </div>    
+    
+<div id="wrapversea"><img src="https://i.imgur.com/lNebRLY.png"> coming soon!<br><br><br><br>
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon</i> // <b>alec lightwood</b> || <a href="http://loialte.tumblr.com/">@loialte</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>        
+        
+    </div>        
+
+<div id="wrapversea"><img src="https://i.imgur.com/Cc8Ao2t.png"> coming soon!<br><br><br><br>
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon</i> // <b>magnus bane</b> || <a href="http://loialte.tumblr.com/">@loialte</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>        
+        
+    </div>        
+
+<div id="wrapversea"><img src="https://i.imgur.com/rhoXTUh.png"> coming soon!<br><br><br><br>
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon</i> || <b>jace herondale</b> || <a href="http://runesanddeath.tumblr.com/">@runesanddeath</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>        
+        
+    </div>    
+    
+<div id="wrapversea"><img src="https://i.imgur.com/jxCgA94.png"> coming soon!<br><br><br><br>
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon</i> || <b>isabelle lightwood</b> || <a href="http://shesacred.tumblr.com/">@shesacred</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>        
+        
+    </div> 
+    
+<div id="wrapversea"><img src="https://i.imgur.com/Uakm2I0.png"> coming soon!<br><br><br><br>
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon</i> || <b>magnus bane</b> || <a href="http://wldbirds.tumblr.com/">@wldbirds</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>        
+        
+    </div>     
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- variant verse one -->
+
+<div id="cv01" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>After valentine was killed* during the uprising, Jocelyn, pregnant with Clary, took her growing family & left idris for paris. She would live there quietly for a number of years before it became apparent that simple discipline alone was not enough to curb the effects of the demon blood running in Jonathan's veins.
+
+<p>When he was six, she realized she wouldn't be able to give him what he needed alone, & left paris to find old friends & allies. weeks later, the family <b>presented themselves to the lightwoods</b> at the new york institute, asking not only for shelter but for training for the boy, as well as eventually for his younger sister. the training was intense, but the two young fairchild children flourished within the confines of the Clave's outpost.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+<div id="wrapverse2"><img src="https://i.imgur.com/4s6sz6x.png"> <b>Jocelyn Fairchild</b>. ( <a href="https://enoughrunning.tumblr.com">@enoughrunning</a>. ) tbd.</div>
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- variant verse two -->
+
+<div id="cv02" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>She dove into the heart of darkness to save him, playing a dangerous game against the psychopath that wore the face of her brother <b>utterly alone</b> in the hopes she could last just long enough for them to find a solution, but the angels <b>aren't merciful</b>. even with Glorious, facing off against Sebastian <i>&</i> Lilith proved to be too much. Still, facing an army of <b>endarkened</b>, Clary knew she had to make a choice. 
+
+<p>After Lilith cast <b>glorious</b> into Hell, Clary used the last window open to her & cut her brother down in a fit of desperation - not with a blade of heavenly fire, but with a fatal blow to the heart. Doing this killed her brother, but it also destroyed one of the most integral pieces of her own soul; in one move, not only had she cut down their greatest enemy, but also the soulmate that had been tied to him. Her soulmate. Her <i>once, fiercely</i>. 
+
+<p>She doesn't remember the battle after that, only that it was fierce, & brief. They lost heavy numbers that day but nothing compared to the gaping hole in her heart. After the dust settled & the dead taken to their final resting places, she was the one to take Jace to the Silent City. Unbeknownst to all, before allowing him his due right to be cremated & his ashes & bones to rest in the Silent City, she tried one last time to bring a piece of him back. The rune came to her like all the others had, but it didn't work - the boy she had loved with everything she had was <b>gone</b>.
+
+<p>She didn't speak for a year after, throwing herself into more & more intense training. When the <b>Scholomance</b> reopened during the Cold Peace, & having nothing to lose, Clary threw herself even further into training. She remained at the Institute of New York after completing her training as a Centurion, tied to the the spot & unable to move on. 
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="header4">options & ideas for interaction</div>
+
+<p><b>option i</b>. <i>meeting in a public place in New York City</i>. while Clary no longer wanders the city as freely as she used to, she does sometimes re-visit old haunts & places that hold deep meaning to her. The streets of Brooklyn she & Simon would have explored, the building that housed Java Jones - regardless if it’s still there or not. She sometimes wanders Central Park at night since mundanes can’t see her. 
+
+<p><b>option ii</b>. <i>meeting in a public place in London</i>. as a Centurion, but also as one of the most famous ( or if you ask her, infamous ) shadowhunters in living memory, Clary spends a lot of time in London because it’s close enough to home without the weight of the memories of home. while working at the London Institute, she can be found wandering the city, the shadow market, & grabbing coffee out & about.
+
+<p><b>option iii</b>. <i>meeting at an institute for official Clave business</i>. as a Centurion, & most definitely because of her unique abilities, Clary is in high demand for things that strike just a shade above normal bumps in the night. the institutes she gets called to the most are London & Los Angeles, but occasionally she also gets called back to New York. any & all Institutes are fair game if there’s a greater demon on the loose.
+
+<p><b>option iv</b>. <i>meeting at the Scholomance</i>. after the battle of the Burren, Clary spent time at the Scholomance training & preparing to become a Centurion. she would have studied alongside several familiar faces, or would have just left when several were starting, so this is an option open on a <b>plotting intensive basis</b>.
+
+<p><b> option v</b>. <i>meeting in the spiral labyrinth</i>. as a Centurion, Clary has access to the labyrinth, & often goes there for research purposes, but mostly to escape. this option is open to warlocks & other centurions on a <b>plotting intensive basis</b>.
+
+<p><b>option vi</b>. <i>meeting prior to verse main canon</i>. this period takes place after the Scholomance but before her return to New York ten years later, & encompasses a dark period for her, & will be marked by significantly higher levels of depression & dark thoughts than the Clary who finally finds the strength in herself to return to New York after ten years away.
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>- my interpretation of the <b>scholomance & centurions</b> comes largely from personal headcanon & the wiki for the time being.
+
+<p>- the centurions have a medallion or pin that signifies their status; the pin has a pattern of a leafless stick and the words primi ordines on it. they also have their family crests on the back of their gear. 
+
+<p>- her status as a centurion means she has access to the libraries of the spiral labyrinth & the silent brothers' archives.
+    
+<p>- she has several runes unique to her as a Centurion, given her connection to Ithuriel: a nameless combination rune across her right peck, over her heart, that invokes the phrases <b>AVE ATQUE VALE</b> (hail & farewell) & <b>PULVIS ET UMBRA SUMUS</b> (we are dust and shadows) - the traditional words said over the dead. this rune signifies her status as a <b>CENTURION</b>, acknowledging that she will die alone with no one to say the words over her body, & that she has already accepted death while still living.
+    
+<p>- in this verse, she has & carries both <b>Phaesphoros</b> & <b>Heosphoros</b>.
+    
+<p>- she did <b>not</b> detroy the apartment.
+    
+<p>- additionally, she did <b>not</b> attend Luke & Jocelyn's wedding, nor did she attend Isabelle & Simon's. She has isolated herself away from everyone in the wake of killing Jace. 
+    
+<p>- The rune she drew on Jace <i>did</i> work, just not in the way she thought. Instead of bringing Jace back, it tied their souls together, enabling her to absorb some of the same abilities he had possessed to to his own connection to Ithuriel. This is what enabled her to advance so rapidly in training after his death, even if she doesn't know it.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapversea"><img src="https://i.imgur.com/4ycFkEX.png"> coming soon! <br><Br><Br><br>
+    
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon crossover</i> || <b>henri lebeau</b> || <a href="http://afaroffadventure.tumblr.com/">@afaroffadventure</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>       
+    
+</div>
+
+<br>
+
+<div id="wrapversea"><img src="https://i.imgur.com/dkf92AW.png"> when you lose the most important person to you in the entire world, where is all the love – love you never even knew you were capable of – supposed to go? Clary has struggled with that question every day since the battle at the burren, & after ten years away, she finally found her way back to New York only to find things are just as strange as she left them. Demons are stalking a mundane - why? After a Scorpios drops her at his feet & she wakes up in his apartment, she wants to find out.
+    
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon crossover</i> || <b>armitage hux</b> || <a href="http://bastxrds.tumblr.com/">@bastxrds</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>       
+    
+</div>
+
+<br>
+
+<div id="wrapversea"><img src="https://i.imgur.com/DgpTCm8.png"> Ten years is a long time to grieve, & a long time to shut out friends. She might've kept in touch with Alec through a collection of private letters, but Magnus... Magnus has been a different story. After a chance encounter, Clary might need to reconsider the people she's tried to leave behind.
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon</i> || <b>magnus bane</b> || <a href="http://bastxrds.tumblr.com/">@bastxrds</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>       
+    
+</div>    
+
+<br>
+
+<div id="wrapversea"><img src="https://i.imgur.com/MHBUUao.png"> Her nephew, son of the brother she had wanted all of her life & was cruelly denied. she was afraid of him, the first time she met him - the blond looking <i>so much</i> like his father, but after some time she came to love this boy who was everything her brother should have been allowed to be. She gave him Phaesphoros, allowing her heart to open up despite the walls she's built over the past ten years & letting herself love a piece of the family she's cut herself off from for so long.
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon</i> || <b>ash morgenstern</b> || <a href="http://faerieborne.tumblr.com/">@faerieborne</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>     
+    
+</div> 
+
+<br>
+
+<div id="wrapversea"><img src="https://i.imgur.com/Pus3grr.png"> It's been ten years since the Battle at the Burren, & Clarissa Fairchild is a... <i>rare</i> sight within the Shadoworld. One of the most famous Nephilim, she walked away from everything she knew after losing the love of her life & traded Institute walls for a Carpathian stronghold. It wasn't until reconnecting with an old friend in the Spiral Labyrinth that she began to wonder if leaving everything behind had been the right course of action.
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon</i> || <b>magnus lightwood-bane</b> || <a href="http://hiighwarlock.tumblr.com/">@hiighwarlock</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>       
+    
+</div>   
+
+<br>
+
+<div id="wrapversea"><img src="https://i.imgur.com/01m9wIF.png"> ( ' A thousand discreet & solitary realities that appear to be occurring in the same location ' ). Both of them has watched the other die, both of them have known loss. After cutting down the love of her life for the sake of stopping their world's greatest threat, Clary doesn' believe in second chances, but when a familiar pair of mismatched eyes come through from another realm, it offers the possibility of a chance at something improbable.
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon</i> || <b>jace herondale</b> || <a href="http://ofangelicblood.tumblr.com/">@ofangelicblood</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>          
+    
+</div>   
+
+<br>
+
+<div id="wrapversea"><img src="https://i.imgur.com/wVSomhk.png"> Ten years ago, Clarissa Fairchild mad a decision that rocked the entire Shadowhunter community & walked away, disappearing to a Carpathian stronghold to learn the secrets of the Centurions & becoming one of the elite <b>Primi Ordines</b>. In the past ten years, the world has passed by in a blur until literally running into <i>a mundane</i> that somehow keeps finding his way back into her path.
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><i>canon crossover</i> || <b>ben solo / kylo ren</b> || <a href="http://sithroyal.tumblr.com/">@sithroyal</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>       
+    
+</div>  
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- fandom verse one -->
+
+<div id="f01" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>Unlike many students at Hogwarts, Clary was plucked from her mundane middle school in sixth grade, having spent much of her childhood largely ensconced in the quiet but creative life her mother had carved for her & her brother in a flat in Brooklyn after fleeing her abusive marriage. She has no memory of her father, & had Jocelyn had it her way, they would have remained normal children growing up safe & unattached to the world their father & his followers had corrupted for her.
+
+<p>Unfortunately, it wouldn’t last; Clary was nine years old when her older brother, Jonathan, received a strange letter in the mail, stamped with a wax crest, & written in glittering ink. The next thing she knew, she was hand in hand with her mother, brother scowling on the other side, as Jocelyn took the wand she had hidden for eleven years & accompanied her son to Diagon Alley for the list of things he would need to start school. It was there, tucked away in a small corner in the back of Flourish & Blotts, that both children found books that would go on to influence their school career for years to come. For Clary, it was a hand-illustrated copy of Winogrand's Wondrous Water Plants<sup>1</sup>. The pictures inspired her own art, & she began studying & drawing these new, fantastic plants even before she started her own first year at Hogwarts two years later.
+
+<p>Over the next few years, she’d continue to read up on the world she had become aware of even while attending school in the muggle world. She excelled at art, often using her whimsical drawings inspired by herbology textbooks for school illustrations. She also found science fascinating, gravitating to biology & botany on a small scale during labs. It was during this time she also discovered Beatrix Potter & her own work as a scientific illustrator<sup>2</sup>. It was also during this time, however, that Valentine reappeared, kidnapping Jonathan while he was in transit between the school & their home over Christmas break. Clary would remember that as the defining moment that changed her brother, turning him into someone far more quiet, & determined, than he had been before.
+
+<p>When she turned 11, her own letter came & she accompanied Jocelyn to Diagon Alley alongside her brother, only this time she was the one to come home with a wand, a cauldron, & a Tawny Owl of her own that she named Beatrix<sup>3</sup>. She was later sorted into Gryffindor, hardly a surprise given it was her mother’s house, & putting her slightly & humorously in contrast to her brother, who had been placed in Slytherin five years earlier. Like her earlier muggle schooling, Clary was surprised to discover much of it had carried over - she excelled at herbology, as well as charm work. While Potions didn’t quite come naturally to her, her brother’s tutelage helped immensely & she developed an affinity for them in her own way. 
+
+<p>She would later receive OWLs that advanced her interests in Herbology & Charms, as well as various other subjects, then also received  high or at least passing grades in the following subjects for her NEWTs: Charms, Defense Against the Dark Arts, Herbology, Transfiguration, Arithmancy, Ancient Runes & Potions.  
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+    <p><sup>1</sup>written & illustrated in the same style as Beatrix Potters’ works
+
+<p><sup>2</sup>had she not eventually gone to Hogwarts, Clary likely would have followed a similar career path to her inspiration & gone into scientific illustration & botany based research.
+
+<p><sup>3</sup>named after her inspiration, naturally.
+
+<p>- verse is compliant with my own <a href="https://idumean.tumblr.com/">Jonathan’s</a> Hogwarts Professor verse, but can happily be alternately plotted to accommodate others’ canons.
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p><b>wand:</b> Cherry, 12¼, dragon heartstring
+
+<p><b>familiar:</b> Tawny owl named <i>Andromache</i>.
+
+<p><b>house:</b> Gryffindor
+
+<p><b>patronus:</b> cat
+
+<p><b>Animagus form:</b> unknown/not relevant
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+<div id="wrapverse2"><img src="https://i.imgur.com/4s6sz6x.png"> <b>Jocelyn Fairchild</b>. ( <a href="https://enoughrunning.tumblr.com">@enoughrunning</a>. ) tbd.</div>
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- fandom verse two -->
+
+<div id="f02" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>Clary has always had a unique <b>gift</b> for working with crystals - not just the ones found in veins of pure kyberite, but others as well. she can imbue them with their own unique abilities, with a little effort, but this gift comes at a significant cost: this connection to them means she’s <b>tied to them</b>, & taking her away from them for too long drains the life right out of her. 
+
+<p><center><i>and there's one other problem</i>. </center>
+
+<p>she's one of the greatest assets to the resitance, but she's a double ege sword - one that could be so easily used <b>against</b> them, as well. that's why she works quietly but quickly; if the First Order gets its claws into her, it's a one way trip & there's no plan for extraction.
+
+<blockquote>
+    <p><b>arc specific variation</b>; <i>empress</i>. ( <b>single ship  variant</b>. ) in this arc, Clary became empress alongside Emperor Hux after tearing apart all of those who would have seen her tethered to a workbench for the rest of her life, making weapons for one side or another in the ongoing war. now she acts as his chief diplomat, building their empire while staying at his side as his enduring wife. 
+</blockquote>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="header4">options & ideas for interaction</div>
+
+<p><b>option i.</b> <i>meeting during her younger years</i>. almost from birth until roughly five years before the events of The Force Awakens, Jocelyn & Clary were constantly on the move, weaving in & out of the unknown regions, as well as vaulting into wild space, all in the effort to stay one step ahead of Valentine, the cold war Imperial remnant, or anyone else who might seek to abuse Clary’s abilities for themselves.
+    
+<p><b>option ii.</b> <i>meeting through the Resistance</i>. With the public formation of the First Order in 29 ABY, it became even harder to hide in the shadows so Jocelyn turned to some of her oldest connections. The help came too late for Jocelyn, who was captured & returned to her husband’s side, but Clary was able to get away & has been with the Resistance since. 
+    
+<p><b>option iii.</b> <i>meeting through captivity</i>. Prior to the events of The Force Awakens, it’s highly probable that Clary would have fallen into the First Order’s hands, & as such would function as a very valuable hostage. While in captivity, she's held on the <b>finalizer</b>, constrained largely to her workshop that's not entirely far from the sick bay. 
+
+<p><b>arc specific interaction</b>; <i>empress</i>. ( <b>single ship  variant</b>. ) this arc is also open to interaction on a by request basis!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>- <b>Regarding her parents</b>, <i>Jocelyn Fairchild</i> is the daughter of one of the Naboo Royal Handmaidens, & <i>Valentine Morgenstern</i> is a Diathim from Millius Prime.
+        <blockquote>
+            <p>- her unique genetic makeup, coupled with the environment Jocelyn was exposed to after fleeing Valentine & escaping into <b>wild space</b> while pregnant with her daughter lead to her unique abilities.
+            <p>- while she's only <b>half diathim</b>, she does retain some of the abilities of her father's people - namely an unusually grace gait that could <i>almost</i> be described as gliding, a <i>resistance</i> ( but, unlike a full Diathim, not total immunity ) to the effects of exposure to the vacuum of interplanetary space without the assistance of a protective suit or life support, & some degree of their natural hypnotic abilities that manifest namely in her ability to <b>somewhat</b> influence & de-escalate conflicting tempers before things spiral out of hand.
+        </blockquote>
+        
+<p>- Clary's signature ability comes at a steep cost. Separating her from her work can be lethal, so once she's <i>set up</i> somewhere, she can only be moved with either great care or very quick speed. Spending too long <i>away</i> will weaken her significantly, & may even prove fatal. 
+    
+<p>- Her workshop is hidden largely due to the high population of imported <a href="https://starwars.fandom.com/wiki/Ysalamir">ysalamiri</a>, most known for their ability to repel the Force by creating a Force-neutral bubble. It's a flimsy precaution, but so far that plus the intense secrecy surrounding her location have done wonders to keep her off others' radar.  
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/UCVkXBZ.png"> <b>Armitage Hux</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) The first time they crossed paths was years ago in the <b>unknown regions</b> while she & Jocelyn were on the run from Valentine & the growing threat of his allies. He looked the other way when he could have tipped off the right people about the two of them, & for that she gave him one of her stones. Years later, when caught in the claws of the <b>First Order</b>, they crossed paths again & she made a choice when she recognized splinters of her own energy surrounding one of the Generals. 
+
+<p>It didn't start out as love - it was pure necessity that had her position herself to be taken alone to his quarters. Over time though, that attachment meant she would be put in another prime position - when General Pryde mistakenly believed he could manipulate her <i>against</i> hux, she was careful to plant the right device in the right place, capturing a recording that would enable those loyal to <b>her general</b> to eventually take down Pryde, Snoke, & later, even Palpatine.
+
+<p>After the dust of their revolution cleared, Hux emerged the winner & began setting up the base of a new <i>First Order</i> on Dromund Kaas. Clary, no longer only a weapon's maker but elevated to his chief diplomat, was to stay by his side even if others might advise him she was <b>too powerful</b> to be anything but a potential threat. After she was taken in a botched kidnapping ( believed by the resistance to be a rescue mission ), it would appear the sentiment of attchment wasn't... <i>enirely</i> one sided.
+
+<p>The real twist came after round after round of diplomatic establishment & meetings. <i>the emperor needs a consort</i>. too many faces & too many bargains, when finally Hux put an end to all of it by naming the woman who had stayed by his side through all of this as his empress, & elevating her to the position as his chief diplomat. Later, after an awkward realization regarding notes in a diplomatic meeting, he would marry her, making her none other than <b>Her Imperial & Merciful Apostolic Majesty</b>, <i>Clarissa Adele</i>.
+
+<p><b>verse</b>: ☆ ❛ stop the suns from setting ❜ || arc. ( empress )
+
+</div>     
+
+<br>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/Rf82EwU.png"> <b>Kylo Ren / Ben Solo</b>. ( <a href="https://sithroyal.tumblr.com">@sithroyal</a>. ) she always knew the <b>first order</b> would find a way to drag her in with its claws. her abilities are just a shade too useful, making her either one of the best assests or the greatest liability.</div>    
+    
+<br>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/fBA7lHn.png"> <b>Poe Dameron</b>. ( <a href="https://vuuelo.tumblr.com">@vuuelo</a>. ) She's used to being alone. Her abilities mean a very <b>solitary</b> existance, but he brings her crystals from his travels - one she wears as a necklace, a piece of him she can keep with her even when they're apart. </div>  
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- fandom verse three -->
+
+<div id="f03" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>After graduation, Clary applied for - & to her great surprise, was accepted - a chance artist in residence position, working for the Flugelheim Museum. Because of her additional qualifications as an educator, Clary spends much of her time additionally working as an art educator for school & youth groups in the museum & at events coordinated with the local community. 
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<blockquote>
+    <p>this verse follows similar progression as her mundane verse, just with a change of location & some slight differences in what she may find normalized. Instead of the location being specific to New York City, this verse takes place in Gotham as mapped in the most recent DC continuity, making it across the river from Metropolis, & situated within New Jersey on the border with Delaware.
+</blockquote>
+
+<div id="header4">options & ideas for interaction</div>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/WTBhPkw.png"> <b>Asajj Ventress</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) tbd. </div>  
+
+<div id="wrapverse2"><img src="https://i.imgur.com/rHYbk4X.png"> <b>Kate Kane</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) tbd. </div>  
+
+<div id="wrapverse2"><img src="https://i.imgur.com/K5gsVoU.png"> <b>Kate Kane</b>. ( <a href="https://mvltis.tumblr.com">@mvltis</a>. ) tbd. </div>  
+
+<div id="wrapverse2"><img src="https://i.imgur.com/7ZRNOto.png"> <b>Mary Hamilton</b>. ( <a href="https://mvltis.tumblr.com">@mvltis</a>. ) tbd. </div>   
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- fandom verse four -->
+
+<div id="f04" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p><h1>coming soon!</h1>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="header4">options & ideas for interaction</div>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/4kEeSeP.png"> <b>Jaxx Heard</b>. ( <a href="https://ovalleycfplenty.tumblr.com">@ovalleycfplenty</a>. ) tbd. </div>  
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- fandom verse five -->
+
+<div id="f05" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>You never would have picked the fairchild children for <b>HEROES</b>. Jonathan & his twin sister Seraphina were recruited to the pan pacific defense corps. After showing considerable talent. Seraphina was recruited first, showcasing show-stopping talent, but her training stalled out when she developed a reputation of being <i>incompatible</i> in the drift with virtually everyone. Jonathan was brought in as a last resort & out of desperation, despite his erratic behavior & seeming tendency towards mental instability. These things apparently balanced out when paired with his sister, allowing the two of them to function <b>without issue</b> as rangers, even if they couldn't be paired with anyone else in the cockpit.
+
+<p>Things seemed to be going fine until a field exploration mission to scout the areas surrounding the breach ended badly. They had been investigating the breach after abnormal data was intercepted by <b>loccent mission control</b>. When they approached the Breach, they were hit with a pulse resembling a transient electromagnetic disturbance/emp that temporarily disabled the Intercept.
+
+<p>Accounts vary after this point - Jonathan claims something <b>CAME OUT OF THE BREACH</b> & ripped apart the Jaeger, dragging Seraphina through the Breach (& into the anteverse), but breach activity being tracked by diligent calculations by the <b>K-SCIENCE DIVISION</b> seemingly proves this would be impossible as it would mean a never before seen isolated event. instead, the PPDC officially labeled the event as a <b>large-scale equipment failure</b> & Jonathan was retired from the field due to injury, trauma, & suspected <b>pressure-induced psychosis</b>. Some went as far as to speculate he attacked his own sister & caused the damage in a psychotic episode, but that, too, cannot be proven or disproven.
+
+<p>What is confirmed is that Jonathan was taken out of the field following this attack, officially because it was on paper he was incompatible with anyone outside of his twin. With her gone, entering the drift was largely impossible with anyone else. Now he works as a loccent officer in the shatterdome, responsible for being the eyes & ears of the pilots. He has a unique knack for identifying Kaiju after they exit the breach but before any other signs are present.
+
+<center><i>ENTER CLARY. </i></center>
+
+<p>After losing her older sister & being closed off from her brother because of the rumors flying around regarding the truth about <b>WHAT HAPPENED</b> at the Breach, Clary pushed herself harder than anyone ever imagined, defying her mother to enter the Jaeger Academy. Her motives are to <b>LEARN THE TRUTH</b> about what happened down there in the deepest part of the Pacific, her sister’s watery hell, & if that means being the third & final in the Fairchild-Morgenstern line to dive into the Drift & assault the Breach, she’ll do it. 
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="header4">options & ideas for interaction</div>
+
+<p><b>option i.</b> <i>meeting in a public space</i>. Hong Kong is considered an open port, & with the consolidation of the PPDC, the staff & pilots of the Shatterdome would be especially integrated with the surrounding area. Places of interest for Clary would include the black market surrounding Reckoner’s bones, Victoria Harbor, Victoria Peak - where you can find her sketching when she’s not training or on duty in the Shatterdome, or Repulse Bay & the beaches.
+    
+    <p><b>option ii.</b> <i>meeting through work</i>. obviously, any muses connected to the PPDC would have a good chance of meeting her either in the training rooms, LOCCENT Mission Control, in the hallways leading to the Ranger’s bunks, or the cafeterias.
+    
+    <p><b>option iii.</b> <i>meeting prior to verse canon</i>. his would include meeting Clary prior to her being passed as a candidate for the Rangers, & is open on a <b>plotting intensive basis</b> as an option.
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>- this verse is a companion verse to my Jonathan’s ( <a href="https://idumean.tumblr.com/">@idumean</a>‘s ) <b>PACIFIC RIM</b> verse, which involves canon for Seraphina as well. All headcanons for all three muses involved carry over unless plotted otherwise. 
+    
+    <p>- With the integration of digital technology, nullifying the risk of radiation sickness from core exposure, <b>she’s paired with her brother</b> in his new jaeger, <i>NOVO IDUMEA</i> unless plotted otherwise.
+    
+    <p>- When not working as a pilot, she works as an instructor in the <b>KWOON COMBAT ROOM</b>.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/WTBhPkw.png"> <b>Asajj Ventress</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) tbd. </div>  
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- fandom verse six -->
+
+<div id="f06" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p><h1>coming soon!</h1>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="header4">options & ideas for interaction</div>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/4kEeSeP.png"> <b>Jaxx Heard</b>. ( <a href="https://ovalleycfplenty.tumblr.com">@ovalleycfplenty</a>. ) tbd. </div>  
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- fandom verse seven -->
+
+<div id="f07" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p><center><a title="to bring Death"><i2>φέρειν φόνον</i2></a></center>
+
+<p>she always remembers things <i>out of order</i>. sometimes it’s the crash of the waves on a distance Grecian shore as her ship careens down into darkness & the water swallows her whole. sometimes it’s being burned at the stake after running from an arranged marriage. 
+
+<p>it never lasts but more than an instant - each of those lifetimes <i2>cut short</i2> by the snap of the threads of fate. there’s only ever the single constant across each of her lifetimes; the motley band of <b>immortals</b> that always seem to find her, or whose path she seems to continually wander into in each & every lifetime.
+
+<p>perhaps another constant is her <i>art</i>. in each lifetime, she finds a new medium or finds a way to refresh another. in this lifetime? it's finally time to return to a classic. Clary works as an artist & travels wherever her feet take her - retracing timeworn paths in the hopes of finding that one <b>missing piece</b> that will spark the return of her memory one more time, so the cycle can <i2>start anew</i2>.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="header4">options & ideas for interaction</div>
+
+<p><b>option i</b>, <i>meeting in a public place</i>. she can almost always be found in any of the major hubs for art. <b>new york city</b> is her current base of operations - having been born in Manhattan in her current lifetime. <b>paris</b> is a constant favorite with its thousands of galleries, & a city of many old memories across multiple lifetimes, but it's far from the only one. <b>florence</b>, of course, draws her in with her connection to renaissance italy. those are just three of many, many varied options where one can find her wandering in a gallery or sketching & painting to... <i>update</i> an old & beloved favorite.
+
+<p><b>option ii</b>, <i>meeting through the old guard</i>. Clary's cyclical span of rebirth & reincarnation means she'll always be drawn to those she views as the few sources of constancy, particularly <b>andromache</b>**, who she's met several times over.
+    <blockquote>
+        **for anyone actively writing Andromache, this is obviously up for plotting! my reasoning is merely her constancy as the oldest of the immortals, but I’m open to her running into them entirely by chance because of the nature of her cycle, or a myriad of other ideas!
+    </blockquote>
+
+<p><b>option iii</b>, <i>meeting in a previous lifetime</i>. 
+    <blockquote>
+        <p>- <b>8<sup>th</sup> century</b>, loosely following the tradition of <i2>Aslaug</i2>
+        <p>- <b>12<sup>th</sup></b> century which follows the fate of <i>Gwenhwyfar</i> in the French-inspired popular tradition
+        <p>- <b>16<sup>th</sup>century</b> as nobility in the court of <b>king henry viii</b>.
+        <p>- <b>18<sup>th</sup> century</b>, under the identity of the pirate <a href="https://en.wikipedia.org/wiki/Anne_Bonny">Anne Bonny</a>.
+    </blockquote>
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/D294Bh8.png"> <b>Armitage Hux</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) tbd. </div>  
+
+<div id="wrapverse2"><img src="https://i.imgur.com/xwyZcbG.png"> <b>Asajj Ventress</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) tbd. </div>  
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- fandom verse eight -->
+
+<div id="f08" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>once the guardian of <i2>Tyche</i2>, Clary was the guardian of fortune & prosperity before the destruction of the original silver millennium. the oldest of the senshi, Clary was <i>heir apparent</i> before the birth of princess serenity. this is because her mother was eos, sister to selene.
+
+<p>when the silver millennium fell, Clary died alongside the other guardians & was reborn because of the actions of Queen Serenity on 20<sup>th</sup> century earth. while the other scouts were reborn close to each other, the destruction of Tyche before she could be reborn meant Clary was set adrift. 
+
+<p>being born in Manhattan, Clary grew up a long, long way away from the rest of the senshi. in a way, this was fitting given her status as the <b>spare</b> in case something should happen to Usagi - while she can no longer transform, she can still wield the <i2>silver crystal</i2>. 
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="header4">options & ideas for interaction</div>
+
+<p><b>option i</b>, <i>meeting in a public place</i>. 
+
+<p><b>option ii</b>, <i>meeting in a previous lifetime</i>. 
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>- because of her original status as <i>heir apparent</i> prior to Serenity's birth, or the event Serenity & Endymion fail to produce an heir, Clary has the crescent mark on her forehead marking her as part of the moon kingdom's royal family. 
+
+<p>- this verse is influenced by the same <b>greek lore</b> surrounding Queen Serenity as the manifestation of <i>Selene</i>.
+
+<p>- her colors are lilac & olive green. 
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/D294Bh8.png"> <b>Armitage Hux</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) tbd. </div>  
+
+<div id="wrapverse2"><img src="https://i.imgur.com/xwyZcbG.png"> <b>Asajj Ventress</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) tbd. </div>  
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- au verse one -->
+
+<div id="au01" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>Graduating with honors & earning both her B.A. & M.A., she took a risk & did a nine month <i>artist in residency</i> program with The Whitney Museum. After the conclusion of the program, she would go on to accept a job teaching kindergarten at one of the prestigious private schools in New York City - <i>the mallory school</i>. Her curriculum centers largely around art, & language development following the expectations established by the school. 
+
+<p>During the school year, she works with other volunteers for a nonprofit specializing in guided art therapy for both men & women - youth & adults - looking for support after trauma associated with assault, as well as military <b>veteran groups</b> confronting issues surrounding re-entry to civilian life, post-traumatic stress, & other related things. Typically she oversees one session a week after the conclusion of her school day for each group, with her youth group being on Saturdays, & her adult group on Wednesday nights. 
+
+<p>During the summer, she's often called to act as an artist in residence for various programs through <i>New York Foundation for the Arts</i>. Through these residencies, she's traveled to places such as Cape Town, South Africa, Skowhegan, Maine, & Itaparica, Brazil - the latter of which was funded by grant through her employer in the hopes to bring back ideas for further diversifying their curriculum.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="header4">options & ideas for interaction</div>
+
+<p><b>OPTION I</b>. <i>meeting in a public place</i>. clary frequently wanders the city doing sketches, so it’s very possible to run into her at various museums, coffee shops, or while she’s navigating the sidewalks after work. places of <b>HIGH INTEREST</b> for her are
+    
+    <blockquote>
+        <p>- the new york botanical gardens
+        <p>- the high line
+        <p>- the new york public library
+        <p>- JAVE JONES ( in brooklyn )
+        <p>- additionally, she can also be found at various gallery openings, or at her brother’s restaurant, <b>PER SE</b>.
+    </blockquote>
+    
+
+<p><b>OPTION II</b>. <i>meeting through work</i>. clary works in manhattan’s upper east at a private school modeled after the brearley school, as well as with various artist in residence programs listed but not limited to above. her artist in residence programs are relatively short, & only occur during the northern hemisphere’s summer months ( late june - early august ), but offer flexibility in that they aren’t restricted to manhattan as the rest of the school year would be.
+
+<p><b>OPTION III</b>. <i>meeting through volunteer work</i>. clary additional volunteers with a nonprofit organization working with youth & veterans. these programs emphasize art therapy, with youth activities on saturdays, & the veteran meetings on wednesday nights.
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>- Clary's canon backstory in this verse is <b>largely similar</b>&nbsp;to her seemingly mundane life prior to her sixteenth birthday. She was born the younger child of Jocelyn Fairchild &amp; Valentine Morgenstern, but raised solely by Jocelyn in Park Slope, Brooklyn. They had separated following steep personal tragedy that had claimed the life of Jocelyn’s parents when their home burned under mysterious circumstances, &amp; Valentine had bolted with their son.
+
+<p>- She attended&nbsp;<b>St. Francis Xavier School</b>, a private school near her home in Park Slope, Brooklyn, which is where she met Simon Lewis when she was six years old. Additionally, prior to her high school graduation, she was taking classes at&nbsp;<b>NYU's Tisch School of the Arts</b>.&nbsp;
+
+
+<p>- <b>When she was 16&nbsp;</b>( circa 2007 ), she received a letter from her father’s estate revealing he had passed away far more recently than she &amp; her mother had been lead to believe - Jocelyn had been under the impression her husband had died in that tragic fire that had claimed the life of her parents &amp; young son before the birth of their daughter.&nbsp;Several weeks later, Jonathan turned up on Jocelyn’s doorstep with the revelation that not only had Valentine lied about his own death, but also that of his son.
+
+<p>- <b>Jonathan has been living &amp; working in Manhattan </b>since, compliant with <a href="https://idumean.tumblr.com">@idumean</a>‘s <i>professional chef</i>&nbsp;verse unless plotted otherwise. Jocelyn &amp; Luke are now married &amp; living at Luke’s.&nbsp;
+
+<p>- Clary teaches <b>kindergarten</b>&nbsp;at a private school in <b>Manhattan’s Upper East</b>. Her class size ranges from 8-10 small children, &amp; follows a Scandinavian elementary model that emphasizes playtime &amp; education through discovery. Her school year runs from roughly the second week of September through the first week of June, with her artist in residence programs typically picking up the third week of June through the second week of August. 
+
+<blockquote>
+     <p><b>yearly salary: </b>76,000, pretax ( <a href="https://www.glassdoor.com/Salary/The-Brearley-School-Teacher-Salaries-E150524_D_KO20,27.htm">link</a> ), $60,291 after taxes. works out to roughly <b>$5,024/mo.</b>
+</blockquote>
+
+<p>- <b>Clary does not drive</b>.&nbsp;She <i>does</i>&nbsp;however frequently use the metro, as well as very, very rarely takes cabs to get between home &amp; work as well as the various places she goes during the week for her volunteer work or art ramblings. She runs an instagram account based on <b>the rambling sketcher</b>&nbsp;( <a href="https://www.instagram.com/ramblingsketcher/">link</a> ), &amp; sells prints for additional income. she carries an etchr field case with her for those excursions. you can find the rest of the details of her kit here ( <a href="https://www.ramblingsketcher.com/single-post/2020/03/28/Sketch-Kit-2020-Edition">link</a> ).
+
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header4">clary's apartment (click here)</div></a>
+
+<div class="toggle-content">
+
+<p>Clary’s apartment is very much a rare find in NYC. She lives in <b>EAST HARLEM</b>&nbsp;in a small nearly studio apartment that’s perpetually covered in plants &amp; paintings. it’s very small, but it’s one of the most walkable areas &amp; close to public transportation - &amp; it’s home. her rent takes up a disproportionate amount of her income, but she supplements her teacher’s salary with her art work, &amp; various grants cover the cost of her artist in residence excursions that aren’t covered by the programs themselves.&nbsp;</p>
+
+<p>she has the world’s smallest kitchen ( <a href="https://i.imgur.com/JeTi11R.png">link</a> ), but it’s fully functional - a miracle for many small NYC apartments - &amp; has a gas stove. she supplements it with a small kitchen cart that acts as additional counter space but mostly stores art supplies. she’s more of a baker than a cook, &amp; she leaves the cooking primarily to Jonathan who invades her space like a human tornado once a week to meal prep ( read: use his sister as a human guinea pig for <i>per se</i>’s new dishes ) for his little sister.&nbsp;</p>
+
+<p>her apartment isn’t just covered in art supplies. she’s converted her closet into a sewing workspace, whereas her clothes typically hang on a freestanding rack by her bed. the living room is absolutely taken over by canvases &amp; drop cloths to protect the floor once she gets <i>really into</i>&nbsp;a project. she has a very small table by her window that she uses for grading, but also doubles as a very small breakfast nook, giving her a small oasis where she can have coffee &amp; snag food before dashing out into the chaos of the city.&nbsp;</p>
+
+<p>she doesn’t have any pets, but she <i>does</i>&nbsp;have an abundance of plants. spider plants, jade plants, &amp; an abundance of ferns can be found tucked away either on the scarcely available surfaces, or more recently thanks to Luke, in wall mounted planters or hung from the ceiling. one of her favorites is a small collection of happy bean plants ( <a href="https://img.crocdn.co.uk/images/products2/pl/20/00/03/20/pl2000032044.jpg?width=940&amp;height=940">link</a> ) one of her parents gifted her with after her first year of teaching, as well as an indoor <i>brown turkey</i> fig tree, a dwarf lemon tree, &amp; a dwarf apricot tree, all of which she has absolutely no room for, but they help her feel a little less claustrophobic in the tiny apartment that is <i>significantly</i>&nbsp;smaller than the one she shared with her mother in Brooklyn.</p>
+
+</div></div>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/hWcY6rE.png"> <b>Armitage Hux</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) <i>unexpectedly & without law</i>. It was supposed to be a quiet summer with her helping Jon settle in with Ash, & Alec & Magnus get the boys squared away before school started, working on her freelance art while working as an artist in residence with a small, local gig. She didn't expect to literally run into someone while sketching, much less run into them <i>again</i> a few days later at her favorite coffee shop. <b>and then there was the charity auction</b>. Who would have thought they'd meet again at the <i>biggest night of the year</i> for her school? After that, meeting a few times a week for coffee felt easy enough, but the invitation over to dinner? Now she's <i>really</i> getting nervous. This is starting to sound a lot like a <b>real</b> date.</div>
+    
+<br>    
+
+<div id="wrapverse2"><img src="https://i.imgur.com/PJinEqo.png"> <b>Hades, Lord of the dead</b>. ( <a href="https://deadlcrd.tumblr.com">@deadlcrd</a>. ) She's not entirely sure when having a standing brunch date with <b>the lord of the underworld</b> became a standing weekend tradition before she had to dive back into grade assesments & volunteer work, but somehow a mimosa & hearing about someone <i>else's</i> job really... <i>takes the edge</i> off her work week.</div>
+    
+<br>    
+
+<div id="wrapverse2"><img src="https://i.imgur.com/5XnVVFB.png"> <b>Carol Danvers</b>. ( <a href="https://mvltis.tumblr.com">@mvltis</a>. ) <i>are all artists this cute, or is that just you?</i> it's not every day a superhero drops in on a local coffee shop a few blocks from her elementary school, & Clary can't help that the vibrant blues & reds in her uniform make for a great sketch while she's fighting off the boredom of quarterly evaluations. The request to get coffee <i>together</i> was even more unexpected, though.</div>
+
+<br>    
+
+<div id="wrapverse2"><img src="https://i.imgur.com/rll7v3n.png"> <b>Jace Herondale</b>. ( <a href="https://ofangelicblood.tumblr.com">@ofangelicblood</a>. ) at first he's just the cute guy who runs her favorite food truck. It's conveniently located for a lot of her art wandering routes, & she can't help but stop by for a pick me up at the end of a long afternoon.</div>
+    
+<br>  
+
+<div id="wrapverse2"><img src="https://i.imgur.com/efqBYle.png"> <b>Ben Solo</b>. ( <a href="https://sithroyal.tumblr.com">@sithroyal</a>. ) <i>poseidon ( arc )</i>. Summer on a cruise ship as an artist in residence wasn't supposed to be too much actual <b>work</b>. It was supposed to be giving lectures & running classes for people who paid well in advance & wanted to have a bit of drunken fun painting with mimosas while she took a break from teaching. After a rogue wave slams into the ship, capsizing the Poseidon & trapping everyone underwater, though... the man she caught a glimpse of on deck just might be the one who yanks her out from under the smoking debris in the dingy nightclub & helps her get to the surface.</div>
+
+<br>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/PIFhLCv.png"> <b>Ben Solo</b>. ( <a href="https://sithroyal.tumblr.com">@sithroyal</a>. ) <i>penpals ( arc. )</i>. it started when they were kids with a school program - she was eleven, paired with an older kid who was supposed to act as a mentor of sorts. it was never supposed to be more than a fun exercise but somehow they never lost touch. fifteen years later, both living in NYC, maybe it's finally time for them to meet up.</div> 
+
+<br>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/fUTWA5Q.png"> <b>Ben Solo</b>. ( <a href="https://sithroyal.tumblr.com">@sithroyal</a>. ) <i>recovery ( arc. )</i>. following his capture in Afghanistan, Ben happens to be placed in the same ward as one <i>Jocelyn Fairchild</i>, recovering from the after effects of poisoning by her now ex husband. Clary crosses his path while reading to her mother in the evenings, & slowly starts to fall into his gravity as he fights his way through his own recovery.</div> 
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- group verse one -->
+
+<div id="gv01" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p><h1>coming soon!</h1>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="header4">options & ideas for interaction</div>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- group verse two -->
+
+<div id="gv02" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p><h1>coming soon!</h1>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/rLsC0WV.png"> <b>Andrew Underhill</b>. ( <a href="https://affcgato.tumblr.com">@affcgato</a>. ) Runs the bed & breakfast, <b>The Carriage House</b>, as well as maintains the former estate's gardens, which remain open to the public. </div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/hrexlMX.png"> <b>Ash Morgenstern</b>. ( <a href="https://affcgato.tumblr.com">@affcgato</a>. ) Son of Jonathan Morganstern, & nephew of Seraphina & Clary. Attends music classes with Jem & cooking classes with Grayson. </div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/iPRykC3.png"> <b>Brock Rumlow</b>. ( <a href="https://affcgato.tumblr.com">@affcgato</a>. ) Owns & manages <b>Mugshots Catering</b>, with a small storefront cafe the serves as a test kitchen. </div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/iXpEKG0.png"> <b>Céline Herondale</b>. ( <a href="http://affcgato.tumblr.com">@affcgato</a>. ) Works as a neonatal nurse at the local hospital.</div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/ri4PqfJ.png"> <b>Grayson Kepler</b>. ( <a href="http://affcgato.tumblr.com">@affcgato</a>. ) owner & executive chef of <b>Coast</b>.</div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/yHGF3uF.png"> <b>James Barnes</b>. ( <a href="http://affcgato.tumblr.com">@affcgato</a>. ) owner & lead designer at <b>RED ROOM studio & off beat gallery</b>.   </div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/xoSf2ue.png"> <b>Jem Carstairs</b>. ( <a href="http://affcgato.tumblr.com">@affcgato</a>. ) A music instructor at the local elementary school. Married to <b>Tessa Gray</b>.</div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/5rDbXQR.png"> <b>Leia Organa</b>. ( <a href="http://affcgato.tumblr.com">@affcgato</a>. ) Local council woman who also additionally works with her husband at the bookshop. </div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/fRqrh8g.png"> <b>Rey</b>. ( <a href="http://affcgato.tumblr.com">@affcgato</a>. ) Works & manages the local scrap yard & autoshop. </div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/GtdMFEy.png"> <b>Seraphina Morgenstern</b>. ( <a href="http://affcgato.tumblr.com">@affcgato</a>. ) Older sister to Clary & older twin to Jonathan. Works as a fitness instructor & as a physical therapist at the rehab center connected to the local hospital.</div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/dkf92AW.png"> <b>Armitage Hux</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. ) tbd. </div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/WTBhPkw.png"> <b>Asajj Ventress</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. ) tbd. </div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/5NJEBw7.png"> <b>Han Solo</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. ) owns a bookshop specialising in rare & older books with Leia. Has a particular talent for finding books that don't quite want to be found.</div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/KUS3U7z.png"> <b>Jamison Eames</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. Manages the gallery portion of <b>RED ROOM studio & off beat gallery</b> ) </div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/0M5OC2x.png"> <b>Lucie Herondale</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. ) Works part time at Han & Leia's shop, stocking & organizing inventory.</div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/oU7L4vE.png"> <b>Magnus Bane</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. ) Manages <b>Pandemonium Yoga</b> & works with Talia.</div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/pdylaJR.png"> <b>Talia al-Ghul</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. yoga instructor at Magnus’ studio ) </div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/wDPwHhX.png"> <b>Tessa Gray</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. ) Works with Yen at the apothecary, specifically working with spice exchange component. Is married to <i>jem carstairs</i>.</div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/3Ew1FBf.png"> <b>Tony Stark</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. ) Works with Rey at the garage & scrap yard, specializing in more highly technical cars.</div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/xxcHgG6.png"> <b>Yennefer</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. ) Owns an apothacary.</div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/sCSwJ3O.png"> <b>West Morgan</b>. ( <a href="http://bastxrds.tumblr.com">@bastxrds</a>. ) Works at the local hospital with Céline.</div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/1DeF5uL.png"> <b>Steve Rogers</b>. ( <a href="http://cxpt.tumblr.com">@cxpt</a>. ) Works at <b>Mugshots Catering</b> with Brock.</div> 
+
+<div id="wrapverse2"><img src="https://i.imgur.com/44B9qYY.png"> <b>Jonathan Morgenstern</b>. ( <a href="https://idumean.tumblr.com">@idumean</a>. ) Works as executive chef a <i>per se</i>, in direct but friendly competition with Grayson. </div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/YUDRRAz.png"> <b>Clary Fairchild</b>. ( <a href="https://masterwcrk.tumblr.com">@masterwcrk</a>. ) Runs a photography business out of <b>Amaryllis</b>, a flower shop owned & operated by her friend & partner in crime, <i>alec lightwood</i>. </div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/01m9wIF.png"> <b>Jace Herondale</b>. ( <a href="https://ofangelicblood.tumblr.com">@ofangelicblood</a>. ) Works with Grayson, on Coast’s test kitchen food truck, <i>currents</i>. </div>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/RWgfGob.png"> <b>Alec Lightwood</b>. ( <a href="https://takeseffort.tumblr.com">@takeseffort</a>. ) Owns <b>Amaryllis</b>, a small flower shop on the main street.</div>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- group verse three -->
+
+<div id="gv03" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p><h1>coming soon!</h1>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/r4xTl7I.png"> <b>Brock Rumlow</b>. ( <a href="https://affcgato.tumblr.com">@affcgato</a>. ) tbd.</div>
+    
+<br>  
+
+<div id="wrapverse2"><img src="https://i.imgur.com/VIW9D9Q.png"> <b>Leia Organa</b>. ( <a href="https://affcgato.tumblr.com">@affcgato</a>. ) tbd.</div>
+    
+<br>  
+
+<div id="wrapverse2"><img src="https://i.imgur.com/D294Bh8.png"> <b>Armitage Hux</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) tbd.</div>
+    
+<br>
+
+<div id="wrapverse2"><img src="https://i.imgur.com/MZbxakF.png"> <b>Ben Solo/Kylo Ren</b>. ( <a href="https://sithroyal.tumblr.com">@sithroyal</a>. ) tbd.</div>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- private verse -->
+
+<div id="p01" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">relationship</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>She doesn't dwell on the little things, forgetting most of them as she sees them. Still, <i>a lot</i> of litle things have always popped up, & her sketchbooks are filled with half-remembered daydreams of a world she only catches glimpses of. 
+
+<p>it starts at <b4>pandemonium</b4>. She'd been once before, on her birthday years ago. She'd gotten in with Simon, she remembers, & she's been hooked on this place since. She comes here when she wants to <i>forget</i> her boring, mundane life, & whatever happens in the club, stays in the club.
+
+<p>someone once jokingly told her the <i>silver stuff</i> is a fairy drink. whatever it is, it loosens everything up. that's how she'd met her. they'd never exchanged names, but she'd never considered leaving her side from the moment they started dancing together. 
+
+<p>now it's an unspoken agreement. they meet up a few times a week & dance all night. they've never exchanged names, or anything else, but Clary's stopped ging out & meeting <i>other people</i>. she deleted those stupid dating apps weeks ago, too. even if they only see each other at the club, somehow that feels like enough.
+
+<p>right up until a <b4>scorpios</b4> demon tries to follow her home from work.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapversea"><img src="https://i.imgur.com/xwyZcbG.png"> <b4>Asajj Ventress</b4>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) meeting up in Pandemonium, Clary wasn't expecting a single dance to end up lasting the entire night. She was even more surprised when, a few days later, it happened again. Now it looks like she has a standing date. One that has a lot of interesting... <i>tattoos</i>.
+    
+    <p>At first it's just them meeting up at the club & dancing until sunrise, & that's all either of them wants. Simon had dared her to wear the stupid dress & now everyone won't stop staring, but it had been the woman at the bar who had pulled her in close & kept her there until daybreak. 
+</div>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- private verse (asajj2) -->
+
+<div id="p01b" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">relationship</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>She hadn't expected to get scouted for this particular project, but knowing the name behind it, it made a lot of sense. She'd been between gigs, working out of her mom & step-dad's place in Manhattan when <b>Alec Lightwood</b> had given her a call, offering her a spot on the underwater research station <i>mana one</i>. It would be a great gig, he promised - & somewhat of a reunion for the group that had worked out of the institute together for years.
+
+<p><b>jace. alec. izzy. her brother. maia.</b> it felt a little too good to be true, but she'd accepted without too much hesitation. as an acquatic botanist & research biologist, the vibrant underwater life at the station means she has no shortage of projects she can work on. taking turns in the kitchen & in the gliders with her brother, their goal is to study the deep sea environments never before fully mapped with state of the art equipment supplied by <b>the Tanaka Institute</b>.... & programmed by one very mysterious <a href="https://bastxrds.tumblr.com/">Asajj Ventress</a>.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>verse based on <i>the meg; a novel of deep terror</i> by <b>steve alten</b>, & the movie based on said novel.
+  
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>- prior to working together on Mama One, Jace & Clary dated briefly before they broke things off. he's now dating Alec.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapversea"><img src="https://i.imgur.com/xwyZcbG.png"> as the <b>de facto</b> systems programmer for Mana One, as well as the creator of much of the equipment used there, Asajj isn't actually permanently based on the station. Instead, the team tends to call her in whenever something hits a rough patch, but she also has a habit of showing up as needed. it's really convenient, given she's been <i>hooking up</i> with a certain redhead ever since the other first ran into her while piloting the gliders for an underwater geological survey.
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><b>single ship // verse exclusive</b> || <a href="http://bastxrds.tumblr.com/">asajj ventress</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>        
+        
+    </div>
+
+<div id="wrapversea"><img src="https://i.imgur.com/01m9wIF.png"> is it weird to work with your ex? maybe, but it's <i>definitely</i> weird to hear he's part of some strange triad with your brother. that's what clary's determined about the entire situation. still, working with Jace means she has someone who keeps her on her toes at the station, & it keeps work from ever being <b>too boring</b>.
+    
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><center><b>non-ship // verse participant</b> || <a href="http://ofangelicblood.tumblr.com/">jace herondale</a></center>
+<br>
+</div>
+<div class="hr2"><hr /></div>
+<p>    
+    
+</div>   
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- private verse -->
+
+<div id="p02" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">relationship</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>Before the extraction can make it through the Holland Tunnel, an extremeist group targeted them & any other cars waiting to get past checkpoints, blowing the tunnel & isolating egress out of the city. Other bridges were targeted as well, leaving the only route out of the city to the <b>north</b>. 
+
+<p>Most of the transport was killed in the blast. Those that weren't pushed through, including Brendol, making for an alternate escape. It's when they part ways that Hux realizes Clary isn't among the survivors, nor those being evacuated. Turning his back on his father & the expectation of safe extraction, he went back for her & found her hiding in her apartment.
+
+<p>Now the two of them have to get out of the city, evading both the vesps & also the rogue cultist groups now roaming the apocalyptic remains of the city that never sleeps while trying not to acknowledge the awkwardness that comes from the fact they broke up <i>weeks</i> ago & neither of them have moved on at all.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapversea"><img src="https://i.imgur.com/wppLgLW.png"> <b>Armitage Hux</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) They broke up because they spoke different languages. <i>love</i> languages, at any rate. She had thought that she'd get over it & move on, that eventually it'd be nothing more than a memory of a whirlwind romance, but she can't stop <b>thinking</b> about him.</div>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- private verse -->
+
+<div id="p03" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>coming soon
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapversea"><img src="https://i.imgur.com/0GzvVFU.png"> <b>Emperor Armitage Hux</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) tbd.</div>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- private verse -->
+
+<div id="p04" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>The Resistance has fallen, shattered & dispersed. The First Order has been remade in the image of its new emperor - one <b>armitage hux</b>, rising out of the ashes of the image the likes of Snoke & Palpatine had envisioned & shaping it into something wholly new. Seated at the heart of a new empire on <b>dromund kaas</b>, this new empire has demonstrated itself to be a force that will outlive all before it.
+
+<p>When she hears talk of a <i>formal ball</i> to be held at the citadel on dromund kaas, there's something about the old world charm of a formal dance that captures her imagination, but in reality, she's been on the run since he collapse of the resistance & she's running out of time & resources to keep herself hidden. The ball offers an opportunity for her to put herself in the perfect position to meet someone of power, someone who perhaps might enable her to stop looking over her shoulder, who might <i>protect her</i> from always being used as a weapon.
+
+<p>It's the most ambitious project she's ever taken on but she takes her time, trading crystals until she can put her hands on a <a href="https://i.imgur.com/hfg2g8Y.png" title="what did you think I'd pick anything else?">suitable dress</a>, & finally shaping ghostfire crystals into a pair of shoes. Bartering for safe passage is even easier, she just hopes tha she can snare the attention of a high level officer before the end of the festivities. Someone who might offer her the one thing she wants the most - a chance to <i>stop running</i>.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<div id="wrapversea"><img src="https://i.imgur.com/0GzvVFU.png"> <b>Emperor Armitage Hux</b>. ( <a href="https://bastxrds.tumblr.com">@bastxrds</a>. ) She thought she might capture the attenion of one of his high ranking officials, not the <b>emperor</b> himself, but after a jealous attendee slashes up her best dresses, she's gifted with something incredibly stunning - fitting, perhaps, of someone who might find herself at his side. </div>
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+<!-- private verse -->
+
+<div id="p05" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:100px">description</li>&nbsp;
+	  <li style="width:100px">notes</li>&nbsp;
+     <li style="width:100px">headcanons</li>&nbsp;
+     <li style="width:100px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>They <strike>hooked up</strike> met on a previous assignment. Now, contracted to the underwater research facility funded by billionaire Jack Morris, the elite <i>mana one</i>, Clary was recruited for her... <i>particular</i> niche work with an unnamed marine conservation agency affter a particularly spectacular stunt involving a whaling vessel & a homemade torpedo. 
+
+<p>After their research glider gets trapped beneath the thermocline because of a large-body impact with an unknown origin, <i>mana one</i> calls in a familiar face to oversee the deepest rescue dive ever attempted. But will <b>Poe Dameron</b> be able to pull it off? & how is it going to go, hunting a living fossil?
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>coming soon!
+ 
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+<p>tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+
+<li>
+
+tbd.
+
+<br />
+<br />
+<br />
+<br />
+</li>
+    
+</div>
+
+<!-- end verse popup -->
+
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+</html>
