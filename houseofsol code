@@ -1,0 +1,1473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+<!--
+ 
+houseofsol #1 single muse variant using a heavily edited basecode by octomoosey @ tumblr
+ 
+please do not remove this credit and please do not use this theme for commissions or giveaways. 
+
+thank you.
+
+https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4 -- use this to change the transparency of the backgrounds
+ 
+-->
+
+<!-- popup script -->
+<script type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+<!-- end script -->
+
+
+<!-- tabbed popup script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#poptabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#poptabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#poptab li.active").removeClass("active");
+            $("ul#poptab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+<!-- popup script -->
+<script type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup2_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+<!-- end script -->
+
+<!-- important scripts -->
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/wgijwsy/Ebfm2v4gy/jquery.masonry.min.js"></script>
+<!-- end other script -->
+
+<!---••• Scripts Misc •••--->
+ 
+<script src="//static.tumblr.com/yzs4yqx/lOsokx99u/smoothscroll.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+ 
+<!---••• Scripts Tooltips •••--->
+ 
+<script src="//static.tumblr.com/fiw4iub/4jdnu5ta4/jquery.style-my-tooltips.js"></script>
+ 
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:90,
+tip_fade_speed:600,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+
+<!--- ••• Colour Variables ••• --->
+
+<meta name="color:background" content="#313131"/>
+<meta name="color:borders" content="#ad130a"/>
+<meta name="color:text" content="#ffffff"/>
+<meta name="color:bold" content="#156f76"/>
+<meta name="color:italic" content="#80a1aa"/>
+<meta name="color:links" content="#53a1ae"/>
+<meta name="color:links hover" content="#ad130a"/>
+<meta name="color:quoteicon" content="#ad130a"/>
+<meta name="color:tooltipsbg" content="#5e0f08">
+<meta name="color:tooltipstext" content="#ffffff">
+<meta name="color:popup background" content="#0f0f0f"/>
+<meta name="color:popup text" content="#cccccc"/>
+<meta name="color:buttons" content="#cccccc"/>
+<meta name="color:buttons background" content="#1a1a1a"/>
+
+
+<!--- ••• Image Variables ••• --->
+
+<meta name="image:background top" content="https://i.imgur.com/7dIt0rA.png"/>
+<meta name="image:background bottom" content="https://i.imgur.com/hxkUrbC.png"/>
+
+
+<!-- text variables -- where you will put in the text for certain aspects of your theme -->
+
+<meta name="text:short quote" content="Donec placerat mauris commodo dolor. Nulla tincidunt. Nulla vitae augue." /> <!-- this is for a short quote or info about the blog -->
+
+
+<!--- ••• Fonts ••• --->
+<link rel="stylesheet" href="//cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<script src="https://kit.fontawesome.com/2e587cc233.js" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet" type='text/css'> 
+
+<style type="text/css">
+
+@font-face{font-family:'northwave';src:url('https://static.tumblr.com/uopakca/AzKq4ct1m/north_wave.otf');}
+
+
+/* tabbed popup styling */
+
+ul#poptabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   left:300px;
+   display:inline;
+   text-transform:uppercase;
+}
+
+ul#poptabs li {
+   display: inline;
+   background-color: transparent;
+   border: solid 0px #bd7f2a;
+   padding: 5px 6px;
+   margin-bottom: 4px;
+   cursor: pointer;
+   list-style-type:none;
+}
+
+ul#poptabs li:hover {
+   background-color: transparent;
+}
+
+ul#poptabs li.active {
+   background-color: transparent;
+   list-style:none;
+}
+
+ul#poptab {
+	list-style-type:none;
+   margin-top:10px;
+   padding: 0;
+}
+
+ul#poptab li {
+   display:none;
+   list-style-type:none;
+}
+
+ul#poptab li.active {
+   display: block;
+   width:475px;
+   height:575px;
+   margin-left:288px;
+   list-style-type:none;
+}
+
+#verse {
+   height:200px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+
+#left img {
+   float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:100px;
+	height:150px;
+	border:1px dashed #13757d;
+   }
+   
+#right img {
+  float:right;
+  margin-right:1px;
+  margin-left:8px;
+  width:100px;
+  height:150px;
+  border:1px dashed #a6120c;
+   }
+
+/* popup sidebar */
+
+#popside {
+	width:300px;
+	height:600px;
+	position:fixed;
+	background:transparent;
+	top:81px;
+	left:385px;
+
+}
+
+#popsideimage img {
+	width:300px;
+	height:600px;    
+   margin-bottom:5px;
+   margin-left:1px;
+   border-right:2px solid #3e3e3e;
+    }
+ 
+ 
+ /* popup menu */
+
+#popmenu {
+	width:450px;
+	height:25px;
+	position:fixed;
+	background:transparent;
+	top:90px;
+	left:760px;     /* adjust this number for the navigation popup menu */
+	font-family: 'Bebas Neue', cursive;
+	font-size:22px;
+
+}
+
+
+/* popup info */
+
+#popinfo {
+	width:773px;
+	height:570px;
+	position:fixed;
+	background:transparent;
+	top:110px;
+	left:405px;
+	overflow-y:scroll; 
+	overflow-x:hidden;
+
+}
+
+/* popup menu */
+
+#popmenu2 {
+	width:495px;
+	height:25px;
+	position:fixed;
+	background:transparent;
+	top:90px;
+	left:695px;     /* adjust this number for the verse popup menu */
+	font-family: 'Bebas Neue', cursive;
+	font-size:22px;
+
+}
+
+
+/* popup styling */
+
+.popup_block{
+    display:none;
+    color:{color:popup text}; /* font colour for the popup */
+    background-color:{color:popup background};
+    padding:20px;
+    border:1px solid #3e3e3e;  /* if you want a solid white pop-up, delete this */
+    float:left;
+    position:fixed;
+    top:400px;
+    left:800px;
+    height:560px; 
+    text-transform:lowercase;
+	 overflow-y:scroll; 
+	 overflow-x:hidden;
+    z-index: 99999;
+    -webkit-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    -moz-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    box-shadow: 0px 0px 0px #000; /* delete for solid white */
+}
+
+.popup2_block{
+    display:none;
+    background:{color:popup background};
+    color:{color:popup text}; /* font colour for the popup */
+    padding:20px;
+    border:1px solid #3e3e3e;  /* if you want a solid white pop-up, delete this */
+    text-align:justified;
+    float:left;
+    position:fixed;
+    top:400px;
+    left:800px;
+    height:560px;
+	 overflow-y:scroll; 
+	 overflow-x:hidden;
+    z-index: 99999;
+    -webkit-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    -moz-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    box-shadow: 0px 0px 0px #000; /* delete for solid white */
+}
+ 
+*html #fade {position: absolute;}
+*html .popup_block {position: absolute;}
+*html .popup2_block {position: absolute;}
+#fade {
+    display:none;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:#000; /* change to #fff for solid white */
+    opacity:0.90; /* change to opacity:1; */
+}
+
+/* end of styling */
+
+/* tumblr controls */
+
+iframe.tmblr-iframe.tmblr-iframe--desktop-loggedin-controls.iframe-controls--desktop, .tmblr-iframe {
+    position:fixed;
+    z-index:9!important;
+    top:0px!important;
+    right:-48px!important;
+    white-space:nowrap;
+    transform: scale(0.6,0.6);}    
+   
+#tumblr_lightbox {
+    background-color:rgba(255, 255, 255, .9)!important;
+    z-index:99999!important;}
+ 
+#tumblr_lightbox img {opacity:0;}
+ 
+#tumblr_lightbox_caption {
+    font-weight:normal!important;
+    text-shadow:none!important;}
+ 
+#tumblr_lightbox_center_image, #tumblr_lightbox_left_image, #tumblr_lightbox_right_image {
+    -moz-box-shadow:none!important;
+    -webkit-box-shadow:none!important;
+    box-shadow:none!important;
+    -moz-border-radius:0px!important;
+    -webkit-border-radius:0px!important;
+    border-radius:0px!important;
+    opacity:1!important;}
+ 
+#tumblr_lightbox_left_image, #tumblr_lightbox_right_image {opacity:.4!important;}
+
+
+/* this is what changes the colour when you highlight */
+
+::selection {
+background: #160908;
+color: #096171;
+}
+
+
+/* this is the scrollbar code */
+
+::-webkit-scrollbar-thumb:vertical {
+	background-color:transparent;
+	height:0px;
+	}
+
+::-webkit-scrollbar-thumb:horizontal {
+	background-color:transparent;
+	height:0px;
+	}
+
+::-webkit-scrollbar {
+	background-color:transparent;
+	height:0px;
+	width:0px;
+	}
+
+/* this changes the tooltip when you hover over a link */
+
+#s-m-t-tooltip {
+    max-width:400px;
+	 padding:5px;
+	 margin:10px 0px 0px 10px;
+	 background-color:{color:tooltipsbg}; 
+	 font-family:'gibson', sans-serif;
+	 font-size:9px;
+	 letter-spacing:1px;
+	 font-style:none;
+	 text-transform:uppercase;
+	 padding-bottom:3px;
+	 color:{color:tooltipstext};
+	 border: 4px double #d7d7d7;
+	 z-index:999999999999999999999999999999999999;}  
+	 
+
+/* this is all your heading codes */
+
+h1 {
+    font-size:26px;
+    letter-spacing:2px;
+    line-height:5px;
+    text-align:right;
+    text-transform:uppercase;
+    margin-top:5px;}
+    
+h2 {
+    font-size:18px;
+    letter-spacing:2px;
+    line-height:30px;
+    text-align:right;
+    text-transform:uppercase;
+    margin-top:-10px;}
+    
+h3 {
+    font-size:26px;
+    letter-spacing:2px;
+    line-height:5px;
+    text-align:right;
+    margin-top:5px;}
+    
+h4 {
+    font-size:50px;
+    letter-spacing:2px;
+    line-height:5px;
+    text-align:right;
+    margin-top:35px;
+    margin-bottom:35px;
+    padding-right:10px;
+    font-family:'northwave', sans-serif;}
+    
+h5 {
+	font-size:12px;
+	line-height:15px;
+	text-transform:uppercase;
+	text-align:center;
+	font-weight:bold;
+	letter-spacing:0px;
+	color:#a6120c;
+	background-color: transparent;
+	border-top: solid 1px #13757d;
+	border-bottom: dashed 1px #13757d;
+	width:150px;
+	display: inline-block;
+	padding: 5px;
+	margin-bottom: 5px;
+	margin-left:150px;
+	margin-top:10px;
+
+}
+
+h6 {
+    font-size:50px;
+    letter-spacing:2px;
+    line-height:5px;
+    text-align:right;
+    margin-top:5px;
+    margin-bottom:5px;
+    padding-right:5px;
+    font-family:'northwave', sans-serif;}
+    
+ul{
+    list-style-type:square;
+}	 
+
+/* ---••• General Styling •••--- */  
+
+body {
+    background:{color:background};
+    color:{color:text};
+    font-size:11px;
+    font-family:'arial', sans-serif;
+    font-weight:normal;
+    position:relative;
+    text-align:left;
+    overflow:none;
+    margin:0;
+    top:0px;
+    left:0px;
+    line-height:150%;
+    height:100%;
+    width:100%;}
+    
+#backgroundimg-top {
+	 background-image: url('{image:background top}');
+	 background-repeat: no-repeat;
+	 border-top:1px dashed #b2150d;
+	 border-bottom:1px solid #b2150d;
+	 position:fixed;
+	 top:275px;
+	 left:10px;
+	 width:950px;
+	 height:200px;
+}
+
+#backgroundimg-bottom {
+	 background-image: url('{image:background bottom}');
+	 background-repeat: no-repeat;
+	 border-top:1px dashed #096a79;
+	 border-bottom:1px solid #096a79;
+	 position:fixed;
+	 top:575px;
+	 left:440px;
+	 width:950px;
+	 height:200px;
+}
+
+ 
+blockquote {
+    text-align:justify;
+    padding-left:10px;
+    border-left:1px dashed {color:borders};
+    margin:10px 0px 10px 0px;}
+     
+blockquote img {
+    max-width:100%;
+    height:auto;}
+   
+blockquote iframe {
+    max-width:100%;
+    height:auto;}    
+   
+img {
+    max-width:100%;
+    height:auto;}
+   
+.caption img {
+    max-width:100%; 
+    height:auto;}
+   
+.posts img {
+    max-width:100%;
+    margin-top:5px;
+    margin-bottom:5px;}
+    
+.photoset {
+	max-width:100%;
+}
+
+pre {
+    font-family: 'Roboto', sans-serif;
+    white-space: pre-wrap;      
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;    
+    white-space: -o-pre-wrap;  
+    word-wrap: break-word;}
+ 
+a {
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:10px;	 
+	 font-family:'open sans', sans-serif;
+    color:{color:links};
+    letter-spacing:1px;
+    cursor:pointer;
+     -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;}
+ 
+a:hover {
+    cursor:pointer;
+    letter-spacing:1px;
+    color:{color:links hover};}
+ 
+p {
+    margin:10px 0 10px 0;}
+ 
+b, strong {
+    font-size:12px;
+    text-transform:uppercase;
+    color:{color:bold};}
+ 
+i, em {
+    color:{color:italic};}
+ 
+sup, small, sub { 
+  font-size:11px;
+  }
+   
+#quote {
+	position:fixed;
+	top:562px;	
+	left:965px;
+	width:415px;
+	font-size:12px;
+	text-align:right;
+	font-style:italic;
+	color:{color:italic};
+}
+    
+/* ---••• Post Styles •••--- */  
+
+#container {
+	 position:absolute;
+	 margin:0 auto;
+    top:0px;
+    min-height:975px;
+    margin-bottom:50px;
+    background:#262626cc; /* change this for the background behind all the posts. only change the first six numbers. the last two are the transparency */
+}
+
+#entries {
+    position:absolute;
+    margin:0 auto;
+    width:500px;
+    left:440px;
+    top:0px;
+    margin-bottom:25px;
+    padding-right:20px;  
+   	}
+    
+.post { 
+    position:relative;
+    text-align:justify;
+    display:block;
+    margin-bottom:70px;
+    color:{color:text};
+    width:500px;
+    padding-right:10px;
+    padding-left:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+   	}
+   	
+
+/* ---••• Post Info •••--- */  
+
+.postinfo {
+    position:absolute;
+    width:500px;
+    font-size:8px;
+    padding-top:3px;
+    margin-top:15px;
+    color:{color:text};
+    border-bottom:1px dashed #156f76;
+    border-top:1px solid #156f76;}    
+
+.postinfo a {
+    margin-right:5px;
+    font-size:8px;
+    color:{color:text};}
+    
+.postinfo a:hover {
+	color:{color:links hover};
+}
+    
+.date {
+	float:left;
+	margin-left:5px;
+}
+
+.date .fa-bookmark { 
+	color:#aaaaaa; 
+	} 
+    
+.reblogs {
+	float:right;
+	
+}
+
+.pinned { 	
+	font-weight:bold; 
+   font-size:10px;
+   text-align:center;
+   width:400px;
+}
+
+.pinned a { 
+	text-transform:uppercase!important; 
+	}
+
+.pinned a:hover {
+	color:{color:links hover};
+}
+
+.pinned .fa-thumbtack { 
+	margin-right:7px; 
+	font-size:11px; 
+	} 
+
+{block:PermalinkPage} 
+.tags {
+    font-size:8px;
+    margin-top:55px;
+    text-align:center;}    
+
+.tags a {
+    font-size:8px;
+    color:{color:text};
+    padding:0px 5px 0px 0px;}
+    
+.tags a:hover {
+	color:{color:links hover};
+}
+{/block:PermalinkPage}
+    
+/* ---••• Post Notes •••--- */  
+
+{block:PermalinkPage} 
+ol.notes {
+    font-size:11px;
+    line-height:11px;
+    margin:0px 0px 0px -40px;
+    list-style-type:none;}
+ 
+ol.notes li.note {
+    padding:10px 0px;}
+ 
+ol.notes li.note a {
+    font-size:9px;
+    text-transform:uppercase;}    
+    
+ol.notes li.note a:hover {
+	color:{color:links hover};
+}
+ 
+ol.notes li.note img.avatar {
+    vertical-align:-5px;
+    margin-right:10px;
+    width:16px;
+    height:16px;}
+ 
+ol.notes li.note span.action {
+    font-weight:none;}
+ 
+ol.notes li.note .answer_content {
+    font-weight:normal;}
+ 
+ol.notes li.note blockquote {
+
+    margin:10px 0px 0px 25px;}
+ 
+ol.notes li.note blockquote a {
+    text-decoration:none;}    
+{/block:PermalinkPage}     
+
+/* ---••• Post Types •••--- */
+ 
+.posttitle {
+    color:{color:text};
+    font-size:11px;
+    margin-bottom:5px;
+    text-transform:uppercase;
+    text-align:right;
+    letter-spacing:2px;}    
+    
+ 
+/* ---••• Ask Posts •••--- */
+
+.question {
+    margin-bottom:10px;}
+    
+.ques {
+    text-align:right;}    
+
+.asker {
+    margin-bottom:5px;
+    font-size:11px;
+    text-align:right;
+    text-transform:uppercase;
+    letter-spacing:2px;}
+
+.asker a {
+    padding-bottom:2px;
+    color:{color:text};
+    border-bottom:1px solid {color:text};
+    font-size:11px;
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:2px;}   
+    
+ .asker a:hover {
+	color:{color:links hover}; 
+ } 
+ 
+/* ---••• Quote Posts •••--- */
+ 
+.titlequote {
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    text-align: left;}
+ 
+.source {
+    font-size:11px;
+    text-align:left;
+    margin-top:10px;}
+ 
+.ql {
+    position:relative;
+    float:left;
+    margin-right:5px;
+    bottom:-11px;
+    font-size: 60px;
+    color:{color:quoteicon};}
+ 
+/* ---••• Audio Player •••--- */    
+ 
+.playwrap {
+    margin-top:0px;
+    position:relative;}
+   
+.playbutton {
+    top:25px;
+    position:relative;
+    margin-left:23px;
+    z-index:6;
+    width:33px;
+    height:30px;
+    overflow:hidden;}
+   
+.albumart img {
+    position:relative;
+    margin-top:-28px;
+    margin-left:0px
+    height:80px;
+    width:80px;
+    overflow:hidden;}    
+           
+.trackinfo {
+    margin-bottom:10px;
+    color:{color:text};
+    position:relative;
+    margin-left:100px;
+    height:80px;
+    margin-top:-90px;
+    margin-bottom:20px;}
+ 
+.trackname {
+    position:relative;
+    padding-top:25px;
+    text-align:left;
+    font-size:10px;
+    text-transform:uppercase;
+    font-weight: bold;
+    letter-spacing:2px;}  
+ 
+.artist {
+    text-align:left;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:4px;}
+ 
+.album {
+    text-align:left;
+    font-style: italic;
+    letter-spacing:4px;}  
+    
+.hidden { visibility: hidden; }
+.unhidden { visibility: visible; } 
+    
+    
+/* ---••• Sidebar •••--- */     
+
+#sidebar {
+	 position:fixed;
+	 left:50px;
+	 top:250px;
+	 height:20px;
+	 width:495px;
+	 padding:2px;
+	 }
+
+ 
+#nav {
+	 font-size:10px;	 
+	 font-family:'open sans', sans-serif;
+	 width:235px;    
+    text-align:left;
+    left:15px;
+    margin-top:10px;
+    position:fixed;}
+
+#nav a {
+	display:inline-block;
+   margin:0px 4px;
+   -webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;}    
+    
+#nav a:hover {
+	color:{color:links hover};
+	letter-spacing:1px;
+} 
+ 
+/* ---••• Pagination •••--- */
+ 
+#pagination {
+    position:fixed;
+    left:375px;
+	 top:261px;
+	 padding:2px;
+	 background:transparent;
+    font-size:9px;
+    text-transform:uppercase;
+    }
+ 
+#pagination a {
+    letter-spacing:1px;
+    font-size:9px;
+    }
+   
+#pagination a:hover {
+    color:{color:links hover};
+    }
+   
+/* navigation tab in popup */
+
+.button {
+  display:inline-block;
+  text-align:center;
+  width:120px;
+  margin:4px;
+  padding:2px;
+  background-color:{color:buttons background};
+  color:{color:buttons};
+  border-top: 1px solid #a6120c;
+  border-bottom: 1px dashed #a6120c;
+  border-radius:2px;
+	}
+
+.button:hover {
+  border-top: 1px dashed #13757d;
+  border-bottom: 1px solid #13757d;
+	}
+	
+#buttons {
+	margin-left:25px;
+}	
+
+
+/* this is the credit coding. DO NOT REMOVE */
+    
+   #credit {
+    font-size:9px;
+    font-family:cambria;
+    font-style:italic;
+    letter-spacing:1px;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#credit a {
+    background-color:transparent;
+    padding:5px;
+    position:fixed;
+    right:15px;
+    bottom:10px
+    }  
+ 
+#credit a:hover {
+    background-color:transparent;
+    }    
+    
+/* credit coding ends here */  
+ 
+    
+</style>
+
+</head>
+
+<body>
+
+<div id="backgroundimg-top"><img src="{image:background top}"></div>
+
+<div id="backgroundimg-bottom"><img src="{image:background bottom}"></div>
+
+<div id="credit"><a href="https://houseofsol.tumblr.com" title="theme by houseofsol"><img src="https://68.media.tumblr.com/e5f4ca3f38bdf7a73c37efc9b8fd4996/tumblr_inline_oj2mweKepP1scj6vj_500.png"></a></div>
+
+
+<div id="sidebar">
+<div id="nav">
+<a title="refresh" href="/"><span class="fas fa-cogs" style="font-size:110%"></span></a>
+<a href="#?w=750" rel="01" class="poplight" title="site map" >navigation</a>
+<a href="#?w=750" rel="02" class="poplight" title="verses" >verses</a>
+</div>   
+
+<div id="pagination">
+{block:Pagination} 
+{block:PreviousPage}<a href="{PreviousPage}"><span class="fas fa-arrow-left" style="font-size:100%"></span></a>{/block:PreviousPage} &nbsp;page&nbsp; {block:NextPage}<a href="{NextPage}"><span class="fas fa-arrow-right" style="font-size:100%"></b></span></a>
+{/block:NextPage}
+{/block:Pagination}
+</div>
+
+</div>
+
+<div id="quote">
+{text:short quote}
+</div>
+
+<div id="entries">
+<div id="container">
+{block:Posts}
+{block:NoRebloggedFrom}
+{block:RebloggedFrom}
+{ReblogParentName}
+{/block:RebloggedFrom}
+{/block:NoRebloggedFrom}
+
+
+<div class="post" id="{PostID}">
+    
+{block:Text}
+{block:Title}<div class="posttitle">{Title}</div>{/block:Title}{Body}
+{/block:Text}
+
+{block:Photo}
+<div class="media">{LinkOpenTag}<img src="{PhotoURL-HighRes}" width="100%">{LinkCloseTag}</div>
+{/block:Photo}
+ 
+{block:Photoset}{Photoset-500}{/block:Photoset}
+ 
+{block:Video}{Video-500}{block:Caption}{Caption}{/block:Caption}{/block:Video}
+
+{block:Quote}
+<div class="ql">&ldquo;</div>
+<div class="titlequote">{Quote}</div>
+{block:Source}<div class="source">{Source}</div>{/block:Source}
+{/block:Quote}
+ 
+{block:Link}
+<h1><a href="{URL}" {Target}>{Name}</a></h1>
+{block:Description}{Description}{/block:Description}
+{/block:Link}
+ 
+{block:Chat}
+<div class="text">
+{block:Title}<h3>{Title}</h3>{/block:Title}
+{block:Lines}<p>
+{block:Label}<b>{Label}</b>{/block:Label}
+{Line}</p>
+{/block:Lines}
+</div>
+{/block:Chat}
+ 
+{block:Audio}
+{block:AudioPlayer}
+<div class="playwrap">
+<div class="playbutton">{AudioPlayerGrey}</div>
+{block:AlbumArt}<div class="albumart"><img src="{AlbumArtURL}"></div>{/block:AlbumArt}
+<div class="trackinfo">
+<div class="trackname">
+{block:TrackName}{TrackName}{/block:TrackName}
+</div>
+<div class="artist">
+{block:Artist}{Artist}{/block:Artist}
+</div>
+<div class="album">
+{block:Album}{Album}{/block:Album}
+</div>
+</div>
+</div>
+{/block:AudioPlayer}
+{/block:Audio}
+
+{block:Answer}
+<div class="question"><div class="asker">{Asker} sent in:</div><div class="ques">{Question}</div></div>{Answer}
+{/block:Answer}
+
+{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+
+<div class="postinfo">
+<div class="date"><span class="fas fa-bookmark" style="font-size:75%"></span> &nbsp; <a href="{Permalink}" title="{ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{Year}">{ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{Year}</a> &nbsp;|&nbsp; <a href="{Permalink}" title="{NoteCountWithLabel}"><span style="color:red; font-size:105%">&#10084;</span>&nbsp;{NoteCount}</a></div>
+<div class="reblogs">{block:RebloggedFrom}
+<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="fas fa-share-alt"></span></a> &nbsp;{/block:RebloggedFrom}{block:ContentSource} <a title="source: {SourceTitle}" href="{SourceURL}"><span class="fas fa-cog"></span></a>{/block:ContentSource} &nbsp;<a href="{ReblogURL}" title="reblog this post"><span class="fas fa-redo"></span></a>
+</div>
+{block:HomePage}{block:PinnedPostLabel}<div class="pinned"><a href="{Permalink}"><span class="fas fa-thumbtack"></span>{PinnedPostLabel}</a></div>{/block:PinnedPostLabel}{/block:HomePage}
+</div>
+
+{block:PermalinkPage}
+<div class="tags">
+<b>filed under:</b>&nbsp;
+{block:HasTags}{block:Tags}&nbsp;<a title="{Tag}" href="{TAGURL}">{TAG}</a>&nbsp; &nbsp; {/block:Tags}{/block:HasTags}
+</div>
+{/block:PermalinkPage}
+
+<div class="postnote">
+{block:PostNotes}{PostNotes-16}{/block:PostNotes}
+</div>
+
+</div> 
+
+{/block:Posts}
+</div>
+
+{block:ContentSource}<!-- {SourceURL}
+{block:SourceLogo}<img src="{BlackLogoURL}"width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
+
+<!-- popup one -->
+
+<div id="01" class="popup_block">
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/9nJRWKV.png"></div> <!-- change the image on the popup sidebar -->
+
+</div>
+
+<div id="popmenu">
+
+<ul id="poptabs">
+     <li class="active" style="width:100px">01. ask</li>
+     
+     <li style="width:100px">02. rules</li>
+		
+     <li style="width:100px">03. bio</li>
+     
+     <li style="width:100px">04. links &amp; tags</li>
+     
+</ul>  
+
+</div> 
+
+<div id="popinfo">
+
+<ul id="poptab">
+<li class="active">
+<center><h4>questions?</h4></center>
+<br />
+<iframe id="ask_form"  style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/ask_form/YOURURLHERE.tumblr.com" frameborder="0" scrolling="no" width="450" height="225"></iframe>
+</li>
+
+<li>
+<center><h4>guidelines</h4></center>
+<br />
+<h5>section one</h5>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+<h5>section two</h5>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+<h5>section three</h5>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+<h5>section four</h5>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+<h5>section five</h5>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+<br />
+</li>
+
+<li>
+<center><h4>biography</h4></center>
+<br />
+<h5>section one</h5>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+<h5>section two</h5>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+<h5>section three</h5>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+<h5>section four</h5>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+<h5>section five</h5>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+<br />
+</li>
+
+<li>
+<h4>navigation</h4>
+<p><h5>section one</h5>
+<p>
+<div id="buttons">
+<a href="/" class="button">one</a> 
+&nbsp;
+<a href="/" class="button">two</a>
+&nbsp;
+<a href="/" class="button">three</a>
+<br />
+<a href="/" class="button">four</a> 
+&nbsp;
+<a href="/" class="button">five</a>
+&nbsp;
+<a href="/" class="button">six</a>
+</div>
+<br />
+<h5>section two</h5><br />
+<p>
+<div id="buttons">
+<a href="/" class="button">one</a> 
+&nbsp;
+<a href="/" class="button">two</a>
+&nbsp;
+<a href="/" class="button">three</a>
+<br />
+<a href="/" class="button">four</a> 
+&nbsp;
+<a href="/" class="button">five</a>
+&nbsp;
+<a href="/" class="button">six</a>
+<p>
+</div>
+<br />
+<h5>section three</h5><br />
+<p>
+<div id="buttons">
+<a href="/" class="button">one</a> 
+&nbsp;
+<a href="/" class="button">two</a>
+&nbsp;
+<a href="/" class="button">three</a>
+<br />
+<a href="/" class="button">four</a> 
+&nbsp;
+<a href="/" class="button">five</a>
+&nbsp;
+<a href="/" class="button">six</a>
+<p>
+</div>
+<br />
+<h5>section four</h5><br />
+<p>
+<div id="buttons">
+<a href="/" class="button">one</a> 
+&nbsp;
+<a href="/" class="button">two</a>
+&nbsp;
+<a href="/" class="button">three</a>
+<br />
+<a href="/" class="button">four</a> 
+&nbsp;
+<a href="/" class="button">five</a>
+&nbsp;
+<a href="/" class="button">six</a>
+<p>
+</div>
+<br />
+<br />
+</li>
+</li>
+
+</div>
+    
+</div>
+
+<!-- popup two -->
+
+<div id="02" class="popup_block">
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/9nJRWKV.png"></div> <!-- change the image on the popup sidebar -->
+
+</div>
+
+<div id="popmenu2">
+
+<ul id="poptabs">
+     <li class="active" style="width:100px">01. canon</li>
+     
+     <li style="width:100px">02. alt canon</li>
+		
+     <li style="width:100px">03. fandom</li>
+     
+     <li style="width:100px">04. alternate</li>
+     
+     <li style="width:100px">05. misc.</li>
+     
+</ul>  
+
+</div> 
+
+<div id="popinfo">
+
+<ul id="poptab">
+<li class="active">
+<center><h4>canon</h4></center>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/eqOB6rd.png"></div>
+<b><a href="/" style="font-size:12px">verse one</a></b> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<br />
+<br />
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/brdWTD4.png"></div>
+<b><a href="/" style="font-size:12px">verse two</a></b> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div></li>
+
+<li>
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/H3OfEUO.png"></div> <!-- change the image on the popup sidebar -->
+
+</div>
+
+<center><h4>alternate canon</h4></center>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/eqOB6rd.png"></div>
+<b><a href="/" style="font-size:12px">verse one</a></b> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<br />
+<br />
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/brdWTD4.png"></div>
+<b><a href="/" style="font-size:12px">verse two</a></b> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div></li>
+
+<li>
+<center><h4>fandom</h4></center>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/eqOB6rd.png"></div>
+<b><a href="/" style="font-size:12px">verse one</a></b> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<br />
+<br />
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/brdWTD4.png"></div>
+<b><a href="/" style="font-size:12px">verse two</a></b> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+</li>
+
+<li>
+<div id="popside">
+
+<div id="popsideimage"><img src="https://i.imgur.com/H3OfEUO.png"></div> <!-- change the image on the popup sidebar -->
+
+</div>
+
+<h4>alternate</h4>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/eqOB6rd.png"></div>
+<b><a href="/" style="font-size:12px">verse one</a></b> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<br />
+<br />
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/brdWTD4.png"></div>
+<b><a href="/" style="font-size:12px">verse two</a></b> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+</li>
+
+<li>
+<center><h4>misc.</h4></center>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/eqOB6rd.png"></div>
+<b><a href="/" style="font-size:12px">verse one</a></b> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<br />
+<br />
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/brdWTD4.png"></div>
+<b><a href="/" style="font-size:12px">verse two</a></b> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+</li>
+
+</li>
+
+</div>
+    
+</div>
+
+</html>
